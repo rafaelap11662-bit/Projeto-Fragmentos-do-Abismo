@@ -1,12 +1,20 @@
-using System.Data.Common;
 using UnityEngine;
+using System.Data.Common;
+using System.Collections.Generic; 
+using System.Collections; 
 
 public class jogador : MonoBehaviour
 {
     Rigidbody2D rbPlayer;
     [SerializeField] float speed = 5f;
 
-    
+    [SerializeField] float jumpForce = 15f;
+    [SerializeField] bool isJump;  
+    [SerializeField] bool inFloor = true;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] LayerMask groundLayer;
+
+
 
 
 
@@ -16,9 +24,29 @@ public class jogador : MonoBehaviour
         rbPlayer = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        inFloor = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.6f, 0.3f), 0f, groundLayer);
+        Debug.DrawLine(transform.position, groundCheck.position, Color.blue); 
+
+        if (Input.GetButtonDown("Jump") && inFloor)
+           isJump = true;
+        else if (Input.GetButtonUp("Jump") && rbPlayer.linearVelocity.y > 0)
+           rbPlayer.linearVelocity = new Vector2(rbPlayer.linearVelocity.x, rbPlayer.linearVelocity.y * 0.5f);
+            
+    }
+
+// Para visualizar a caixa de colisão do chão no editor, para ajudar ajustar a posição e o tamanho da caixa de colisão corretamente.
+    void OnDrawGizmos()
+{
+    Gizmos.color = Color.green;
+    Gizmos.DrawWireCube(groundCheck.position, new Vector2(0.6f, 0.3f));
+}
+
     void FixedUpdate()
     {
         Move();
+        JumpPlayer();
     }
 
     void Move()
@@ -35,5 +63,13 @@ public class jogador : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 0);
         }
         
+    }
+
+    void JumpPlayer()
+    {
+        if (isJump){
+        rbPlayer.linearVelocity = Vector2.up * jumpForce;
+        isJump = false;
+        }
     }
 }
