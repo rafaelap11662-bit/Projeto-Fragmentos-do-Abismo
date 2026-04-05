@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Data.Common;
 using System.Collections.Generic; 
-using System.Collections; 
+using System.Collections;
+using System.Reflection;
 
 public class jogador : MonoBehaviour
 {
     Rigidbody2D rbPlayer;
+
     [SerializeField] float speed = 5f;
 
     [SerializeField] float jumpForce = 15f;
@@ -13,7 +15,7 @@ public class jogador : MonoBehaviour
     [SerializeField] bool inFloor = true;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
-
+    [SerializeField] private Animator anim;
 
 
 
@@ -22,6 +24,7 @@ public class jogador : MonoBehaviour
     {
         // GetComponent le o componente dentro de jogador
         rbPlayer = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()
@@ -47,6 +50,7 @@ public class jogador : MonoBehaviour
     {
         Move();
         JumpPlayer();
+        MoveAnim();
     }
 
     void Move()
@@ -54,17 +58,22 @@ public class jogador : MonoBehaviour
         float xMove = Input.GetAxisRaw("Horizontal");
         rbPlayer.linearVelocity = new Vector2(xMove * speed, rbPlayer.linearVelocity.y);
 
-        if (xMove > 0)
-        {
-            transform.eulerAngles = new Vector2(0, 180);
-        }
-        else if (xMove < 0)
+        if (xMove > 0) // Vai para Direita
         {
             transform.eulerAngles = new Vector2(0, 0);
+           
+        }
+        else if (xMove < 0) // Vai para Esquerda 
+        {
+            transform.eulerAngles = new Vector2(0, 180);
+            
         }
         
     }
-
+    void MoveAnim()
+    {
+        anim.SetFloat("HorizontalAnim", rbPlayer.linearVelocity.x);
+    }
     void JumpPlayer()
     {
         if (isJump){
