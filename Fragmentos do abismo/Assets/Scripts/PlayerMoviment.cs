@@ -89,4 +89,20 @@ public class jogador : MonoBehaviour
         anim.SetFloat("VerticalAnim", rbPlayer.linearVelocity.y);
         anim.SetBool("groundCheck", inFloor);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 6)
+        {
+            
+        }
+    }
+
+     void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 6)
+        {
+            
+        }
+    }
 }

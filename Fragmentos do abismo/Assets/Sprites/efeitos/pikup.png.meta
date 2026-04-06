@@ -1,0 +1,452 @@
+fileFormatVersion: 2
+guid: e0676675f2985594d9e11a53bc1e947e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4989026433078632521
+    second: pikup_0
+  - first:
+      213: -5247910268697134291
+    second: pikup_1
+  - first:
+      213: 8209059634855949875
+    second: pikup_2
+  - first:
+      213: 8458672607302400459
+    second: pikup_3
+  - first:
+      213: -1689585197733288276
+    second: pikup_4
+  - first:
+      213: 5194082065239783688
+    second: pikup_5
+  - first:
+      213: -6477666759836510462
+    second: pikup_6
+  - first:
+      213: 7878360317626264014
+    second: pikup_7
+  - first:
+      213: -6954470093793228622
+    second: pikup_8
+  - first:
+      213: 4002916257227107158
+    second: pikup_9
+  - first:
+      213: 4288420773431227459
+    second: pikup_10
+  - first:
+      213: -6608145813106060048
+    second: pikup_11
+  - first:
+      213: 1272095751328216223
+    second: pikup_12
+  - first:
+      213: -4720176401200001676
+    second: pikup_13
+  - first:
+      213: 5156021825570802978
+    second: pikup_14
+  - first:
+      213: -6333028435863969875
+    second: pikup_15
+  - first:
+      213: 1212296985159867635
+    second: pikup_16
+  - first:
+      213: -2672988304584619367
+    second: pikup_17
+  - first:
+      213: 39140291312625915
+    second: pikup_18
+  - first:
+      213: 5591180084823570111
+    second: pikup_19
+  - first:
+      213: -5436896300933016690
+    second: pikup_20
+  - first:
+      213: -1088422487596888477
+    second: pikup_21
+  - first:
+      213: -6822902433798505931
+    second: pikup_22
+  - first:
+      213: -953504797057169782
+    second: pikup_23
+  - first:
+      213: -3121662786071165283
+    second: pikup_24
+  - first:
+      213: -5022707882373861011
+    second: pikup_25
+  - first:
+      213: -7236157976653788212
+    second: pikup_26
+  - first:
+      213: -8233041273732279195
+    second: pikup_27
+  - first:
+      213: 3589635623530955782
+    second: pikup_28
+  - first:
+      213: -8660671895671056540
+    second: pikup_29
+  - first:
+      213: 5623769150002518652
+    second: pikup_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pikup_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 18
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940afae9b159c3540800000000000000
+      internalID: 4989026433078632521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pikup_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 12
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2bbe2d4a6dab27b0800000000000000
+      internalID: -5247910268697134291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pikup_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 5
+        width: 65
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33636939e307ce170800000000000000
+      internalID: 8209059634855949875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pikup_8
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b8806acb42cc7f90800000000000000
+      internalID: -6954470093793228622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pikup_17
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 56
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99ac5709c43a7ead0800000000000000
+      internalID: -2672988304584619367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pikup_23
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a86c6cf507874c2f0800000000000000
+      internalID: -953504797057169782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pikup_25
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 0
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d613d8cdac1cb4ab0800000000000000
+      internalID: -5022707882373861011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pikup_26
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 4
+        width: 69
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb01f6b8a0049b90800000000000000
+      internalID: -7236157976653788212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pikup_27
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 4
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 564de02059c5ebd80800000000000000
+      internalID: -8233041273732279195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9117a89a908c0434ba2359ef0aef5e72
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pikup_0: 4989026433078632521
+      pikup_1: -5247910268697134291
+      pikup_10: 4288420773431227459
+      pikup_11: -6608145813106060048
+      pikup_12: 1272095751328216223
+      pikup_13: -4720176401200001676
+      pikup_14: 5156021825570802978
+      pikup_15: -6333028435863969875
+      pikup_16: 1212296985159867635
+      pikup_17: -2672988304584619367
+      pikup_18: 39140291312625915
+      pikup_19: 5591180084823570111
+      pikup_2: 8209059634855949875
+      pikup_20: -5436896300933016690
+      pikup_21: -1088422487596888477
+      pikup_22: -6822902433798505931
+      pikup_23: -953504797057169782
+      pikup_24: -3121662786071165283
+      pikup_25: -5022707882373861011
+      pikup_26: -7236157976653788212
+      pikup_27: -8233041273732279195
+      pikup_28: 3589635623530955782
+      pikup_29: -8660671895671056540
+      pikup_3: 8458672607302400459
+      pikup_30: 5623769150002518652
+      pikup_4: -1689585197733288276
+      pikup_5: 5194082065239783688
+      pikup_6: -6477666759836510462
+      pikup_7: 7878360317626264014
+      pikup_8: -6954470093793228622
+      pikup_9: 4002916257227107158
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
