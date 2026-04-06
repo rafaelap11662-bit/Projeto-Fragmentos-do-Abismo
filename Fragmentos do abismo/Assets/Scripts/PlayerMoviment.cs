@@ -51,6 +51,7 @@ public class jogador : MonoBehaviour
         Move();
         JumpPlayer();
         MoveAnim();
+        JumpAnim();
     }
 
     void Move()
@@ -70,15 +71,22 @@ public class jogador : MonoBehaviour
         }
         
     }
-    void MoveAnim()
+    
+    void MoveAnim() // Animação de RUN/IDLE
     {
         anim.SetFloat("HorizontalAnim", rbPlayer.linearVelocity.x);
     }
-    void JumpPlayer()
+
+    void JumpPlayer()//Pulo do Jogador
     {
         if (isJump){
         rbPlayer.linearVelocity = Vector2.up * jumpForce;
         isJump = false;
         }
+    }
+    void JumpAnim()// Animação do pulo
+    {
+        anim.SetFloat("VerticalAnim", rbPlayer.linearVelocity.y);
+        anim.SetBool("groundCheck", inFloor);
     }
 }
