@@ -24,7 +24,7 @@ public class jogador : MonoBehaviour
     {
         // GetComponent le o componente dentro de jogador
         rbPlayer = GetComponent<Rigidbody2D>();
-        
+
     }
 
     private void Update()

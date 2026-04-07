@@ -9,7 +9,7 @@ public class Fragmento : MonoBehaviour
     public GameObject coleta;
     public int Score = 1;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {  
         sr = GetComponent<SpriteRenderer>();
