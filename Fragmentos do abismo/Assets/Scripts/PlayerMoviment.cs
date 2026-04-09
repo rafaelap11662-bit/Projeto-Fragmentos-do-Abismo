@@ -3,10 +3,12 @@ using System.Data.Common;
 using System.Collections.Generic; 
 using System.Collections;
 using System.Reflection;
+using UnityEngine.Video;
 
 public class jogador : MonoBehaviour
 {
     Rigidbody2D rbPlayer;
+    public SistemaCoracao coracao;
 
     [SerializeField] float speed = 5f;
 
@@ -18,13 +20,13 @@ public class jogador : MonoBehaviour
     [SerializeField] private Animator anim;
 
 
-
+    
 
     private void Awake()
     {
         // GetComponent le o componente dentro de jogador
         rbPlayer = GetComponent<Rigidbody2D>();
-
+        
     }
 
     private void Update()
@@ -92,9 +94,9 @@ public class jogador : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 6)
+        if(collision.gameObject.tag == "Trap")
         {
-            
+            coracao.vida -=5;
         }
     }
 
