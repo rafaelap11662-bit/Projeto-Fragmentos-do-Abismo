@@ -97,14 +97,15 @@ public class jogador : MonoBehaviour
         if(collision.gameObject.tag == "Trap")
         {
             coracao.vida -=5;
-        }
+        } 
     }
 
-     void OnCollisionExit2D(Collision2D collision)
+     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 6)
-        {
-            
-        }
+
+    if (collision.gameObject.tag == "FIreBox")
+    {
+        coracao.vida -= 1;
     }
+}
 }

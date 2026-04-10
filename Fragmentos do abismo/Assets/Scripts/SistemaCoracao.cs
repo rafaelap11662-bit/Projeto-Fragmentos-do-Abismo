@@ -13,13 +13,13 @@ public class SistemaCoracao : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-         CoracaoLogica();
+         
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+       CoracaoLogica();
     }
 
     void CoracaoLogica()
