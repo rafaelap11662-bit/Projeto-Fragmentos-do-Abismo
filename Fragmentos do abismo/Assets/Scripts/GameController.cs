@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
     public int totalScore;
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
 
 
     public static GameController instance;
