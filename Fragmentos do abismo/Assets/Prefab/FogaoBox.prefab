@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5055699678454811896}
   - component: {fileID: 8636507963107848263}
   m_Layer: 6
-  m_Name: FireBox
+  m_Name: FogaoBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1577846555770328067, guid: 2d17f96ae61b8054c93d6e0f06dd6297, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3422416
+      value: 2.9314573
       objectReference: {fileID: 0}
     - target: {fileID: 1577846555770328067, guid: 2d17f96ae61b8054c93d6e0f06dd6297, type: 3}
       propertyPath: m_LocalScale.z
@@ -202,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1577846555770328067, guid: 2d17f96ae61b8054c93d6e0f06dd6297, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.16296
+      value: 0.27739
       objectReference: {fileID: 0}
     - target: {fileID: 1577846555770328067, guid: 2d17f96ae61b8054c93d6e0f06dd6297, type: 3}
       propertyPath: m_LocalPosition.z
