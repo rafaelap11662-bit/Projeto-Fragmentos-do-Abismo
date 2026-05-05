@@ -111,5 +111,11 @@ public class jogador : MonoBehaviour
     {
         coracao.vida -= 1;
     }
-}
+    }
+    
+    //Função para receber os DANOS
+    public void receberDano (int dano) 
+    {
+        coracao.vida -= dano;
+    }
 }
