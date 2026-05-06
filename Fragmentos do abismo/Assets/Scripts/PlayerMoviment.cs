@@ -17,7 +17,7 @@ public class jogador : MonoBehaviour
     [SerializeField] bool inFloor = true;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
-    [SerializeField] private Animator anim;
+     public Animator anim;
 
 
     

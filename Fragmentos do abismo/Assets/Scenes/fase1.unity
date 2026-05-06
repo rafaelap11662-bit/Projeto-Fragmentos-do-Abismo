@@ -927,6 +927,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &312541568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 312541569}
+  m_Layer: 0
+  m_Name: AtaquePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &312541569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312541568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6, y: -0.148, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1279711512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &334192554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5348,7 +5379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 708212443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53189,6 +53220,7 @@ GameObject:
   - component: {fileID: 1279711513}
   - component: {fileID: 1279711514}
   - component: {fileID: 1279711516}
+  - component: {fileID: 1279711517}
   m_Layer: 0
   m_Name: jogador
   m_TagString: Player
@@ -53274,6 +53306,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1151769478}
+  - {fileID: 312541569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1279711513
@@ -53401,6 +53434,24 @@ MonoBehaviour:
   - {fileID: 800082723}
   cheio: {fileID: 7584909091477175504, guid: 9ca32eef7b8f30445ba254f0d78b1566, type: 3}
   vazio: {fileID: 2400690780651743819, guid: 9ca32eef7b8f30445ba254f0d78b1566, type: 3}
+--- !u!114 &1279711517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279711508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44103a51dce7e9a4ca0d367a337beecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AtackPlayer
+  animator: {fileID: 1279711514}
+  ataquePoint: {fileID: 312541569}
+  ataqueRanger: 0.5
+  inimigoLayers:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1309031960
 GameObject:
   m_ObjectHideFlags: 0
@@ -53529,6 +53580,37 @@ MonoBehaviour:
     MaxWindowSize: 0
     Padding: 0
   m_LegacyMaxWindowSize: -2
+--- !u!1 &1311001126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311001127}
+  m_Layer: 7
+  m_Name: wallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1311001127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311001126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.109, y: -0.036, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2029041062}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1373449425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54652,10 +54734,11 @@ GameObject:
   - component: {fileID: 2029041061}
   - component: {fileID: 2029041060}
   - component: {fileID: 2029041063}
-  - component: {fileID: 2029041064}
   - component: {fileID: 2029041065}
   - component: {fileID: 2029041066}
-  m_Layer: 0
+  - component: {fileID: 2029041067}
+  - component: {fileID: 2029041068}
+  m_Layer: 7
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54766,11 +54849,12 @@ Transform:
   m_GameObject: {fileID: 2029041058}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.8, y: -77.909, z: 0}
+  m_LocalPosition: {x: 83.05, y: -77.24, z: 0}
   m_LocalScale: {x: 5.257892, y: 5.257892, z: 5.257892}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 708212443}
+  - {fileID: 1311001127}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2029041063
@@ -54788,37 +54872,11 @@ MonoBehaviour:
   speed: 3
   ground: 1
   groundCheck: {fileID: 708212443}
+  wallCheck: {fileID: 1311001127}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   rotacao: 1
---- !u!50 &2029041064
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029041058}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!95 &2029041065
 Animator:
   serializedVersion: 7
@@ -54854,6 +54912,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damege
   dano: 1
+  player: {fileID: 1279711513}
+--- !u!50 &2029041067
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029041058}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &2029041068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029041058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71c2405077fb004b8e7dae41a1510d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
+  vidaAtual: 2
 --- !u!1 &2061769773
 GameObject:
   m_ObjectHideFlags: 0

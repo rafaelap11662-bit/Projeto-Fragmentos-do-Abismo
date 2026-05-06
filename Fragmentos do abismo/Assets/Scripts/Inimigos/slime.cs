@@ -4,38 +4,51 @@ public class slime : MonoBehaviour
 {
     public float speed;
     public bool ground = true;
+
     public Transform groundCheck;
+    public Transform wallCheck;
     public LayerMask groundLayer;
+
     public bool rotacao;
 
-    // Update is called once per frame
     void Update()
     {
+        // movimento
         transform.Translate(Vector2.right * speed * Time.deltaTime);
-        ground = Physics2D.Linecast(groundCheck.position, transform.position, groundLayer);
-    
 
-        if(ground == false)
+        // detecta chão
+        ground = Physics2D.Linecast( groundCheck.position, transform.position, groundLayer);
+
+        // detecta parede
+        bool wall = Physics2D.Raycast( wallCheck.position, transform.right, 0.1f, groundLayer);
+
+        
+        // vira se não tiver chão ou tiver parede
+        if (!ground || wall)
         {
             speed *= -1;
         }
 
-        if(speed > 0 && !rotacao)
+        // rotação
+        if (speed > 0 && !rotacao)
         {
             Flip();
         }
-        else if(speed < 0 && rotacao)
+        else if (speed < 0 && rotacao)
         {
             Flip();
         }
+
+        // debug
+        Debug.DrawRay(wallCheck.position, transform.right * 0.1f, Color.red);
     }
 
     void Flip()
     {
         rotacao = !rotacao;
-        Vector3 Scale = transform.localScale;
-        Scale.x *= -1;
-        transform.localScale = Scale;
-    }
 
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
 }
