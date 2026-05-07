@@ -952,7 +952,7 @@ Transform:
   m_GameObject: {fileID: 312541568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -0.148, z: 0}
+  m_LocalPosition: {x: 0.6, y: -0.014, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52542,6 +52542,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1136956705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1136956706}
+  m_Layer: 7
+  m_Name: BodySlime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1136956706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136956705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2029041062}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1151769477
 GameObject:
   m_ObjectHideFlags: 0
@@ -53217,8 +53248,8 @@ GameObject:
   - component: {fileID: 1279711515}
   - component: {fileID: 1279711510}
   - component: {fileID: 1279711509}
-  - component: {fileID: 1279711513}
   - component: {fileID: 1279711514}
+  - component: {fileID: 1279711513}
   - component: {fileID: 1279711516}
   - component: {fileID: 1279711517}
   m_Layer: 0
@@ -53331,6 +53362,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   anim: {fileID: 1279711514}
+  KBforce: 6
+  KBCount: 0
+  KBTime: 0.2
+  isKnockRight: 0
+  isInvencivel: 0
 --- !u!95 &1279711514
 Animator:
   serializedVersion: 7
@@ -53448,7 +53484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AtackPlayer
   animator: {fileID: 1279711514}
   ataquePoint: {fileID: 312541569}
-  ataqueRanger: 0.5
+  ataqueRanger: 1
   inimigoLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -54733,10 +54769,10 @@ GameObject:
   - component: {fileID: 2029041062}
   - component: {fileID: 2029041061}
   - component: {fileID: 2029041060}
-  - component: {fileID: 2029041063}
-  - component: {fileID: 2029041065}
-  - component: {fileID: 2029041066}
   - component: {fileID: 2029041067}
+  - component: {fileID: 2029041065}
+  - component: {fileID: 2029041063}
+  - component: {fileID: 2029041066}
   - component: {fileID: 2029041068}
   m_Layer: 7
   m_Name: Slime
@@ -54855,6 +54891,7 @@ Transform:
   m_Children:
   - {fileID: 708212443}
   - {fileID: 1311001127}
+  - {fileID: 1136956706}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2029041063
@@ -54912,7 +54949,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damege
   dano: 1
-  player: {fileID: 1279711513}
 --- !u!50 &2029041067
 Rigidbody2D:
   serializedVersion: 5

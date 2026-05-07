@@ -28,9 +28,9 @@ public class AtackPlayer : MonoBehaviour
         // Ranger de ataque do jogador
         Collider2D[] hitInimigos = Physics2D.OverlapCircleAll(ataquePoint.position, ataqueRanger, inimigoLayers);
 
-        foreach(Collider2D inimigo in hitInimigos) //Dano que o jogador da no inimigo
+        foreach(Collider2D inimigo in hitInimigos)                  //Dano que o jogador da no inimigo
         {
-            inimigo.GetComponent<MorteInimigo>().danoInimigo(1);
+            inimigo.GetComponent<MorteInimigo>().danoInimigo(1);    //Chama a MorteInimogo 
         }
     }
    

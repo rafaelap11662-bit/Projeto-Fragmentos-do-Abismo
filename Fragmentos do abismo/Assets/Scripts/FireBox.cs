@@ -1,5 +1,3 @@
-using Unity.VisualScripting;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
@@ -12,12 +10,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         FogoAtivado();
         FogoDesativado(); 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void FogoAtivado()

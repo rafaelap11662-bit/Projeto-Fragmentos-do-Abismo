@@ -1,9 +1,6 @@
 using UnityEngine;
-using System.Data.Common;
-using System.Collections.Generic; 
 using System.Collections;
-using System.Reflection;
-using UnityEngine.Video;
+
 
 public class jogador : MonoBehaviour
 {
@@ -19,19 +16,23 @@ public class jogador : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
      public Animator anim;
 
+     public float KBforce;
+     public float KBCount;
+     public float KBTime;
 
+    public bool isKnockRight;
+
+    public bool isInvencivel;
     
 
     private void Awake()
-    {
-        // GetComponent le o componente dentro de jogador
-        rbPlayer = GetComponent<Rigidbody2D>();
-        
+    { 
+        rbPlayer = GetComponent<Rigidbody2D>();    // GetComponent le o componente RIgidbody2s dentro de jogador
     }
 
     private void Update()
     {
-        inFloor = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.6f, 0.3f), 0f, groundLayer);
+        inFloor = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.6f, 0.3f), 0f, groundLayer); 
         Debug.DrawLine(transform.position, groundCheck.position, Color.blue); 
 
         if (Input.GetButtonDown("Jump") && inFloor)
@@ -41,19 +42,50 @@ public class jogador : MonoBehaviour
             
     }
 
-// Para visualizar a caixa de colisão do chão no editor, para ajudar ajustar a posição e o tamanho da caixa de colisão corretamente.
-    void OnDrawGizmos()
+    // Para visualizar a caixa de colisão do chão no editor, para ajudar 
+    // ajustar a posição e o tamanho da caixa de colisão corretamente.
+    void OnDrawGizmos()    
     {
-    Gizmos.color = Color.green;
-    Gizmos.DrawWireCube(groundCheck.position, new Vector2(0.6f, 0.3f));
+    Gizmos.color = Color.green;                                                 // Define a cor do Gizmo como verde
+    Gizmos.DrawWireCube(groundCheck.position, new Vector2(0.6f, 0.3f));         // Desenha uma caixa
     }
 
     void FixedUpdate()
     {
-        Move();
+        KnockLogica();
         JumpPlayer();
         MoveAnim();
         JumpAnim();
+    }
+
+    public IEnumerator Invencibilidade()
+    {
+    isInvencivel = true;
+
+    yield return new WaitForSeconds(1f);
+
+    isInvencivel = false;
+    }
+    
+    // Função responsável pela lógica de Knockback (empurrão ao tomar dano)
+    void KnockLogica()              
+    {
+        if(KBCount < 0)                                                         // Verifica se o tempo do Knockback acabou
+        {
+            Move();                                                             // Permite o jogador se mover normalmente
+        }
+        else
+        {
+            if(isKnockRight == true)                                            // Se o inimigo estiver à direita do player
+            {
+                rbPlayer.linearVelocity = new Vector2(-KBforce, KBforce);       // Empurra o jogador para a esquerda e para cima
+            }
+            if(isKnockRight == false)                                           // Se o inimigo estiver à esquerda do player
+            {
+                rbPlayer.linearVelocity = new Vector2(KBforce, KBforce);        // Empurra o jogador para a direita e para cima
+            }
+        }
+        KBCount -= Time.deltaTime;                                              // diminui o tempo para o player não ficar em estado de Knockback
     }
 
     void Move()
@@ -61,12 +93,12 @@ public class jogador : MonoBehaviour
         float xMove = Input.GetAxisRaw("Horizontal");
         rbPlayer.linearVelocity = new Vector2(xMove * speed, rbPlayer.linearVelocity.y);
 
-        if (xMove > 0) // Vai para Direita
+        if (xMove > 0)              // Vai para Direita
         {
             transform.eulerAngles = new Vector2(0, 0);
            
         }
-        else if (xMove < 0) // Vai para Esquerda 
+        else if (xMove < 0)         // Vai para Esquerda 
         {
             transform.eulerAngles = new Vector2(0, 180);
             
@@ -74,19 +106,19 @@ public class jogador : MonoBehaviour
         
     }
     
-    void MoveAnim() // Animação de RUN/IDLE
+    void MoveAnim()                 // Animação de RUN/IDLE
     {
         anim.SetFloat("HorizontalAnim", rbPlayer.linearVelocity.x);
     }
 
-    void JumpPlayer()//Pulo do Jogador
+    void JumpPlayer()               //Pulo do Jogador
     {
         if (isJump){
         rbPlayer.linearVelocity = Vector2.up * jumpForce;
         isJump = false;
         }
     }
-    void JumpAnim()// Animação do pulo
+    void JumpAnim()                 // Animação do pulo
     {
         anim.SetFloat("VerticalAnim", rbPlayer.linearVelocity.y);
         anim.SetBool("groundCheck", inFloor);
