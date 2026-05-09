@@ -1,36 +1,73 @@
 using UnityEngine;
 
+
 public class AtackPlayer : MonoBehaviour
 {
-    private bool atacando;
+    
     public Animator animator;
+    public Transform ataquePoint;                               // Ponto onde o ataque será detectado
+    public float ataqueRanger = 0.5f;                           // Alcance do ataque
+    public LayerMask inimigoLayers;                             // Layer dos inimigos
 
-    public Transform ataquePoint;
-    public float ataqueRanger = 0.5f;
-    public LayerMask inimigoLayers;
+    private int combo;                                          // Variável que controla o número atual do combo
+    private float comboTime;                                    // Tempo restante para continuar o combo
+    public float startComboTime = 1.5f;                         // Tempo máximo entre ataques antes do combo resetar
 
-
+    
     void Update()
     {
-        atacando = Input.GetKeyDown(KeyCode.K);
-        if(atacando == true)
+        if(comboTime > 0)                                       // Verifica se ainda existe tempo para continuar o combo
         {
-            Ataque();
+            comboTime -= Time.deltaTime;                        // Diminui o tempo do combo usando o tempo real do jogo
+        }
+        else
+        {
+            combo = 0;                                          // Reseta o combo caso o tempo acabe
+        }
+
+        if(Input.GetKeyDown(KeyCode.K))                         // Verifica se a tecla K foi pressionada
+        {
+            Ataque();                                           // Chama a função de ataque
         }
     }
 
-
+    
     void Ataque()
     {
-        // animação de ataque do jogador
-        animator.SetTrigger("Atack01");
+        combo++;
 
-        // Ranger de ataque do jogador
-        Collider2D[] hitInimigos = Physics2D.OverlapCircleAll(ataquePoint.position, ataqueRanger, inimigoLayers);
+        comboTime = startComboTime;                             // Reinicia o tempo do combo
 
-        foreach(Collider2D inimigo in hitInimigos)                  //Dano que o jogador da no inimigo
+        if(combo > 3)                                           // Limita o combo até 3 ataques
         {
-            inimigo.GetComponent<MorteInimigo>().danoInimigo(1);    //Chama a MorteInimogo 
+            combo = 1;                                          // Volta para o primeiro ataque
+        }
+
+        if(combo == 1)                                          // Se o combo for igual a 1
+        {   
+            animator.SetTrigger("Atack01");                     // Ativa a animação do primeiro ataque
+        }
+
+        if(combo == 2)                                          // Se o combo for igual a 2
+        {
+            animator.SetTrigger("Atack02");                     // Ativa a animação do segundo ataque
+        }
+
+        if(combo == 3)                                          // Se o combo for igual a 3
+        {
+            animator.SetTrigger("Atack03");                     // Ativa a animação do terceiro ataque
+        }
+
+
+
+        // Cria uma área circular de ataque e detecta todos os inimigos dentro dela
+        Collider2D[] hitInimigos = Physics2D.OverlapCircleAll(ataquePoint.position, ataqueRanger, inimigoLayers           
+        );
+
+        
+        foreach(Collider2D inimigo in hitInimigos)                      // Percorre todos os inimigos atingidos
+        {
+            inimigo.GetComponent<MorteInimigo>().danoInimigo(1);        // Chama a função de dano no inimigo
         }
     }
    
