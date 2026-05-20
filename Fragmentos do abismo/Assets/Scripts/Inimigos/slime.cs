@@ -1,3 +1,5 @@
+using System;
+using UnityEditor.Search;
 using UnityEngine;
 
 public class slime : MonoBehaviour
@@ -9,7 +11,15 @@ public class slime : MonoBehaviour
     public Transform wallCheck;
     public LayerMask groundLayer;
 
+    private Rigidbody2D rb;
+    public float knockbackForce = 5f;
+
     public bool rotacao;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
@@ -30,7 +40,7 @@ public class slime : MonoBehaviour
         }
 
         // rotação
-        if (speed > 0 && !rotacao)
+        if (speed > 0 && !rotacao) 
         {
             Flip();
         }
@@ -50,5 +60,11 @@ public class slime : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+
+    public void Knockback(Vector2 direcao, float forca)         // Função para aplicar o knockback no slime
+    {
+        rb.AddForce(direcao * forca, ForceMode2D.Impulse);      
     }
 }

@@ -1,3 +1,4 @@
+using System.Reflection;
 using UnityEngine;
 
 
@@ -12,7 +13,7 @@ public class AtackPlayer : MonoBehaviour
     private int combo;                                          // Variável que controla o número atual do combo
     private float comboTime;                                    // Tempo restante para continuar o combo
     public float startComboTime = 1.5f;                         // Tempo máximo entre ataques antes do combo resetar
-
+    private bool podeAtacar = true;                             // Variável para controlar se o jogador pode atacar ou não 
     
     void Update()
     {
@@ -25,15 +26,16 @@ public class AtackPlayer : MonoBehaviour
             combo = 0;                                          // Reseta o combo caso o tempo acabe
         }
 
-        if(Input.GetKeyDown(KeyCode.K))                         // Verifica se a tecla K foi pressionada
+        if(Input.GetKeyDown(KeyCode.K) && podeAtacar)                         // Verifica se a tecla K foi pressionada
         {
             Ataque();                                           // Chama a função de ataque
         }
     }
 
     
-    void Ataque()
+    void Ataque() 
     {
+        podeAtacar = false;                                    // Impede que o jogador ataque novamente até que a animação termine
         combo++;
 
         comboTime = startComboTime;                             // Reinicia o tempo do combo
@@ -61,16 +63,31 @@ public class AtackPlayer : MonoBehaviour
 
 
         // Cria uma área circular de ataque e detecta todos os inimigos dentro dela
-        Collider2D[] hitInimigos = Physics2D.OverlapCircleAll(ataquePoint.position, ataqueRanger, inimigoLayers           
-        );
+        Collider2D[] hitInimigos = Physics2D.OverlapCircleAll(ataquePoint.position, ataqueRanger, inimigoLayers);
 
         
         foreach(Collider2D inimigo in hitInimigos)                      // Percorre todos os inimigos atingidos
         {
             inimigo.GetComponent<MorteInimigo>().danoInimigo(1);        // Chama a função de dano no inimigo
+
+            Vector2 direcaoKnockback = (inimigo.transform.position - transform.position).normalized;         // Calcula a direção do knockback
+            float forcaKnockback = 6f;
+
+            slime slime = inimigo.GetComponent<slime>();          // Pega o script do slime
+            if(slime != null)                                      // Aplica o knockback
+            {
+                slime.Knockback(direcaoKnockback, forcaKnockback);
+            }
         }
+
+        Invoke(nameof(liberarAtaque), 0.2f);                            // Permite que o jogador ataque novamente após um curto período de tempo
     }
-   
+
+    private void liberarAtaque()
+    {
+        podeAtacar = true;
+    }
+
     // Para conseguir ver o AtaquePoint
     /*private void OnDrawGizmos()
     {
