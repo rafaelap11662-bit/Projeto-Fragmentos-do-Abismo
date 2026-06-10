@@ -19,6 +19,9 @@ public class Parallax : MonoBehaviour
 
     void Update()
     {
+        if (player == null) // Verifica se o player existe antes de tentar acessar sua posição
+            return;
+
         float RePos = player.position.x * parallaxEffect; 
         float distancia = cam.position.x * (1 - parallaxEffect); 
         transform.position = new Vector3(startPos + distancia, transform.position.y, transform.position.z); 

@@ -28,6 +28,11 @@ public class DamagePlayer : MonoBehaviour
 
         player.receberDano(dano);                                                 // Chama a função de receber dano no jogador
 
+        if (player.coracao.vida <= 0)
+        {
+            return;
+        }
+
         player.anim.SetTrigger("TakeDamage");                                     // Ativa a animação de dano do jogador
 
         StartCoroutine(player.Invencibilidade());                                 // Inicia a Coroutine de invencibilidade temporária
@@ -57,7 +62,12 @@ public class DamagePlayer : MonoBehaviour
 
         player.receberDano(dano);                                                 // Chama a função de receber dano no jogador
 
-        player.anim.SetTrigger("TakeDamage");                                     // Ativa a animação de dano do jogador
+        if (player.coracao.vida <= 0)
+        {
+            return;
+        }
+        
+        player.anim.SetTrigger("TakeDamage");                                       // Ativa a animação de dano do jogador
 
         StartCoroutine(player.Invencibilidade());                                 // Inicia a Coroutine de invencibilidade temporária
     }

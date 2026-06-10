@@ -966,6 +966,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1279711512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &331836604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331836605}
+  m_Layer: 0
+  m_Name: RespawnPoit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &331836605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331836604}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.4, y: -86.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &331837832
 GameObject:
   m_ObjectHideFlags: 0
@@ -8698,6 +8729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4d028ed02435d44a0e23427dd85fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SistemaCoracao
+  isDead: 0
   vida: 5
   vidaMaxima: 5
   coracao:
@@ -8708,6 +8740,7 @@ MonoBehaviour:
   - {fileID: 800082723}
   cheio: {fileID: 7584909091477175504, guid: 9ca32eef7b8f30445ba254f0d78b1566, type: 3}
   vazio: {fileID: 2400690780651743819, guid: 9ca32eef7b8f30445ba254f0d78b1566, type: 3}
+  pontoRespawn: {fileID: 331836605}
 --- !u!114 &1279711517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126406,3 +126439,4 @@ SceneRoots:
   - {fileID: 1822860193}
   - {fileID: 789527691}
   - {fileID: 2029041062}
+  - {fileID: 331836605}

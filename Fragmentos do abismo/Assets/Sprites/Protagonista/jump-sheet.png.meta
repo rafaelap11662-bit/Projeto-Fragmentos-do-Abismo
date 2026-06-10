@@ -1,43 +1,49 @@
 fileFormatVersion: 2
-guid: 7efc588c18235d14ca5bb4346ca375dd
+guid: 562a179b42164b4449c26e96b3f6421e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4412676158306408767
-    second: atackDAsht_0
+      213: -6619761729131806080
+    second: jump-sheet_0
   - first:
-      213: 4454779713002440762
-    second: atackDAsht_1
+      213: -2614457667967621724
+    second: jump-sheet_1
   - first:
-      213: 1916407542687949363
-    second: atackDAsht_2
+      213: -749852811402780547
+    second: jump-sheet_2
   - first:
-      213: 7157365937503038833
-    second: atackDAsht_3
+      213: 2212934162506972719
+    second: jump-sheet_3
   - first:
-      213: -5621390388489889615
-    second: atackDAsht_4
+      213: -5795080858043624865
+    second: jump-sheet_4
   - first:
-      213: -8735925719275850324
-    second: atackDAsht_5
+      213: 3106370687212464139
+    second: jump-sheet_5
   - first:
-      213: 3437517388445477560
-    second: atackDAsht_6
+      213: -5386759286002335784
+    second: jump-sheet_6
   - first:
-      213: -3200583881211663111
-    second: atackDAsht_7
+      213: 6590098915406733339
+    second: jump-sheet_7
   - first:
-      213: -1143282017326153696
-    second: atackDAsht_8
+      213: -879744701034284006
+    second: jump-sheet_8
   - first:
-      213: -3686171495722872334
-    second: atackDAsht_9
+      213: -8150241366316190432
+    second: jump-sheet_9
   - first:
-      213: -3510815250334112781
-    second: atackDAsht_10
+      213: 7522010939839332598
+    second: jump-sheet_10
   - first:
-      213: -5156569041211889286
-    second: atackDAsht_11
+      213: 2137921426341567917
+    second: jump-sheet_11
+  - first:
+      213: 2437344362458871303
+    second: jump-sheet_12
+  - first:
+      213: -2327094000940262049
+    second: jump-sheet_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,7 +76,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -146,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: atackDAsht_0
+      name: jump-sheet_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 14
         y: 15
-        width: 82
-        height: 65
+        width: 85
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c6af43d96603c2c0800000000000000
-      internalID: -4412676158306408767
+      spriteID: 0828f55c7c1e124a0800000000000000
+      internalID: -6619761729131806080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_1
+      name: jump-sheet_1
       rect:
         serializedVersion: 2
-        x: 140
+        x: 142
         y: 15
-        width: 82
-        height: 65
+        width: 85
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a38802aeb8e82dd30800000000000000
-      internalID: 4454779713002440762
+      spriteID: 4a56e7c5a9497bbd0800000000000000
+      internalID: -2614457667967621724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_2
+      name: jump-sheet_2
       rect:
         serializedVersion: 2
-        x: 268
+        x: 270
         y: 15
-        width: 82
-        height: 65
+        width: 85
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3326bcaa182789a10800000000000000
-      internalID: 1916407542687949363
+      spriteID: d70628647dcf795f0800000000000000
+      internalID: -749852811402780547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_3
+      name: jump-sheet_3
       rect:
         serializedVersion: 2
-        x: 399
-        y: 28
-        width: 90
-        height: 74
+        x: 413
+        y: 14
+        width: 51
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +233,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 17d69581662145360800000000000000
-      internalID: 7157365937503038833
+      spriteID: f2efd8b65ebe5be10800000000000000
+      internalID: 2212934162506972719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_4
+      name: jump-sheet_4
       rect:
         serializedVersion: 2
-        x: 527
-        y: 28
-        width: 92
-        height: 74
+        x: 540
+        y: 14
+        width: 52
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b8d34e993fccf1b0800000000000000
-      internalID: -5621390388489889615
+      spriteID: f52d4abc9acb39fa0800000000000000
+      internalID: -5795080858043624865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_5
+      name: jump-sheet_5
       rect:
         serializedVersion: 2
-        x: 655
-        y: 27
-        width: 93
-        height: 75
+        x: 657
+        y: 14
+        width: 81
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +277,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca53d5ed7d1c3c680800000000000000
-      internalID: -8735925719275850324
+      spriteID: b082cf78eab0c1b20800000000000000
+      internalID: 3106370687212464139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_6
+      name: jump-sheet_6
       rect:
         serializedVersion: 2
-        x: 781
-        y: 45
-        width: 113
-        height: 53
+        x: 785
+        y: 15
+        width: 81
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8ba658f1ad384bf20800000000000000
-      internalID: 3437517388445477560
+      spriteID: 8df3b4b38f26e35b0800000000000000
+      internalID: -5386759286002335784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_7
+      name: jump-sheet_7
       rect:
         serializedVersion: 2
-        x: 910
-        y: 45
-        width: 112
-        height: 53
+        x: 913
+        y: 15
+        width: 81
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9fca98edaed3593d0800000000000000
-      internalID: -3200583881211663111
+      spriteID: b1061873c0cb47b50800000000000000
+      internalID: 6590098915406733339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_8
+      name: jump-sheet_8
       rect:
         serializedVersion: 2
-        x: 1038
-        y: 45
-        width: 113
-        height: 53
+        x: 1041
+        y: 14
+        width: 81
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 020ce27001f3220f0800000000000000
-      internalID: -1143282017326153696
+      spriteID: a1cb1d10bd48ac3f0800000000000000
+      internalID: -879744701034284006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_9
+      name: jump-sheet_9
       rect:
         serializedVersion: 2
-        x: 11
-        y: 32
-        width: 9
-        height: 11
+        x: 1169
+        y: 14
+        width: 81
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,20 +365,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f194480e8618dcc0800000000000000
-      internalID: -3686171495722872334
+      spriteID: 025770fb8a684ee80800000000000000
+      internalID: -8150241366316190432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_10
+      name: jump-sheet_10
       rect:
         serializedVersion: 2
-        x: 139
-        y: 32
-        width: 9
-        height: 11
+        x: 1304
+        y: 14
+        width: 56
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,20 +387,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f3afc38124174fc0800000000000000
-      internalID: -3510815250334112781
+      spriteID: 6f0c9b1b81d836860800000000000000
+      internalID: 7522010939839332598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atackDAsht_11
+      name: jump-sheet_11
       rect:
         serializedVersion: 2
-        x: 267
-        y: 32
-        width: 9
-        height: 11
+        x: 1432
+        y: 14
+        width: 56
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,8 +409,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a79e9c617cf2078b0800000000000000
-      internalID: -5156569041211889286
+      spriteID: dad19c6c53c6bad10800000000000000
+      internalID: 2137921426341567917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 15
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70679a7b8cf23d120800000000000000
+      internalID: 2437344362458871303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 15
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d530be55084bfd0800000000000000
+      internalID: -2327094000940262049
       vertices: []
       indices: 
       edges: []
@@ -423,18 +473,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      atackDAsht_0: -4412676158306408767
-      atackDAsht_1: 4454779713002440762
-      atackDAsht_10: -3510815250334112781
-      atackDAsht_11: -5156569041211889286
-      atackDAsht_2: 1916407542687949363
-      atackDAsht_3: 7157365937503038833
-      atackDAsht_4: -5621390388489889615
-      atackDAsht_5: -8735925719275850324
-      atackDAsht_6: 3437517388445477560
-      atackDAsht_7: -3200583881211663111
-      atackDAsht_8: -1143282017326153696
-      atackDAsht_9: -3686171495722872334
+      jump-sheet_0: -6619761729131806080
+      jump-sheet_1: -2614457667967621724
+      jump-sheet_10: 7522010939839332598
+      jump-sheet_11: 2137921426341567917
+      jump-sheet_12: 2437344362458871303
+      jump-sheet_13: -2327094000940262049
+      jump-sheet_2: -749852811402780547
+      jump-sheet_3: 2212934162506972719
+      jump-sheet_4: -5795080858043624865
+      jump-sheet_5: 3106370687212464139
+      jump-sheet_6: -5386759286002335784
+      jump-sheet_7: 6590098915406733339
+      jump-sheet_8: -879744701034284006
+      jump-sheet_9: -8150241366316190432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
