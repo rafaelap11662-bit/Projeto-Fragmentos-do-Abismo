@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class SistemaCoracao : MonoBehaviour
 {
     jogador jogador;
+    Rigidbody2D rbPlayer;
     public bool isDead;
     public int vida;            //Quantidade de vida do jogador
     public int vidaMaxima;      //Quantidade de corações jogador tem.
@@ -18,6 +19,7 @@ public class SistemaCoracao : MonoBehaviour
     void Start()
     {
          jogador = GetComponent<jogador>(); 
+         rbPlayer = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -41,28 +43,35 @@ public class SistemaCoracao : MonoBehaviour
     {
         if (vida <= 0 && !isDead) // Verifica se a vida é menor ou igual a 0 e se o jogador ainda não está marcado como morto
         {
-         isDead = true; 
+            isDead = true; 
 
-        GetComponent<jogador>().enabled = false; 
-        GetComponent<AtackPlayer>().enabled = false;  
-
-        jogador.anim.SetBool("IsDead", true);
-
-        Invoke(nameof(Respawn), 1.0f);
+            rbPlayer.linearVelocity = Vector2.zero;
+            rbPlayer.angularVelocity = 0f; 
+        
+            GetComponent<jogador>().enabled = false; 
+            GetComponent<AtackPlayer>().enabled = false;  
+            jogador.anim.SetBool("IsDead", true);
+        
+            Invoke(nameof(Respawn), 1.0f);
         }
     }
 
     void Respawn()
     {
-    vida = vidaMaxima; //traz a vida de volta ao máximo
+        jogador.KBCount = -1f;  
+        jogador.isKnockRight = false;                          
 
-    transform.position = pontoRespawn.position;     //teleporta o jogador para o ponto de respawn
+        vida = vidaMaxima;                              //traz a vida de volta ao máximo
 
-    jogador.anim.SetBool("IsDead", false);          //desativa a animação de morte
+        transform.position = pontoRespawn.position;     //teleporta o jogador para o ponto de respawn
 
-    GetComponent<jogador>().enabled = true;         //serve para que o jogador possa se mover novamente
-    GetComponent<AtackPlayer>().enabled = true;     //serve para que o jogador possa atacar novamente
+        rbPlayer.linearVelocity = Vector2.zero;
+        rbPlayer.angularVelocity = 0f; 
 
-    isDead = false;                                 //reseta o status de morte para permitir que o jogador morra novamente
+
+        jogador.anim.SetBool("IsDead", false);          //desativa a animação de morte
+        GetComponent<jogador>().enabled = true;         //serve para que o jogador possa se mover novamente
+        GetComponent<AtackPlayer>().enabled = true;     //serve para que o jogador possa atacar novamente
+        isDead = false;                                 //reseta o status de morte para permitir que o jogador morra novamente
     }
 }
