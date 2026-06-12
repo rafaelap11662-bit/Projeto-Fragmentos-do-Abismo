@@ -26,7 +26,7 @@ public class Fragmento : MonoBehaviour
             coleta.SetActive(true);                             //habilita a animação de coleta
 
             GameController.instance.totalScore += Score;        //add um ponto no score
-            GameController.instance.UpdadeScoreText();          //atualiza o score
+            GameController.instance.UpdateScoreText();          //atualiza o score
 
             Destroy(gameObject, 0.3f);  
         }

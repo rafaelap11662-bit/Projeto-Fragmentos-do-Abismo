@@ -13,8 +13,6 @@ public class SistemaCoracao : MonoBehaviour
     public Sprite cheio;
     public Sprite vazio;
 
-    public Transform pontoRespawn;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -52,26 +50,12 @@ public class SistemaCoracao : MonoBehaviour
             GetComponent<AtackPlayer>().enabled = false;  
             jogador.anim.SetBool("IsDead", true);
         
-            Invoke(nameof(Respawn), 1.0f);
+            Invoke(nameof(ChamarRespawn), 1.0f);
         }
     }
 
-    void Respawn()
+    void ChamarRespawn()
     {
-        jogador.KBCount = -1f;  
-        jogador.isKnockRight = false;                          
-
-        vida = vidaMaxima;                              //traz a vida de volta ao máximo
-
-        transform.position = pontoRespawn.position;     //teleporta o jogador para o ponto de respawn
-
-        rbPlayer.linearVelocity = Vector2.zero;
-        rbPlayer.angularVelocity = 0f; 
-
-
-        jogador.anim.SetBool("IsDead", false);          //desativa a animação de morte
-        GetComponent<jogador>().enabled = true;         //serve para que o jogador possa se mover novamente
-        GetComponent<AtackPlayer>().enabled = true;     //serve para que o jogador possa atacar novamente
-        isDead = false;                                 //reseta o status de morte para permitir que o jogador morra novamente
+        GameController.instance.RespawnPlayer(this);
     }
 }
