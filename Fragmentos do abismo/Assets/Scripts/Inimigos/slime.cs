@@ -53,11 +53,12 @@ public class slime : MonoBehaviour
         Debug.DrawRay(wallCheck.position, transform.right * 0.1f, Color.red);
     }
 
+    //funcao para virar o slime
     void Flip()
     {
         rotacao = !rotacao;
 
-        Vector3 scale = transform.localScale;
+        Vector3 scale = transform.localScale; 
         scale.x *= -1;
         transform.localScale = scale;
     }
@@ -66,5 +67,15 @@ public class slime : MonoBehaviour
     public void Knockback(Vector2 direcao, float forca)         // Função para aplicar o knockback no slime
     {
         rb.AddForce(direcao * forca, ForceMode2D.Impulse);      
+    }
+
+    // Detecta colisao com outro slime 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Slime"))
+        {
+            speed *= -1;
+            Flip();
+        }
     }
 }

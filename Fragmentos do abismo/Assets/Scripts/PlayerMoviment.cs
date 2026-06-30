@@ -126,14 +126,7 @@ public class jogador : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Trap")
-        {
-            coracao.vida -=3;
-        } 
-        if(collision.gameObject.tag == "Espeto")
-        {
-            coracao.vida -=2;
-        }
+        
     }
 
      void OnTriggerEnter2D(Collider2D collision)

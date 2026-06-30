@@ -28,7 +28,7 @@ public class DamagePlayer : MonoBehaviour
 
         player.receberDano(dano);                                                 // Chama a função de receber dano no jogador
 
-        if (player.coracao.vida <= 0)
+        if (player.coracao.vida <= 0) 
         {
             return;
         }

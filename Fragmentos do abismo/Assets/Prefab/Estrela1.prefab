@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3426064112136284109}
   - component: {fileID: 6586455701622428112}
   - component: {fileID: 1832575179988055813}
+  - component: {fileID: 4831127570319414242}
   m_Layer: 0
   m_Name: Estrela1
   m_TagString: Trap
@@ -191,3 +192,16 @@ PolygonCollider2D:
       - {x: 0.024983643, y: 0.12728605}
       - {x: -0.00035621226, y: 0.16193694}
   m_UseDelaunayMesh: 1
+--- !u!114 &4831127570319414242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807085026380267636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbb90356fbe0494b8efcc87ed9ad9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamagePlayer
+  dano: 3

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9066803408699929638}
   - component: {fileID: 6902196907190254644}
   - component: {fileID: 7341636840366657105}
+  - component: {fileID: 6064757564080429774}
   m_Layer: 0
   m_Name: SerraAlternativa
   m_TagString: Trap
@@ -179,3 +180,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.00000023841858}
   m_Radius: 0.16000001
+--- !u!114 &6064757564080429774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706918756461882747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbb90356fbe0494b8efcc87ed9ad9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamagePlayer
+  dano: 3

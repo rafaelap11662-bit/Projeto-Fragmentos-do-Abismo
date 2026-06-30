@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2767605449961243223}
   - component: {fileID: 3561986993502110585}
   - component: {fileID: 24847027022171867}
+  - component: {fileID: 5785315736530380836}
   m_Layer: 0
   m_Name: Serra
   m_TagString: Trap
@@ -179,3 +180,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5785315736530380836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7421423288344973360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbb90356fbe0494b8efcc87ed9ad9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamagePlayer
+  dano: 3

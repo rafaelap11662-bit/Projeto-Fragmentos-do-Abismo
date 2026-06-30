@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2026615895146363043}
   - component: {fileID: 7349360864632767877}
   - component: {fileID: 7892361096240578410}
+  - component: {fileID: 8059068903739007799}
   m_Layer: 0
   m_Name: Espeto
   m_TagString: Espeto
@@ -161,3 +162,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.082558304, y: 0.11860776}
   m_EdgeRadius: 0
+--- !u!114 &8059068903739007799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2337897405432512858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbb90356fbe0494b8efcc87ed9ad9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamagePlayer
+  dano: 1
