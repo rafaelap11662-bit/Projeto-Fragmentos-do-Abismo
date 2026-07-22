@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class Fragmento : MonoBehaviour
 {
-
     private SpriteRenderer sr;
     private EdgeCollider2D pikup; 
+    
     public GameObject coleta;                                   // animação de coleta
     public int Score = 1;                                       //Valor do Fragmento
+    public DialogData dialogData;                               // Referência ao ScriptableObject de diálogo
 
     
     void Start()
@@ -21,6 +22,7 @@ public class Fragmento : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
+            SistemaDialog.Instance.StartDialog(dialogData);     
             sr.enabled = false;                                 //apos colisão desabilita Sprite do fragmento
             pikup.enabled = false;                              //apos colisão desabilita o Collider
             coleta.SetActive(true);                             //habilita a animação de coleta

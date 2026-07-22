@@ -32,10 +32,10 @@ public class jogador : MonoBehaviour
 
     private void Update()
     {
-        inFloor = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.6f, 0.3f), 0f, groundLayer); 
-        Debug.DrawLine(transform.position, groundCheck.position, Color.blue); 
+        inFloor = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.6f, 0.3f), 0f, groundLayer);  
+        //Debug.DrawLine(transform.position, groundCheck.position, Color.blue); 
 
-        if (Input.GetButtonDown("Jump") && inFloor)
+        if (Input.GetButtonDown("Jump") && inFloor) 
            isJump = true;
         else if (Input.GetButtonUp("Jump") && rbPlayer.linearVelocity.y > 0)
            rbPlayer.linearVelocity = new Vector2(rbPlayer.linearVelocity.x, rbPlayer.linearVelocity.y * 0.5f);
@@ -44,6 +44,7 @@ public class jogador : MonoBehaviour
 
     // Para visualizar a caixa de colisão do chão no editor, para ajudar 
     // ajustar a posição e o tamanho da caixa de colisão corretamente.
+
     void OnDrawGizmos()    
     {
     Gizmos.color = Color.green;                                                 // Define a cor do Gizmo como verde
@@ -58,7 +59,7 @@ public class jogador : MonoBehaviour
         JumpAnim();
     }
 
-    public IEnumerator Invencibilidade()
+    public IEnumerator Invencibilidade() 
     {
     isInvencivel = true;
 
