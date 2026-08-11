@@ -144,4 +144,14 @@ public class jogador : MonoBehaviour
     {
         coracao.vida -= dano;
     }
+
+    public void pararJogador()
+    {
+        rbPlayer.linearVelocity = Vector2.zero;
+        
+        isJump = false;
+
+        anim.SetFloat("HorizontalAnim", 0);
+
+    }
 }

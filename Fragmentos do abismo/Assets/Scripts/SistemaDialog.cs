@@ -10,14 +10,16 @@ public enum STATE
 public class SistemaDialog : MonoBehaviour
 {
     public static SistemaDialog Instance;
+    [SerializeField] jogador jogador;
+    [SerializeField] AtackPlayer ataque;
 
     [Header("Referencias")]
     public DialogData dialogData;
     public GameObject dialogBox;
     [SerializeField] AnimacaoTexto typeText;
 
-    private int currentText = 0;
-    private bool finished = false;
+    private int currentText = 0; 
+    private bool finished = false;  
 
     [SerializeField] private DialogUi dialogUi;
 
@@ -37,13 +39,15 @@ public class SistemaDialog : MonoBehaviour
     }
 
     
+
+
     void Update()
     {
-        if(state == STATE.DISABLED) return;
+        if(state == STATE.DISABLED) return; 
 
         if(state == STATE.WAITING)
         {
-            Waiting();
+            Waiting(); 
         }
         else if (state == STATE.TYPING)
         {
@@ -51,8 +55,21 @@ public class SistemaDialog : MonoBehaviour
         }
     }
 
+
+
     public void StartDialog(DialogData dialog)
     {
+        if(dialog == null)
+        {
+            Debug.LogWarning("Dialogo nulo");
+            return;
+        }
+
+        if(dialog.talkScript == null || dialog.talkScript.Count == 0)
+        {
+            Debug.LogWarning("Dialogo sem falas");
+            return;
+        }
 
         dialogData = dialog;
 
@@ -63,14 +80,20 @@ public class SistemaDialog : MonoBehaviour
         Next();
     }
 
+
+
     void Next()
     {
         if(currentText == 0)
         {
             dialogUi.Enable();
         }
+        
+        jogador.pararJogador();
+        ataque.enabled = false;
+        jogador.enabled = false;
 
-        typeText.fullText = dialogData.talkScript[currentText++].texto;
+        typeText.fullText = dialogData.talkScript[currentText++].texto; 
 
         if(currentText >= dialogData.talkScript.Count) finished = true;
 
@@ -78,10 +101,14 @@ public class SistemaDialog : MonoBehaviour
         state = STATE.TYPING;
     }
 
+
+
     void OnTypeFinished()
     {
         state = STATE.WAITING;
     }
+
+
 
     void Waiting()
     {
@@ -95,11 +122,15 @@ public class SistemaDialog : MonoBehaviour
         {
             dialogUi.Disable();
             state = STATE.DISABLED;
+            jogador.enabled = true;    
+            ataque.enabled = true;       
             currentText = 0;
             finished = false;
         }
         
     }
+
+
 
     void Typing()
     {
