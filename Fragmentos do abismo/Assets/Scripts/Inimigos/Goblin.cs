@@ -3,21 +3,17 @@ using UnityEngine;
 
 public class Goblin : MonoBehaviour
 {
-    public float speed;
-    public bool ground = true;
-    public SpriteRenderer sprite;
+    private float perseguicao = 3f;
+    [SerializeField] private float speed;
+    [SerializeField] private bool ground = true;
+    [SerializeField] private SpriteRenderer sprite;
 
-    public Transform groundCheck;
-    public Transform wallCheck;
-    public LayerMask groundLayer;
-
-    public Transform currentTarget;
-    public Transform targetA;
-    public Transform targetB;
-
+    [SerializeField] private Transform currentTarget;
+    [SerializeField] private Transform targetA;
+    [SerializeField] private Transform targetB;
+    [SerializeField] private Transform alvo;
     [SerializeField] private float visao;
-
-
+    
 
     void Start()
     {
@@ -26,19 +22,21 @@ public class Goblin : MonoBehaviour
 
     void Update()
     {
-        Move();
+        ProcurarPlayer();
+        if(alvo != null)
+        {
+            SeguirPlayer();
+        }
+        else
+        {
+            Move();
+        }
     }
 
-     void Move()
+     private void Move()
     {
         // movimento
         transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, speed * Time.deltaTime);
-        
-        // detecta chão
-        ground = Physics2D.Linecast( groundCheck.position, transform.position, groundLayer);
-        
-        // detecta parede
-        bool wall = Physics2D.Raycast( wallCheck.position, transform.right, 0.1f, groundLayer);
         
         if(currentTarget == targetA && transform.position.x == targetA.position.x)
         {
@@ -48,21 +46,47 @@ public class Goblin : MonoBehaviour
         {
             currentTarget = targetA;
         }
-        
+        MudarDirecao(currentTarget);
+    }
 
-        if (transform.position.x > currentTarget.position.x)
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, visao);
+    }
+
+    private void ProcurarPlayer()
+{
+    Collider2D[] colisores = Physics2D.OverlapCircleAll(transform.position,visao);
+
+    foreach (Collider2D colisor in colisores)
+    {
+        if (colisor.CompareTag("Player"))
+        {
+            alvo = colisor.transform;
+            return;
+        }
+    }
+
+    alvo = null;
+}
+
+    private void SeguirPlayer()
+    {
+        Vector2 posicaoAlvo = this.alvo.position; 
+        Vector2 posicaoAtual = this.transform.position;
+        transform.position = Vector2.MoveTowards(posicaoAtual, posicaoAlvo, perseguicao * Time.deltaTime);
+        MudarDirecao(alvo);
+    }
+
+    private void MudarDirecao(Transform destino)
+    {
+        if (transform.position.x > destino.position.x)
         {
             sprite.flipX = true;
         }
         else
         {
             sprite.flipX = false;
-        } 
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, visao);
+        }
     }
 }
