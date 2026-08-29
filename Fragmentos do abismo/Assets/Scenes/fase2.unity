@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 603894006206713383, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2624471453648838752, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: 'coracao.Array.data[0]'
       value: 
@@ -154,6 +158,14 @@ PrefabInstance:
     - target: {fileID: 4051250019111463655, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_Name
       value: jogador
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051250019111463655, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248910518422514116, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -867,9 +879,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 592467955}
-  - component: {fileID: 592467956}
   - component: {fileID: 592467958}
   - component: {fileID: 592467957}
+  - component: {fileID: 592467956}
   - component: {fileID: 592467959}
   - component: {fileID: 592467960}
   m_Layer: 7
@@ -893,6 +905,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1989197457}
+  - {fileID: 1277306912}
   m_Father: {fileID: 1141255987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &592467956
@@ -910,12 +923,19 @@ MonoBehaviour:
   speed: 2
   ground: 1
   sprite: {fileID: 1989197458}
+  anim: {fileID: 1989197459}
+  ataquePoint: {fileID: 1277306912}
   currentTarget: {fileID: 0}
   targetA: {fileID: 1880802012}
   targetB: {fileID: 1601755753}
   alvo: {fileID: 38389021}
   visao: 6
-  distanciaMinima: 1
+  distanciaMinima: 1.3
+  ataqueRange: 0.3
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  dano: 0
 --- !u!61 &592467957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1016,8 +1036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c4c2169e41ecf4aabf1baee9c950fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KBInimigo
-  knockbackForce: 7
-  knockbackUp: 2
+  knockbackForce: 5
+  knockbackUp: 3
 --- !u!1 &699502701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,6 +1795,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226720490}
   m_CullTransparentMesh: 1
+--- !u!1 &1277306911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1277306912}
+  m_Layer: 7
+  m_Name: AtaquePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1277306912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277306911}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.94, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 592467955}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478923112
 GameObject:
   m_ObjectHideFlags: 0
@@ -155077,6 +155128,7 @@ GameObject:
   - component: {fileID: 1989197457}
   - component: {fileID: 1989197458}
   - component: {fileID: 1989197459}
+  - component: {fileID: 1989197460}
   m_Layer: 7
   m_Name: SpiteGoblin
   m_TagString: Untagged
@@ -155180,6 +155232,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1989197460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989197456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2a74131c907004384b8484fe6842f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoblinAnimacao
 --- !u!1 &2047536064
 GameObject:
   m_ObjectHideFlags: 0
