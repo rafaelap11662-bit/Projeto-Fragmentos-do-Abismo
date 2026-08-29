@@ -13,6 +13,9 @@ public class Goblin : MonoBehaviour
     [SerializeField] private Transform targetB;
     [SerializeField] private Transform alvo;
     [SerializeField] private float visao;
+    [SerializeField] private float distanciaMinima;
+    private Animator anim;
+
     
 
     void Start()
@@ -70,12 +73,24 @@ public class Goblin : MonoBehaviour
     alvo = null;
 }
 
-    private void SeguirPlayer()
+    private void SeguirPlayer() // MEXER DPS -----------------------------------------------------------------------
     {
         Vector2 posicaoAlvo = this.alvo.position; 
         Vector2 posicaoAtual = this.transform.position;
-        transform.position = Vector2.MoveTowards(posicaoAtual, posicaoAlvo, perseguicao * Time.deltaTime);
-        MudarDirecao(alvo);
+        float distancia = Vector2.Distance(posicaoAlvo, posicaoAtual);
+
+        if (distancia >= distanciaMinima){
+            transform.position = Vector2.MoveTowards(posicaoAtual, posicaoAlvo, perseguicao * Time.deltaTime);
+            MudarDirecao(alvo);  
+        }
+        else
+        {
+            transform.position = Vector2.MoveTowards(posicaoAtual, posicaoAlvo, 0);
+            anim.SetTrigger("GoblinIdleAnim");
+            
+
+        }
+
     }
 
     private void MudarDirecao(Transform destino)

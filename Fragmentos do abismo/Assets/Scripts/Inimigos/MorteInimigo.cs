@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class MorteInimigo : MonoBehaviour
 {
-    [SerializeField] int vidaAtual = 3;
+    [SerializeField] int vidaAtual = 2;
+    
 
     [Header("Animação")]
     [SerializeField] Animator animator;
-    [SerializeField] string morteTrigger = "Dead";
+    [SerializeField] string morteTrigger;
+
 
     public void danoInimigo(int dano)
     {
@@ -20,6 +22,8 @@ public class MorteInimigo : MonoBehaviour
 
     void Morrer()
     {
+        
+
         animator.SetTrigger(morteTrigger);
 
         Destroy(gameObject, 1f);

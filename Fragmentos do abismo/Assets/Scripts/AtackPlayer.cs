@@ -71,12 +71,12 @@ public class AtackPlayer : MonoBehaviour
             inimigo.GetComponent<MorteInimigo>().danoInimigo(1);        // Chama a função de dano no inimigo
 
             Vector2 direcaoKnockback = (inimigo.transform.position - transform.position).normalized;         // Calcula a direção do knockback
-            float forcaKnockback = 6f;
 
-            slime slime = inimigo.GetComponent<slime>();          // Pega o script do slime
-            if(slime != null)                                      // Aplica o knockback
+            KBInimigo knockback = inimigo.GetComponent<KBInimigo>();
+
+            if(knockback != null)
             {
-                slime.Knockback(direcaoKnockback, forcaKnockback);
+                knockback.AplicarKnockback(direcaoKnockback);
             }
         }
 

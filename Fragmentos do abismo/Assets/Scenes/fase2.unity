@@ -157,11 +157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.6
+      value: 52.4
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.4
+      value: -29.1
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -851,7 +851,7 @@ Transform:
   m_GameObject: {fileID: 565360975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.571287, y: -22.254772, z: -10}
+  m_LocalPosition: {x: 53.31296, y: -27.954773, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -871,6 +871,7 @@ GameObject:
   - component: {fileID: 592467958}
   - component: {fileID: 592467957}
   - component: {fileID: 592467959}
+  - component: {fileID: 592467960}
   m_Layer: 7
   m_Name: Goblin
   m_TagString: Untagged
@@ -914,6 +915,7 @@ MonoBehaviour:
   targetB: {fileID: 1601755753}
   alvo: {fileID: 38389021}
   visao: 6
+  distanciaMinima: 1
 --- !u!61 &592467957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1002,6 +1004,20 @@ MonoBehaviour:
   vidaAtual: 2
   animator: {fileID: 1989197459}
   morteTrigger: GoblinDead
+--- !u!114 &592467960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592467954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c4c2169e41ecf4aabf1baee9c950fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KBInimigo
+  knockbackForce: 7
+  knockbackUp: 2
 --- !u!1 &699502701
 GameObject:
   m_ObjectHideFlags: 0
@@ -151412,7 +151428,7 @@ Transform:
   m_GameObject: {fileID: 1620082439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.571287, y: -22.254772, z: -10}
+  m_LocalPosition: {x: 53.31296, y: -27.954773, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151566,7 +151582,7 @@ Transform:
   m_GameObject: {fileID: 1652502278}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.391113, y: 0, z: 0}
+  m_LocalPosition: {x: 19.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -155190,7 +155206,7 @@ Transform:
   m_GameObject: {fileID: 2047536064}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.397566, y: 0, z: 0}
+  m_LocalPosition: {x: -19.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
