@@ -21,7 +21,7 @@ public class FallBlock : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collider2D)
     {
-        if(collider2D.gameObject.tag == "Player")
+        if(collider2D.gameObject.tag == "Player" && !ativado)
         {
             anim.SetTrigger("FallBlock");
 
@@ -29,15 +29,17 @@ public class FallBlock : MonoBehaviour
         }
     }
 
-    public void DesativarColisor()
+    public void DesativarColisor() //animator event
     {
         col.enabled = false;
     }
 
-    public void DesativarSprite()
+    public void DesativarSprite() //animator event
     {
         sr.enabled = false;
-        anim.SetTrigger("IntBlock");        StartCoroutine(VoltarBloco());
+        anim.SetTrigger("IntBlock");        
+        
+        StartCoroutine(VoltarBloco());
     }
 
 
@@ -48,7 +50,6 @@ public class FallBlock : MonoBehaviour
         col.enabled = true;
         sr.enabled = true;
 
-        
         ativado = false;
     }
 

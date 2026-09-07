@@ -23,8 +23,8 @@ public class Fragmento : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             SistemaDialog.Instance.StartDialog(dialogData);     
-            sr.enabled = false;                                 //apos colisão desabilita Sprite do fragmento
-            pikup.enabled = false;                              //apos colisão desabilita o Collider
+            sr.enabled = false;                                 
+            pikup.enabled = false;                              
             coleta.SetActive(true);                             //habilita a animação de coleta
 
             GameController.instance.totalScore += Score;        //add um ponto no score

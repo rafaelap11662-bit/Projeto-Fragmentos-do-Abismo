@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public Transform checkpointAtual;
     public Transform checkpointInicial;
 
+    public bool temChave = false;
+
     public static GameController instance;
 
 
@@ -30,7 +32,7 @@ public class GameController : MonoBehaviour
         Rigidbody2D rb = coracao.GetComponent<Rigidbody2D>(); 
         AtackPlayer ataque = coracao.GetComponent<AtackPlayer>();
         
-        jogador.KBCount = -1f;
+        jogador.KBCount = -1f;  
         jogador.isKnockRight = false;
 
         coracao.vida = coracao.vidaMaxima; 

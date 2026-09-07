@@ -4,14 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class Porta : MonoBehaviour
 {
-    private CircleCollider2D circle;
     [SerializeField] private int check;
     [SerializeField] private string nomeProximaFase;
-
-    void Start()
-    {   
-        circle = GetComponent<CircleCollider2D>();
-    }
 
     void OnTriggerEnter2D(Collider2D collider) // detecta a se o player tem a quantidade de Fragmentos necessarios para passar de fase
     {

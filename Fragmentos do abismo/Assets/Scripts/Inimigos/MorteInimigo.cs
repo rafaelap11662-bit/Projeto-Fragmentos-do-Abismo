@@ -26,6 +26,6 @@ public class MorteInimigo : MonoBehaviour
 
         animator.SetTrigger(morteTrigger);
 
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 0.8f);
     }
 }

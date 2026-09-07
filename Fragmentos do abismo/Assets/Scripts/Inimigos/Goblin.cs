@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class Goblin : MonoBehaviour
 {
-    
-    private float perseguicao = 3f;
+    [SerializeField] private float perseguicao = 3f;
     [SerializeField] private float speed;
     [SerializeField] private bool ground = true;
     [SerializeField] private SpriteRenderer sprite;
