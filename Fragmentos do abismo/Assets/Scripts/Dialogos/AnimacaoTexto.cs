@@ -7,7 +7,7 @@ public class AnimacaoTexto : MonoBehaviour
 {
     public Action TypeFinished;
 
-    public float typeDelay = 0.05f;
+    private float typeDelay = 0.01f;
     public TextMeshProUGUI textObject;
 
     public string fullText;

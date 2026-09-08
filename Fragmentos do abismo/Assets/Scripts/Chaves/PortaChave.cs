@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class PortaChave : MonoBehaviour
 {
-    public DialogData dialogData;
+    [SerializeField] private Animator anim;
+    [SerializeField] private DialogData dialogData;
+    [SerializeField] private DialogData fragChaveColetada;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,7 +16,9 @@ public class PortaChave : MonoBehaviour
             }
             if (GameController.instance.temChave)
             {
-                Destroy(gameObject);
+                anim.SetTrigger("PortaFim");
+                SistemaDialog.Instance.StartDialog(fragChaveColetada);
+                Destroy(gameObject, 1.9f);
             }
             else
             {
