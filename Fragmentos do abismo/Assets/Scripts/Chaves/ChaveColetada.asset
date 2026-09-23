@@ -13,8 +13,4 @@ MonoBehaviour:
   m_Name: ChaveColetada
   m_EditorClassIdentifier: Assembly-CSharp::DialogData
   talkScript:
-  - texto: 'Noah
-
-
-      Essa energia... ela combina com a da barreira. Talvez possa
-      abri-la.'
+  - texto: Um fragmento vermelho??

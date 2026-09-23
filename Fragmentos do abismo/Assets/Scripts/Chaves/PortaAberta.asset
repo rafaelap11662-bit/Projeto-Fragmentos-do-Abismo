@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PortaAberta
   m_EditorClassIdentifier: Assembly-CSharp::DialogData
   talkScript:
-  - texto: "Noah \n\nComo pensei! "
+  - texto: "Ent\xE3o era para isso que servia aquele fragmento... sua energia abre
+      a barreira."

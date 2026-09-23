@@ -174,7 +174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 12214545}
   animator: {fileID: 12214547}
   morteTrigger: SlimeDead
 --- !u!114 &12214545
@@ -2165,7 +2164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 406752908}
   animator: {fileID: 406752910}
   morteTrigger: SlimeDead
 --- !u!114 &406752908
@@ -2744,7 +2742,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 486335563}
   animator: {fileID: 486335565}
   morteTrigger: SlimeDead
 --- !u!114 &486335563
@@ -9090,7 +9087,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 1045315998}
   animator: {fileID: 1045316000}
   morteTrigger: SlimeDead
 --- !u!114 &1045315998
@@ -9747,7 +9743,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 1074890809}
   animator: {fileID: 1074890811}
   morteTrigger: SlimeDead
 --- !u!114 &1074890809
@@ -11736,7 +11731,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 1323120291}
   animator: {fileID: 1323120293}
   morteTrigger: SlimeDead
 --- !u!114 &1323120291
@@ -12174,7 +12168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 1412078266}
   animator: {fileID: 1412078268}
   morteTrigger: SlimeDead
 --- !u!114 &1412078266
@@ -12627,7 +12620,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 1508150027}
   animator: {fileID: 1508150029}
   morteTrigger: SlimeDead
 --- !u!114 &1508150027
@@ -13660,6 +13652,7 @@ MonoBehaviour:
   scoreText: {fileID: 1795398274}
   checkpointAtual: {fileID: 0}
   checkpointInicial: {fileID: 331836605}
+  temChave: 0
 --- !u!4 &1706000038
 Transform:
   m_ObjectHideFlags: 0
@@ -15007,7 +15000,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 1942735242}
   animator: {fileID: 1942735244}
   morteTrigger: SlimeDead
 --- !u!114 &1942735242
@@ -15395,7 +15387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 1985147998}
   animator: {fileID: 1985148000}
   morteTrigger: SlimeDead
 --- !u!114 &1985147998
@@ -15967,7 +15958,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 2029041066}
   animator: {fileID: 2029041065}
   morteTrigger: SlimeDead
 --- !u!114 &2029041069
@@ -16131,7 +16121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 2041358889}
   animator: {fileID: 2041358891}
   morteTrigger: SlimeDead
 --- !u!114 &2041358889
@@ -16363,7 +16352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 2046424019}
   animator: {fileID: 2046424021}
   morteTrigger: SlimeDead
 --- !u!114 &2046424019
@@ -16938,7 +16926,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MorteInimigo
   vidaAtual: 2
-  comportamentoInimigo: {fileID: 2093260216}
   animator: {fileID: 2093260218}
   morteTrigger: SlimeDead
 --- !u!114 &2093260216
@@ -17264,7 +17251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff792bada02c8647aeda2c08c5e6d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimacaoTexto
-  typeDelay: 0.05
   textObject: {fileID: 764791929}
   fullText: 
 --- !u!4 &2129920686
@@ -132467,6 +132453,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1403489049168865816, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
+      propertyPath: isInvencivel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2624471453648838752, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: 'coracao.Array.data[0]'
       value: 

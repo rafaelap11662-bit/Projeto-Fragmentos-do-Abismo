@@ -22,7 +22,7 @@ public class jogador : MonoBehaviour
 
     public bool isKnockRight;
 
-    public bool isInvencivel;
+    public bool isInvencivel = false;
     
 
     private void Awake()
@@ -62,10 +62,11 @@ public class jogador : MonoBehaviour
     public IEnumerator Invencibilidade() 
     {
     isInvencivel = true;
-
+    
     yield return new WaitForSeconds(0.5f); 
 
     isInvencivel = false;
+    
     }
     
     // Função responsável pela lógica de Knockback (empurrão ao tomar dano)

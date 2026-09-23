@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fragmento
   coleta: {fileID: 8263928166557954436}
   Score: 1
+  dialogData: {fileID: 0}
 --- !u!1 &8263928166557954436
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +217,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.01, y: 0.023, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6.805012, y: 6.805012, z: 6.805012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8993852772036659763}
@@ -268,7 +269,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 6
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4989026433078632521, guid: e0676675f2985594d9e11a53bc1e947e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

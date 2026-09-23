@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PortaTrancada
   m_EditorClassIdentifier: Assembly-CSharp::DialogData
   talkScript:
-  - texto: Voce precisa de uma CHAVE passar
+  - texto: "A passagem est\xE1 bloqueada... preciso encontrar uma forma de abri-la."
