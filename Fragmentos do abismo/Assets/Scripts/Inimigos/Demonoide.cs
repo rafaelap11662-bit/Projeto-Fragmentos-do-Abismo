@@ -108,8 +108,12 @@ public class Demonoide : MonoBehaviour
         float distancia = Vector2.Distance(posicaoAlvo, posicaoAtual);
 
         if (distancia >= distanciaMinima){
-            transform.position = Vector2.MoveTowards(posicaoAtual, posicaoAlvo, perseguicao * Time.deltaTime);
-            MudarDirecao(alvo);  
+            transform.position = Vector2.MoveTowards(posicaoAtual, posicaoAlvo, perseguicao * Time.deltaTime); 
+            if (DetectarParede())
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, forceJump);
+            }
+                MudarDirecao(alvo);  
         }
         else if (!atacando)
         {

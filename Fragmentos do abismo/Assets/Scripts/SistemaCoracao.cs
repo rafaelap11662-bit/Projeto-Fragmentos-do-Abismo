@@ -41,7 +41,8 @@ public class SistemaCoracao : MonoBehaviour
     {
         if (vida <= 0 && !isDead) // Verifica se a vida é menor ou igual a 0 e se o jogador ainda não está marcado como morto
         {
-            isDead = true; 
+            isDead = true;
+            GameController.instance.registrarMorte();
 
             rbPlayer.linearVelocity = Vector2.zero;
             rbPlayer.angularVelocity = 0f; 

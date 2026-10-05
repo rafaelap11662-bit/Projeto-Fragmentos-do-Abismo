@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -13,16 +14,27 @@ public class GameController : MonoBehaviour
 
     public static GameController instance;
 
+    public TextMeshProUGUI mortesText;
+    public int mortes = 0;
+
+
 
     void Start()
     {
         instance = this;
 
         checkpointAtual = checkpointInicial;
+        UpdateMortesText();
     }
+
     public void UpdateScoreText()
     {
         scoreText.text = totalScore.ToString();
+    }
+
+    public void UpdateMortesText()
+    {
+        mortesText.text = mortes + "/5";
     }
 
 
@@ -48,5 +60,22 @@ public class GameController : MonoBehaviour
         ataque.enabled = true;
 
         coracao.isDead = false;
+    }
+
+    public void registrarMorte()
+    {
+        
+        mortes++;
+        UpdateMortesText();
+
+        if (mortes >= 5)
+        {
+            reiniciarJogo();
+        }
+    }
+
+    public void reiniciarJogo()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
