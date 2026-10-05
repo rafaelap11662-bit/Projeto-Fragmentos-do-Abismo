@@ -1,9 +1,11 @@
 using Unity.VisualScripting;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class Demonoide : MonoBehaviour
 {
     
+    private Rigidbody2D rb;
     private float perseguicao = 3f;
     [SerializeField] private float speed;
     [SerializeField] private bool ground = true;
@@ -18,15 +20,25 @@ public class Demonoide : MonoBehaviour
     [SerializeField] private float visao;
     [SerializeField] private float distanciaMinima;
 
-    [Header("Ataque")]
+    [Header("ATAQUE")]
     [SerializeField] private float ataqueRange;
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private int dano;
-    private bool atacando = false;    
+    private bool atacando = false;
+
+    [Header ("DETECÇÃO DE PAREDE")]
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private float wallDistance;
+    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private float forceJump;
+
+
+
 
     void Start()
     {
         currentTarget = targetA;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -46,7 +58,14 @@ public class Demonoide : MonoBehaviour
     {
         // movimento
         transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, speed * Time.deltaTime);
-        
+
+        //caso detecte uma parede, dar um salto 
+        if (DetectarParede())
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, forceJump);
+        }
+
+
         if(currentTarget == targetA && transform.position.x == targetA.position.x)
         {
             currentTarget = targetB;
@@ -106,11 +125,13 @@ public class Demonoide : MonoBehaviour
         {
             sprite.flipX = true;
             ataquePoint.localPosition = new Vector2(-Mathf.Abs(ataquePoint.localPosition.x), ataquePoint.localPosition.y);
+            wallCheck.localPosition = new Vector2(-Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y);
         }
         else
         {
             sprite.flipX = false;
             ataquePoint.localPosition = new Vector2(Mathf.Abs(ataquePoint.localPosition.x), ataquePoint.localPosition.y);
+            wallCheck.localPosition = new Vector2(Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y);
         }
     }
 
@@ -150,6 +171,11 @@ public class Demonoide : MonoBehaviour
     {
     atacando = false;
     Debug.Log("Ataque liberado");
+    }
+    
+    private bool DetectarParede()
+    {
+        return Physics2D.Raycast(wallCheck.position, transform.right, wallDistance, wallLayer);
     }
     
 }
