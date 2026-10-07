@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 31210b3ba94491e44979d98e84bd5540
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7293622873769582539
+    second: "Folha de Sprites do Dem\xF4nio de Lava_0"
+  - first:
+      213: 7199798499904913610
+    second: "Folha de Sprites do Dem\xF4nio de Lava_1"
+  - first:
+      213: -7038093848535132095
+    second: "Folha de Sprites do Dem\xF4nio de Lava_2"
+  - first:
+      213: -1219191691137026321
+    second: "Folha de Sprites do Dem\xF4nio de Lava_3"
+  - first:
+      213: 3399345049161133590
+    second: "Folha de Sprites do Dem\xF4nio de Lava_4"
+  - first:
+      213: 8425965846194160248
+    second: "Folha de Sprites do Dem\xF4nio de Lava_5"
+  - first:
+      213: 7218374246250579729
+    second: "Folha de Sprites do Dem\xF4nio de Lava_6"
+  - first:
+      213: 4637818366513986235
+    second: "Folha de Sprites do Dem\xF4nio de Lava_7"
+  - first:
+      213: 763760118906513353
+    second: "Folha de Sprites do Dem\xF4nio de Lava_8"
+  - first:
+      213: 1816430403926585347
+    second: "Folha de Sprites do Dem\xF4nio de Lava_9"
+  - first:
+      213: -1526728546022685934
+    second: "Folha de Sprites do Dem\xF4nio de Lava_10"
+  - first:
+      213: -5416324757346604723
+    second: "Folha de Sprites do Dem\xF4nio de Lava_11"
+  - first:
+      213: 8443844960419021165
+    second: "Folha de Sprites do Dem\xF4nio de Lava_12"
+  - first:
+      213: 2597823948550205737
+    second: "Folha de Sprites do Dem\xF4nio de Lava_13"
+  - first:
+      213: 3641947599026192214
+    second: "Folha de Sprites do Dem\xF4nio de Lava_14"
+  - first:
+      213: -9151408901325195471
+    second: "Folha de Sprites do Dem\xF4nio de Lava_15"
+  - first:
+      213: 7794761463441146018
+    second: "Folha de Sprites do Dem\xF4nio de Lava_16"
+  - first:
+      213: -7977689222600082167
+    second: "Folha de Sprites do Dem\xF4nio de Lava_17"
+  - first:
+      213: -7990020137826387360
+    second: "Folha de Sprites do Dem\xF4nio de Lava_18"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Folha de Sprites do Dem\xF4nio de Lava_0"
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 456
+        width: 352
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcf13b44c57283560800000000000000
+      internalID: 7293622873769582539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Folha de Sprites do Dem\xF4nio de Lava_1"
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 455
+        width: 360
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac00939e692dae360800000000000000
+      internalID: 7199798499904913610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Folha de Sprites do Dem\xF4nio de Lava_2"
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 452
+        width: 351
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14893362feaa35e90800000000000000
+      internalID: -7038093848535132095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Folha de Sprites do Dem\xF4nio de Lava_3"
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 447
+        width: 356
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe67ba0dd9f841fe0800000000000000
+      internalID: -1219191691137026321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Folha de Sprites do Dem\xF4nio de Lava_4"
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 452
+        width: 356
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e6b3ccf46ec2f20800000000000000
+      internalID: 3399345049161133590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Folha de Sprites do Dem\xF4nio de Lava_5"
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 55
+        width: 383
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8720aff5b4b0fe470800000000000000
+      internalID: 8425965846194160248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Folha de Sprites do Dem\xF4nio de Lava_6"
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 56
+        width: 413
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1170893e121dc2460800000000000000
+      internalID: 7218374246250579729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Folha de Sprites do Dem\xF4nio de Lava_7"
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 50
+        width: 358
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bba39dc6b37dc5040800000000000000
+      internalID: 4637818366513986235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Folha de Sprites do Dem\xF4nio de Lava_8"
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 45
+        width: 323
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc3a22ec40d37742ae994477296ee51
+      internalID: 763760118906513353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ecc169049670b2942816499545e5bff8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Folha de Sprites do Dem\xF4nio de Lava_0": 7293622873769582539
+      "Folha de Sprites do Dem\xF4nio de Lava_1": 7199798499904913610
+      "Folha de Sprites do Dem\xF4nio de Lava_10": -1526728546022685934
+      "Folha de Sprites do Dem\xF4nio de Lava_11": -5416324757346604723
+      "Folha de Sprites do Dem\xF4nio de Lava_12": 8443844960419021165
+      "Folha de Sprites do Dem\xF4nio de Lava_13": 2597823948550205737
+      "Folha de Sprites do Dem\xF4nio de Lava_14": 3641947599026192214
+      "Folha de Sprites do Dem\xF4nio de Lava_15": -9151408901325195471
+      "Folha de Sprites do Dem\xF4nio de Lava_16": 7794761463441146018
+      "Folha de Sprites do Dem\xF4nio de Lava_17": -7977689222600082167
+      "Folha de Sprites do Dem\xF4nio de Lava_18": -7990020137826387360
+      "Folha de Sprites do Dem\xF4nio de Lava_2": -7038093848535132095
+      "Folha de Sprites do Dem\xF4nio de Lava_3": -1219191691137026321
+      "Folha de Sprites do Dem\xF4nio de Lava_4": 3399345049161133590
+      "Folha de Sprites do Dem\xF4nio de Lava_5": 8425965846194160248
+      "Folha de Sprites do Dem\xF4nio de Lava_6": 7218374246250579729
+      "Folha de Sprites do Dem\xF4nio de Lava_7": 4637818366513986235
+      "Folha de Sprites do Dem\xF4nio de Lava_8": 763760118906513353
+      "Folha de Sprites do Dem\xF4nio de Lava_9": 1816430403926585347
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
