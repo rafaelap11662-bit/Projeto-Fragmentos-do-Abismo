@@ -22,7 +22,7 @@ public class Demonoide : MonoBehaviour
 
     [Header("ATAQUE")]
     [SerializeField] private float ataqueRange;
-    [SerializeField] private LayerMask PlayerLayer;
+    [SerializeField] private LayerMask playerLayer;
     [SerializeField] private int dano;
     private bool atacando = false;
 
@@ -141,18 +141,18 @@ public class Demonoide : MonoBehaviour
 
     public void AtacarPlayer()
     {
-        Collider2D PlayerCollider = Physics2D.OverlapCircle(ataquePoint.position, ataqueRange, PlayerLayer);
+        Collider2D PlayerCollider = Physics2D.OverlapCircle(ataquePoint.position, ataqueRange, playerLayer);
         
         if (PlayerCollider != null)
         {
-            jogador player = PlayerCollider.GetComponent<jogador>();
+            jogador player = PlayerCollider.GetComponent<jogador>(); 
             
             if(player != null) 
             {
                 if (player.isInvencivel)
                 return;
 
-            player.KBCount = player.KBTime;
+            player.KBCount = player.KBTime; 
 
             if (PlayerCollider.transform.position.x <= transform.position.x)
             {

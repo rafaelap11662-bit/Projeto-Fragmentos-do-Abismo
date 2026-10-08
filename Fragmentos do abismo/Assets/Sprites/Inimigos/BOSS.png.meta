@@ -836,9 +836,9 @@ TextureImporter:
       name: BOSS_IDLE
       rect:
         serializedVersion: 2
-        x: 0
+        x: 106
         y: 640
-        width: 288
+        width: 80
         height: 160
       alignment: 9
       pivot: {x: 0.5, y: 0.28}
@@ -858,9 +858,9 @@ TextureImporter:
       name: BOSS_IDLE1
       rect:
         serializedVersion: 2
-        x: 288
+        x: 391
         y: 640
-        width: 288
+        width: 87
         height: 160
       alignment: 9
       pivot: {x: 0.5, y: 0.28}
@@ -880,9 +880,9 @@ TextureImporter:
       name: BOSS_IDLE2
       rect:
         serializedVersion: 2
-        x: 576
+        x: 677
         y: 640
-        width: 288
+        width: 91
         height: 160
       alignment: 9
       pivot: {x: 0.5, y: 0.28}
@@ -902,9 +902,9 @@ TextureImporter:
       name: BOSS_IDLE3
       rect:
         serializedVersion: 2
-        x: 864
+        x: 964
         y: 640
-        width: 288
+        width: 91
         height: 160
       alignment: 9
       pivot: {x: 0.5, y: 0.28}
@@ -924,9 +924,9 @@ TextureImporter:
       name: BOSS_IDLE4
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 1253
         y: 640
-        width: 288
+        width: 91
         height: 160
       alignment: 9
       pivot: {x: 0.5, y: 0.28}
@@ -946,9 +946,9 @@ TextureImporter:
       name: BOSS_IDLE5
       rect:
         serializedVersion: 2
-        x: 1440
+        x: 1543
         y: 640
-        width: 288
+        width: 87
         height: 160
       alignment: 9
       pivot: {x: 0.5, y: 0.28}
