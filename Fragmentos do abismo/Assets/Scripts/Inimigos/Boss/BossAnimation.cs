@@ -3,6 +3,7 @@ using UnityEngine;
 public class BossAnimation : MonoBehaviour
 {
    private Boss boss;
+   public GameObject Explosao;
 
    private void Awake()
     {
@@ -23,4 +24,20 @@ public class BossAnimation : MonoBehaviour
     {
         boss.CriarRajada();
     }
+
+    public void RepelirPlayer()
+    {
+        boss.RepelirPlayer();
+    }
+
+    public void AtivarExplosao()
+    {
+        Explosao.SetActive(true);
+    }
+    
+    public void DesativarExplosao()
+    {
+        Explosao.SetActive(false);
+    }
+    
 }

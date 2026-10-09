@@ -12,6 +12,7 @@ public class Boss : MonoBehaviour
     [Header("DISTANCIAS DE ATAQUE")]
     [SerializeField] private float distanciaAtaque;
     [SerializeField] private float distanciaRajada;
+    [SerializeField] private float distanciaRepelir;
 
     [Header("ATAQUE")]
     [SerializeField] private Transform ataquePoint;
@@ -19,15 +20,22 @@ public class Boss : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private int danoFacao;
     [SerializeField] private int danoRajada;
+    [SerializeField] private int danoRepelir;
      private int dano;
+    
+    [Header("REPELIR")]
+    [SerializeField] private float repelirRange;
+    [SerializeField] private float knockbackRepelir;
+    [SerializeField] private Transform repelirPoint;
 
-     [Header("RAJADA")]
-     [SerializeField] private GameObject rajadaPrefab;
-     [SerializeField] private Transform rajadaPoint;
+    [Header("RAJADA")]
+    [SerializeField] private GameObject rajadaPrefab;
+    [SerializeField] private Transform rajadaPoint;
 
     [Header("ESTADOS DO BOSS")]
     private EstadoBoss estadoAtual = EstadoBoss.DECIDINDO;
     private TipoAtaque ataqueAtual;
+
 
     private bool executandoAtaque = false;
     
@@ -68,8 +76,12 @@ public class Boss : MonoBehaviour
     {
         if(player == null)
             return;
-        
-        VirarBoss();
+
+
+        if (!executandoAtaque) 
+        {
+            VirarBoss();
+        }
 
         if(estadoAtual == EstadoBoss.DECIDINDO)
         {
@@ -85,7 +97,7 @@ public class Boss : MonoBehaviour
         }
         if(estadoAtual == EstadoBoss.REPELIR)
         {
-            RepelirPlayer();
+            IniciarRepelir();
         }
     }
 
@@ -150,15 +162,14 @@ public class Boss : MonoBehaviour
         {
             estadoAtual = EstadoBoss.PERSEGUINDO;
         }
-        else if(distancia <= distanciaAtaque)
+        else if(distancia > distanciaRepelir && distancia <= distanciaAtaque)
         {
             ataqueAtual = TipoAtaque.FACAO;
             estadoAtual = EstadoBoss.ATACANDO;
         }
         else
         {
-            estadoAtual = EstadoBoss.DECIDINDO;
-            Debug.Log("Decidindo ação");
+            estadoAtual = EstadoBoss.REPELIR;
         }
     }    
 
@@ -181,10 +192,49 @@ public class Boss : MonoBehaviour
             dano = danoFacao;
         }
     }
-
-    private void RepelirPlayer()
+    private void IniciarRepelir()
     {
-        
+        if(executandoAtaque)
+            return;
+
+            executandoAtaque = true;
+
+            anim.SetTrigger("isRepelir");
+    }
+
+    public void RepelirPlayer()
+    {
+        Collider2D PlayerCollider = Physics2D.OverlapCircle(repelirPoint.position, repelirRange, playerLayer);
+
+        if (PlayerCollider != null)
+        {
+            jogador player = PlayerCollider.GetComponent<jogador>(); 
+            
+            if(player != null) 
+            {
+                if (player.isInvencivel)
+                return;
+
+                
+                player.KBforce = knockbackRepelir;
+                player.KBCount = player.KBTime;
+
+                if (PlayerCollider.transform.position.x <= transform.position.x)
+                {
+                    player.isKnockRight = true;
+                }
+                else
+                {
+                    player.isKnockRight = false;
+                }
+                    player.receberDano(danoRepelir);
+                    player.anim.SetTrigger("TakeDamage");
+                    StartCoroutine(player.Invencibilidade());
+                
+            }
+        }
+
+
     }
 
     private void AtaqueFacao()
@@ -255,6 +305,7 @@ public class Boss : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(ataquePoint.position, ataqueRange);
+        Gizmos.DrawWireSphere(repelirPoint.position, repelirRange);
     }
 
     public void CriarRajada()

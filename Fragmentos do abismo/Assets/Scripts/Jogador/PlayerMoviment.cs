@@ -14,13 +14,15 @@ public class jogador : MonoBehaviour
     [SerializeField] bool inFloor = true;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
-     public Animator anim;
+    public Animator anim;
 
-     public float KBforce;
-     public float KBCount;
-     public float KBTime;
+    public float KBforce;
+    public float KBCount;
+    public float KBTime;
+    private float kbForceNormal; 
 
     public bool isKnockRight;
+    
 
     public bool isInvencivel = false;
     
@@ -28,6 +30,8 @@ public class jogador : MonoBehaviour
     private void Awake()
     { 
         rbPlayer = GetComponent<Rigidbody2D>();    // GetComponent le o componente RIgidbody2s dentro de jogador
+
+        kbForceNormal = KBforce;
     }
 
     private void Update()
@@ -74,6 +78,7 @@ public class jogador : MonoBehaviour
     {
         if(KBCount < 0)                                                         // Verifica se o tempo do Knockback acabou
         {
+            KBforce = kbForceNormal;
             Move();                                                             // Permite o jogador se mover normalmente
         }
         else
