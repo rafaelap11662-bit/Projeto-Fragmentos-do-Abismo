@@ -3,7 +3,7 @@ using UnityEngine;
 public class BossAnimation : MonoBehaviour
 {
    private Boss boss;
-   public GameObject Explosao;
+   public GameObject Explosao; // PreBab Explosao
 
    private void Awake()
     {
@@ -38,6 +38,21 @@ public class BossAnimation : MonoBehaviour
     public void DesativarExplosao()
     {
         Explosao.SetActive(false);
+    }
+
+    public void AtivarInvencibilidade()
+    {
+        boss.AtivarIvencibilidade();
+    }
+
+    public void DesativarInvencibilidade()
+    {
+        boss.DesativarIvencibilidade();
+    }
+
+    public void AbrirBarreira()
+    {
+        boss.AbrirBarreira();
     }
     
 }

@@ -68,7 +68,17 @@ public class AtackPlayer : MonoBehaviour
         
         foreach(Collider2D inimigo in hitInimigos)                      // Percorre todos os inimigos atingidos
         {
-            inimigo.GetComponent<MorteInimigo>().danoInimigo(1);        // Chama a função de dano no inimigo
+
+            Boss boss = inimigo.GetComponent<Boss>();
+
+            if (boss != null)
+            {
+                boss.ReceberDano(1);
+            }
+            else
+            {
+                inimigo.GetComponent<MorteInimigo>().danoInimigo(1);        // Chama a função de dano no inimigo
+            }
 
             Vector2 direcaoKnockback = (inimigo.transform.position - transform.position).normalized;         // Calcula a direção do knockback
 

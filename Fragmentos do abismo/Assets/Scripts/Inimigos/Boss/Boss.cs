@@ -4,6 +4,8 @@ public class Boss : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private BossArena arena;
+    
 
     [Header("MOVIMENTAÇÃO")]
     [SerializeField] private float velocidade;
@@ -36,8 +38,13 @@ public class Boss : MonoBehaviour
     private EstadoBoss estadoAtual = EstadoBoss.DECIDINDO;
     private TipoAtaque ataqueAtual;
 
+    [Header("VIDA DO BOSS")]
+    [SerializeField] private int vidaAtual;
+    private bool morreu = false;
+
 
     private bool executandoAtaque = false;
+    private bool invencivel = false;
     
     private Rigidbody2D rb;
     private Transform player;
@@ -74,7 +81,7 @@ public class Boss : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(player == null)
+        if(morreu ||player == null)
             return;
 
 
@@ -245,7 +252,7 @@ public class Boss : MonoBehaviour
     private void AtaqueRajada()
     {
         anim.SetTrigger("isRajadaAtk");
-        Debug.Log("Ataque rajada");
+        //Debug.Log("Ataque rajada");
     }
 
 
@@ -254,7 +261,7 @@ public class Boss : MonoBehaviour
         executandoAtaque = false;
         estadoAtual = EstadoBoss.ESPERANDO;
 
-        Invoke(nameof(VoltarDecidir), 2f);
+        Invoke(nameof(VoltarDecidir), 1f);
     }
 
     public void VoltarDecidir()
@@ -318,4 +325,47 @@ public class Boss : MonoBehaviour
 
         rajada.ConfigurarDirecao(direcao, this);
     }
+
+    public void AtivarIvencibilidade()
+    {
+        invencivel = true;
+    }
+    public void DesativarIvencibilidade()
+    {
+        invencivel = false;
+    }
+
+    public void ReceberDano(int dano)
+    {
+        if (morreu || invencivel)
+            return;
+
+        vidaAtual -= dano;
+
+        if(vidaAtual <= 0)
+        {
+            Morreu();
+        }
+    }
+
+    private void Morreu()
+    {
+        if (morreu)
+            return;
+
+        morreu = true;
+
+        rb.linearVelocity = Vector2.zero;
+        
+        anim.SetBool("isRun", false);
+        anim.SetTrigger("isDead");
+
+        Debug.Log("Boss morreu");
+    }
+
+    public void AbrirBarreira()
+    {
+        arena.AbrirBarreira();
+    }
+
 }

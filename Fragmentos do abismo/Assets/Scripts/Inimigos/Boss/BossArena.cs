@@ -23,5 +23,11 @@ public class BossArena : MonoBehaviour
         spawnBoss.SetActive(true); 
 
         GameController.instance.checkpointAtual = checkPointBoss; 
+
+    }
+
+    public void AbrirBarreira()
+    {
+        barreiraBoss.SetActive(false);
     }
 }
