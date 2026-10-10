@@ -40,9 +40,10 @@ public class Boss : MonoBehaviour
 
     [Header("VIDA DO BOSS")]
     [SerializeField] private int vidaAtual;
+    private int vidaInicial;
     private bool morreu = false;
 
-
+    private Vector2 posicaoInicial;
     private bool executandoAtaque = false;
     private bool invencivel = false;
     
@@ -53,6 +54,8 @@ public class Boss : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        vidaInicial = vidaAtual;
+        posicaoInicial = transform.position;
     }
 
     private void Update()
@@ -363,9 +366,35 @@ public class Boss : MonoBehaviour
         Debug.Log("Boss morreu");
     }
 
-    public void AbrirBarreira()
+    public void AbrirBarreira() // Metodo para o BossAnimation chamar e abrir a barreira da arena
     {
         arena.AbrirBarreira();
     }
 
+
+    public void ReiniciarBoss()
+    {
+        CancelInvoke(nameof(VoltarDecidir));
+
+        vidaAtual = vidaInicial;
+
+        morreu = false;
+        invencivel = false;
+        executandoAtaque = false;
+
+        estadoAtual = EstadoBoss.DECIDINDO;
+        ataqueAtual = TipoAtaque.FACAO;
+        dano = danoFacao;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        anim.Rebind();
+        anim.Update(0f);
+
+        anim.SetBool("isRun", false);
+        Debug.Log("Boss reiniciando");
+
+        rb.position = posicaoInicial;
+    }
 }

@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI mortesText;
     public int mortes = 0;
 
+    public BossArena bossArenaAtiva;
+
 
 
     void Start()
@@ -44,22 +46,28 @@ public class GameController : MonoBehaviour
         Rigidbody2D rb = coracao.GetComponent<Rigidbody2D>(); 
         AtackPlayer ataque = coracao.GetComponent<AtackPlayer>();
         
-        jogador.KBCount = -1f;  
-        jogador.isKnockRight = false;
-
         coracao.vida = coracao.vidaMaxima; 
 
         coracao.transform.position = checkpointAtual.position;
-
+ 
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
+        
+        jogador.KBCount = -1f;  
+        jogador.isKnockRight = false;
 
         jogador.anim.SetBool("IsDead", false); 
-
         jogador.enabled = true; 
         ataque.enabled = true;
-
         coracao.isDead = false;
+
+        if (mortes >= 5 && bossArenaAtiva != null)
+        {
+            bossArenaAtiva.ReiniciarBatalha();
+
+            mortes = 0;
+            UpdateMortesText();
+        }
     }
 
     public void registrarMorte()
@@ -70,7 +78,16 @@ public class GameController : MonoBehaviour
 
         if (mortes >= 5)
         {
-            reiniciarJogo();
+            if (bossArenaAtiva != null)
+            {
+                checkpointAtual = bossArenaAtiva.GetCheckpointBoss();
+
+                return;
+            }
+            else
+            {
+                reiniciarJogo();
+            }
         }
     }
 

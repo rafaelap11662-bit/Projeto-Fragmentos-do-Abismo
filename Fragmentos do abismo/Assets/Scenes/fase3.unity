@@ -634,6 +634,10 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3672365091064406567, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
+      propertyPath: m_LinearDamping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4051250019111463655, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_Name
       value: jogador
@@ -648,11 +652,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 253.15
+      value: 252.6
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -77.79
+      value: -77.8
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1711,7 +1715,7 @@ GameObject:
   - component: {fileID: 631804106}
   - component: {fileID: 631804105}
   - component: {fileID: 631804107}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpriteBOSS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,7 +1840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 641820744}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RepelirPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2837,7 +2841,7 @@ Transform:
   m_GameObject: {fileID: 1106660349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 256.1786, y: -77.26877, z: -10}
+  m_LocalPosition: {x: 253.01268, y: -77.05477, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2876,6 +2880,7 @@ MonoBehaviour:
   spawnBoss: {fileID: 1665118052}
   barreiraBoss: {fileID: 627215010}
   checkPointBoss: {fileID: 496630456}
+  boss: {fileID: 1665118056}
 --- !u!4 &1109930094
 Transform:
   m_ObjectHideFlags: 0
@@ -3144,7 +3149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1229206104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RajadaPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3324,6 +3329,7 @@ MonoBehaviour:
   temChave: 0
   mortesText: {fileID: 812012722}
   mortes: 0
+  bossArenaAtiva: {fileID: 0}
 --- !u!4 &1395664102
 Transform:
   m_ObjectHideFlags: 0
@@ -3631,7 +3637,7 @@ MonoBehaviour:
   ataqueRange: 0.8
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   dano: 1
   wallCheck: {fileID: 1341255638}
   wallDistance: 0.1
@@ -4478,7 +4484,8 @@ GameObject:
   - component: {fileID: 1665118055}
   - component: {fileID: 1665118057}
   - component: {fileID: 1665118056}
-  m_Layer: 0
+  - component: {fileID: 1665118058}
+  m_Layer: 7
   m_Name: BOSS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4555,24 +4562,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Boss
   anim: {fileID: 631804105}
   sprite: {fileID: 631804106}
+  arena: {fileID: 1109930092}
   velocidade: 3
-  distanciaMinima: 3
-  distanciaAtaque: 4
+  distanciaMinima: 4
+  distanciaAtaque: 5
   distanciaRajada: 7
-  distanciaRepelir: 3
+  distanciaRepelir: 4
   ataquePoint: {fileID: 1801016741}
-  ataqueRange: 4
+  ataqueRange: 2
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
   danoFacao: 2
   danoRajada: 1
-  danoRepelir: 0
-  repelirRange: 2
-  knockbackRepelir: 15
+  danoRepelir: 3
+  repelirRange: 5
+  knockbackRepelir: 20
   repelirPoint: {fileID: 641820744}
   rajadaPrefab: {fileID: 5320720827678926415, guid: de55e893175675e48b1bf0593991f5e0, type: 3}
   rajadaPoint: {fileID: 1229206104}
+  vidaAtual: 2
 --- !u!50 &1665118057
 Rigidbody2D:
   serializedVersion: 5
@@ -4588,7 +4597,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -4600,6 +4609,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1665118058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665118052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c4c2169e41ecf4aabf1baee9c950fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KBInimigo
+  knockbackForce: 5
+  knockbackUp: 0
 --- !u!1 &1718272144
 GameObject:
   m_ObjectHideFlags: 0
@@ -217458,7 +217481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1801016741}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AtaquePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217474,7 +217497,7 @@ Transform:
   m_GameObject: {fileID: 1801016740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.14, y: -0.33, z: 0}
+  m_LocalPosition: {x: -3.23, y: -0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -217690,7 +217713,7 @@ Transform:
   m_GameObject: {fileID: 1933644959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 256.1786, y: -77.26877, z: -10}
+  m_LocalPosition: {x: 253.01268, y: -77.05477, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -221340,6 +221363,10 @@ PrefabInstance:
     - target: {fileID: 5975996792881940546, guid: 33e99af1f4007bd4a908adcea3956948, type: 3}
       propertyPath: m_Name
       value: Explosao
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975996792881940546, guid: 33e99af1f4007bd4a908adcea3956948, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5975996792881940546, guid: 33e99af1f4007bd4a908adcea3956948, type: 3}
       propertyPath: m_IsActive
