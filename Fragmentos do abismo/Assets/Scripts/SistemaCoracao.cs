@@ -37,6 +37,7 @@ public class SistemaCoracao : MonoBehaviour
             coracao[i].enabled = i < vidaMaxima;
         }
     }
+     
     void StatusMorte() // Verifica se o jogador morreu e executa as ações correspondentes
     {
         if (vida <= 0 && !isDead) // Verifica se a vida é menor ou igual a 0 e se o jogador ainda não está marcado como morto
@@ -51,12 +52,22 @@ public class SistemaCoracao : MonoBehaviour
             GetComponent<AtackPlayer>().enabled = false;  
             jogador.anim.SetBool("IsDead", true);
         
-            Invoke(nameof(ChamarRespawn), 1.0f);
         }
     }
 
     void ChamarRespawn()
     {
         GameController.instance.RespawnPlayer(this);
+    }
+
+    public void FinalizarMorte()
+    {
+        if (GameController.instance.mortes >= 5)
+        {
+            GameController.instance.MostrarPainelGameOver();
+            return;
+        }
+
+        ChamarRespawn();
     }
 }

@@ -264,7 +264,7 @@ public class Boss : MonoBehaviour
         executandoAtaque = false;
         estadoAtual = EstadoBoss.ESPERANDO;
 
-        Invoke(nameof(VoltarDecidir), 1f);
+        Invoke(nameof(VoltarDecidir), 0f);
     }
 
     public void VoltarDecidir()

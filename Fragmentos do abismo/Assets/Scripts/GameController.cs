@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     public Transform checkpointAtual;
     public Transform checkpointInicial;
 
+    public GameObject painelGameOver;
+
     public bool temChave = false;
 
     public static GameController instance;
@@ -47,7 +49,6 @@ public class GameController : MonoBehaviour
         AtackPlayer ataque = coracao.GetComponent<AtackPlayer>();
         
         coracao.vida = coracao.vidaMaxima; 
-
         coracao.transform.position = checkpointAtual.position;
  
         rb.linearVelocity = Vector2.zero;
@@ -56,21 +57,14 @@ public class GameController : MonoBehaviour
         jogador.KBCount = -1f;  
         jogador.isKnockRight = false;
 
-        jogador.anim.SetBool("IsDead", false); 
+        jogador.anim.SetBool("IsDead", false);
+        jogador.anim.ResetTrigger("TakeDamage");
         jogador.enabled = true; 
         ataque.enabled = true;
         coracao.isDead = false;
-
-        if (mortes >= 5 && bossArenaAtiva != null)
-        {
-            bossArenaAtiva.ReiniciarBatalha();
-
-            mortes = 0;
-            UpdateMortesText();
-        }
     }
 
-    public void registrarMorte()
+     public void registrarMorte()
     {
         
         mortes++;
@@ -81,18 +75,37 @@ public class GameController : MonoBehaviour
             if (bossArenaAtiva != null)
             {
                 checkpointAtual = bossArenaAtiva.GetCheckpointBoss();
-
-                return;
-            }
-            else
-            {
-                reiniciarJogo();
             }
         }
     }
 
-    public void reiniciarJogo()
+    public void BotaoReiniciar()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
+
+        if(bossArenaAtiva != null)
+        {
+            painelGameOver.SetActive(false);
+
+            mortes = 0;
+            UpdateMortesText();
+
+            SistemaCoracao coracao = FindAnyObjectByType<SistemaCoracao>();
+
+            if (coracao != null)
+            {
+                RespawnPlayer(coracao);
+            }
+
+            bossArenaAtiva.ReiniciarBatalha();
+            return;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);  
+    }
+
+    public void MostrarPainelGameOver()
+    {
+        painelGameOver.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
