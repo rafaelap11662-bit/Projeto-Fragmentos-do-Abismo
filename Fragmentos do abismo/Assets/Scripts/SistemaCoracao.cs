@@ -60,7 +60,7 @@ public class SistemaCoracao : MonoBehaviour
         GameController.instance.RespawnPlayer(this);
     }
 
-    public void FinalizarMorte()
+    public void FinalizarMorte() //chamado pelo evento de animação da morte
     {
         if (GameController.instance.mortes >= 5)
         {

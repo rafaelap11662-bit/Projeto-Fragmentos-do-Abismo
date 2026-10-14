@@ -11,6 +11,10 @@ public class GameController : MonoBehaviour
     public Transform checkpointInicial;
 
     public GameObject painelGameOver;
+    public GameObject painelPauseMenu;
+    public GameObject painelHUD;
+
+    private bool pause = false;
 
     public bool temChave = false;
 
@@ -30,6 +34,16 @@ public class GameController : MonoBehaviour
         checkpointAtual = checkpointInicial;
         UpdateMortesText();
     }
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            AlternarPause();
+        }
+    }
+
+    
 
     public void UpdateScoreText()
     {
@@ -64,7 +78,7 @@ public class GameController : MonoBehaviour
         coracao.isDead = false;
     }
 
-     public void registrarMorte()
+     public void registrarMorte() 
     {
         
         mortes++;
@@ -79,7 +93,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void BotaoReiniciar()
+    public void BotaoReiniciar() //Botao reiniciar do painel GameOver
     {
         Time.timeScale = 1f;
 
@@ -107,5 +121,19 @@ public class GameController : MonoBehaviour
     {
         painelGameOver.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void AlternarPause() //botao Continuar do pause
+    {
+        pause = !pause;
+        painelPauseMenu.SetActive(pause);
+        painelHUD.SetActive(!pause);
+        Time.timeScale = pause ? 0f : 1f;
+    }
+    
+    public void BotaoMenu() //botao MENU do pause
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MenuPrincipal");
     }
 }
