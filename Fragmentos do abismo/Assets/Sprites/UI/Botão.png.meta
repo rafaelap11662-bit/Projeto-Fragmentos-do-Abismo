@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 03357080a9ae7fd439278007f2210b18
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5552118531381489681
+    second: "Bot\xE3o_0"
+  - first:
+      213: -7792726124566442416
+    second: "Bot\xE3o_1"
+  - first:
+      213: -8638299324861934013
+    second: "Bot\xE3o_2"
+  - first:
+      213: 7964854713820861650
+    second: "Bot\xE3o_3"
+  - first:
+      213: 6890027277550389296
+    second: "Bot\xE3o_4"
+  - first:
+      213: 6003010105037868717
+    second: "Bot\xE3o_5"
+  - first:
+      213: 278222076403027618
+    second: "Bot\xE3o_6"
+  - first:
+      213: -1611070919938162936
+    second: "Bot\xE3o_7"
+  - first:
+      213: 260779342790598423
+    second: "Bot\xE3o_8"
+  - first:
+      213: 1159146817142681873
+    second: "Bot\xE3o_9"
+  - first:
+      213: 9125248672351087710
+    second: "Bot\xE3o_10"
+  - first:
+      213: 4342938593489305431
+    second: "Bot\xE3o_11"
+  - first:
+      213: 8428779924603352226
+    second: "Bot\xE3o_12"
+  - first:
+      213: 4289962878837757042
+    second: "Bot\xE3o_13"
+  - first:
+      213: -6965978328747140141
+    second: "Bot\xE3o_14"
+  - first:
+      213: -7599289028761172850
+    second: "Bot\xE3o_15"
+  - first:
+      213: -1266215171613970991
+    second: "Bot\xE3o_16"
+  - first:
+      213: -7023939646316435469
+    second: "Bot\xE3o_17"
+  - first:
+      213: 6750190022668820212
+    second: "Bot\xE3o_18"
+  - first:
+      213: 8700989192388995074
+    second: "Bot\xE3o_19"
+  - first:
+      213: -1673644980639176163
+    second: "Bot\xE3o_20"
+  - first:
+      213: -8631432511321618375
+    second: "Bot\xE3o_21"
+  - first:
+      213: -1982482066999025674
+    second: "Bot\xE3o_22"
+  - first:
+      213: 2008015352363459093
+    second: "Bot\xE3o_23"
+  - first:
+      213: -3732615430431283928
+    second: "Bot\xE3o_24"
+  - first:
+      213: 4922435003801252337
+    second: "Bot\xE3o_25"
+  - first:
+      213: 4481301353437420829
+    second: "Bot\xE3o_26"
+  - first:
+      213: -9107095688024219895
+    second: "Bot\xE3o_27"
+  - first:
+      213: 134149496362483343
+    second: "Bot\xE3o_28"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Bot\xE3o_0"
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 141
+        width: 1852
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef8422bc99e2f2b0800000000000000
+      internalID: -5552118531381489681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6bab5a09a94ef344195dc557d6b415bc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1983.0,"y":793.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      "Bot\xE3o_0": -5552118531381489681
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

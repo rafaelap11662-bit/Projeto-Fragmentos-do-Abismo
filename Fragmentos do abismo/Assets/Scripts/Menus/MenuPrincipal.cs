@@ -15,4 +15,11 @@ public class MenuPrincipal : MonoBehaviour
         Application.Quit();
         Debug.Log("Fecho o joguin");
     }
+
+    public void ContinuarJogo()
+    {
+        string faseSalva = PlayerPrefs.GetString("FaseSalva", "Fase1");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(faseSalva);
+    }
 }

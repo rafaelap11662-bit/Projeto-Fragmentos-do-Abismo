@@ -26,13 +26,16 @@ public class GameController : MonoBehaviour
     public BossArena bossArenaAtiva;
 
 
-
+    
     void Start()
     {
         instance = this;
 
         checkpointAtual = checkpointInicial;
         UpdateMortesText();
+
+        ResetarSave();
+        SalvarJogo(SceneManager.GetActiveScene().name);
     }
     
     void Update()
@@ -44,7 +47,6 @@ public class GameController : MonoBehaviour
     }
 
     
-
     public void UpdateScoreText()
     {
         scoreText.text = totalScore.ToString();
@@ -53,6 +55,27 @@ public class GameController : MonoBehaviour
     public void UpdateMortesText()
     {
         mortesText.text = mortes + "/5";
+    }
+
+
+    public void SalvarJogo(string nomeFase)
+    {
+        int faseAtual = int.Parse(nomeFase.Replace("fase", ""));
+
+        string faseSalva = PlayerPrefs.GetString("FaseSalva", "fase1");
+        int progressoSalvo = int.Parse(faseSalva.Replace("fase", ""));
+
+        if(faseAtual > progressoSalvo)
+        {
+            PlayerPrefs.SetString("FaseSalva", nomeFase);
+            PlayerPrefs.Save();
+        }
+    }
+
+    public void ResetarSave()
+    {
+        PlayerPrefs.DeleteKey("FaseSalva");
+        PlayerPrefs.Save();
     }
 
 
