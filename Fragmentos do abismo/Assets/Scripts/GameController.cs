@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         checkpointAtual = checkpointInicial;
         UpdateMortesText();
 
-        ResetarSave();
+        //ResetarSave();
         SalvarJogo(SceneManager.GetActiveScene().name);
     }
     
@@ -61,8 +61,7 @@ public class GameController : MonoBehaviour
     public void SalvarJogo(string nomeFase)
     {
         int faseAtual = int.Parse(nomeFase.Replace("fase", ""));
-
-        string faseSalva = PlayerPrefs.GetString("FaseSalva", "fase1");
+        string faseSalva = PlayerPrefs.GetString("FaseSalva", "fase1"); 
         int progressoSalvo = int.Parse(faseSalva.Replace("fase", ""));
 
         if(faseAtual > progressoSalvo)

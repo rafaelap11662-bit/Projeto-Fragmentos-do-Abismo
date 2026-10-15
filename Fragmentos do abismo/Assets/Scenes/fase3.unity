@@ -2155,7 +2155,7 @@ Transform:
   m_GameObject: {fileID: 641820743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3581,7 +3581,7 @@ Transform:
   m_GameObject: {fileID: 1106660349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 251.61345, y: -77.178764, z: -10}
+  m_LocalPosition: {x: 251.61378, y: -77.178764, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6040,7 +6040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1665118054
 Transform:
   m_ObjectHideFlags: 0
@@ -6130,7 +6130,7 @@ MonoBehaviour:
   repelirPoint: {fileID: 641820744}
   rajadaPrefab: {fileID: 5320720827678926415, guid: de55e893175675e48b1bf0593991f5e0, type: 3}
   rajadaPoint: {fileID: 1229206104}
-  vidaAtual: 2
+  vidaAtual: 50
 --- !u!50 &1665118057
 Rigidbody2D:
   serializedVersion: 5
@@ -6170,7 +6170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c4c2169e41ecf4aabf1baee9c950fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KBInimigo
-  knockbackForce: 5
+  knockbackForce: 7
   knockbackUp: 0
 --- !u!1 &1718272144
 GameObject:
@@ -219491,7 +219491,7 @@ Transform:
   m_GameObject: {fileID: 1933644959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 251.61345, y: -77.178764, z: -10}
+  m_LocalPosition: {x: 251.61378, y: -77.178764, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -219536,7 +219536,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 27.2, y: 33.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1943509412
 MonoBehaviour:

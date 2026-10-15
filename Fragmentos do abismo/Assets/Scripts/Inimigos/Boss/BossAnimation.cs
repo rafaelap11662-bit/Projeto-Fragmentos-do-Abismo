@@ -54,5 +54,10 @@ public class BossAnimation : MonoBehaviour
     {
         boss.AbrirBarreira();
     }
+
+    public void FinalizarDano()
+    {
+        boss.FinalizarDano();
+    }
     
 }

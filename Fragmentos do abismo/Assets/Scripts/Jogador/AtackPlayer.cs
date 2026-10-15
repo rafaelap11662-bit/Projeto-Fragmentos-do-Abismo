@@ -26,7 +26,7 @@ public class AtackPlayer : MonoBehaviour
             combo = 0;                                          // Reseta o combo caso o tempo acabe
         }
 
-        if(Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.JoystickButton2) && podeAtacar)                         // Verifica se a tecla K foi pressionada
+        if((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.JoystickButton2)) && podeAtacar)                         // Verifica se a tecla K foi pressionada
         {
             Ataque();                                           // Chama a função de ataque
         }
@@ -90,7 +90,7 @@ public class AtackPlayer : MonoBehaviour
             }
         }
 
-        Invoke(nameof(liberarAtaque), 0.2f);                            // Permite que o jogador ataque novamente após um curto período de tempo
+        Invoke(nameof(liberarAtaque), 0.4f);                            // Permite que o jogador ataque novamente após um curto período de tempo
     }
 
     private void liberarAtaque()

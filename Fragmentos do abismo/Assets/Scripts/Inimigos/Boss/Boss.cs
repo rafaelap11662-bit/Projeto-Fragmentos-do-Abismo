@@ -51,6 +51,7 @@ public class Boss : MonoBehaviour
     private Transform player;
 
 
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -73,7 +74,8 @@ public class Boss : MonoBehaviour
         PERSEGUINDO,
         ATACANDO,
         REPELIR,
-        ESPERANDO
+        ESPERANDO,
+        TOMANDO_DANO
     }
 
     private enum TipoAtaque
@@ -108,6 +110,10 @@ public class Boss : MonoBehaviour
         if(estadoAtual == EstadoBoss.REPELIR)
         {
             IniciarRepelir();
+        }
+        if(estadoAtual == EstadoBoss.TOMANDO_DANO)
+        {
+            return;
         }
     }
 
@@ -264,7 +270,7 @@ public class Boss : MonoBehaviour
         executandoAtaque = false;
         estadoAtual = EstadoBoss.ESPERANDO;
 
-        Invoke(nameof(VoltarDecidir), 0f);
+        Invoke(nameof(VoltarDecidir), 1f);
     }
 
     public void VoltarDecidir()
@@ -348,7 +354,22 @@ public class Boss : MonoBehaviour
         if(vidaAtual <= 0)
         {
             Morreu();
+            return;
         }
+        estadoAtual = EstadoBoss.TOMANDO_DANO;
+        executandoAtaque = true;
+
+        anim.SetBool("isRun", false);
+        anim.SetTrigger("isHit");
+
+    }
+    public void FinalizarDano()
+    {
+        if (morreu)
+            return;
+
+        executandoAtaque = false;
+        estadoAtual = EstadoBoss.DECIDINDO;
     }
 
     private void Morreu()
