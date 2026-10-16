@@ -10,6 +10,11 @@ public class Boss : MonoBehaviour
     [Header("MOVIMENTAÇÃO")]
     [SerializeField] private float velocidade;
     [SerializeField] private float distanciaMinima;
+
+    [Header("SEGUNDA FASE")]
+    [SerializeField] private float multiVelocidadeFase2 = 1.5f;
+    private bool segundaFase = false;
+
     
     [Header("DISTANCIAS DE ATAQUE")]
     [SerializeField] private float distanciaAtaque;
@@ -34,14 +39,15 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject rajadaPrefab;
     [SerializeField] private Transform rajadaPoint;
 
+    [Header("VIDA DO BOSS")]
+    [SerializeField] private int vidaAtual;
+    private int vidaInicial = 20;
+    private bool morreu = false;
+
     [Header("ESTADOS DO BOSS")]
     private EstadoBoss estadoAtual = EstadoBoss.DECIDINDO;
     private TipoAtaque ataqueAtual;
 
-    [Header("VIDA DO BOSS")]
-    [SerializeField] private int vidaAtual;
-    private int vidaInicial;
-    private bool morreu = false;
 
     private Vector2 posicaoInicial;
     private bool executandoAtaque = false;
@@ -55,7 +61,7 @@ public class Boss : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        vidaInicial = vidaAtual;
+        vidaAtual = vidaInicial;
         posicaoInicial = transform.position;
     }
 
@@ -194,8 +200,9 @@ public class Boss : MonoBehaviour
         if(executandoAtaque)
             return;
 
-
         executandoAtaque = true;
+
+        anim.SetBool("isRun", false);
 
         if(ataqueAtual == TipoAtaque.RAJADA)
         {
@@ -351,6 +358,14 @@ public class Boss : MonoBehaviour
 
         vidaAtual -= dano;
 
+        if (!segundaFase && vidaAtual <= vidaInicial / 2)
+        {
+            segundaFase = true;
+            velocidade *= multiVelocidadeFase2;
+
+            Debug.Log("Segunda fase COMEÇOU!");
+        }
+
         if(vidaAtual <= 0)
         {
             Morreu();
@@ -399,12 +414,15 @@ public class Boss : MonoBehaviour
 
         vidaAtual = vidaInicial;
 
+        segundaFase = false;
+        velocidade /= multiVelocidadeFase2;
+
         morreu = false;
         invencivel = false;
         executandoAtaque = false;
 
         estadoAtual = EstadoBoss.DECIDINDO;
-        ataqueAtual = TipoAtaque.FACAO;
+        ataqueAtual = TipoAtaque.FACAO; 
         dano = danoFacao;
 
         rb.linearVelocity = Vector2.zero;
