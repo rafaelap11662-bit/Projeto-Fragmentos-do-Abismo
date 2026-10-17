@@ -955,7 +955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 251.2
+      value: 252.35
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2155,7 +2155,7 @@ Transform:
   m_GameObject: {fileID: 641820743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.09, z: 0}
+  m_LocalPosition: {x: -0.25, y: -0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3581,7 +3581,7 @@ Transform:
   m_GameObject: {fileID: 1106660349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 251.61378, y: -77.178764, z: -10}
+  m_LocalPosition: {x: 255.38498, y: -77.178764, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6058,6 +6058,7 @@ Transform:
   - {fileID: 1801016741}
   - {fileID: 1229206104}
   - {fileID: 641820744}
+  - {fileID: 2140479556}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1665118055
@@ -6114,23 +6115,29 @@ MonoBehaviour:
   arena: {fileID: 1109930092}
   velocidade: 3
   distanciaMinima: 4
+  multiVelocidadeFase2: 1.5
   distanciaAtaque: 5
   distanciaRajada: 7
   distanciaRepelir: 4
-  ataquePoint: {fileID: 1801016741}
   ataqueRange: 2
+  ataquePoint: {fileID: 1801016741}
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  danoFacao: 2
-  danoRajada: 1
-  danoRepelir: 3
+  danoFacao: 0
+  danoRajada: 0
+  danoRepelir: 0
+  danoInvestida: 1
   repelirRange: 5
   knockbackRepelir: 20
   repelirPoint: {fileID: 641820744}
   rajadaPrefab: {fileID: 5320720827678926415, guid: de55e893175675e48b1bf0593991f5e0, type: 3}
   rajadaPoint: {fileID: 1229206104}
-  vidaAtual: 50
+  InvestidaRange: 1.5
+  velocidadeInvestida: 30
+  distanciaInvestida: 7
+  investidaPoint: {fileID: 2140479556}
+  vidaAtual: 0
 --- !u!50 &1665118057
 Rigidbody2D:
   serializedVersion: 5
@@ -219491,7 +219498,7 @@ Transform:
   m_GameObject: {fileID: 1933644959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 251.61378, y: -77.178764, z: -10}
+  m_LocalPosition: {x: 255.38498, y: -77.178764, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -223387,6 +223394,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118499159}
   m_CullTransparentMesh: 1
+--- !u!1 &2140479555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140479556}
+  m_Layer: 7
+  m_Name: InvestidaPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2140479556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140479555}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.47, y: -0.13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1665118054}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3444489090949637760
 PrefabInstance:
   m_ObjectHideFlags: 0

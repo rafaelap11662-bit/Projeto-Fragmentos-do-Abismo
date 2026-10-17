@@ -22,12 +22,13 @@ public class Boss : MonoBehaviour
     [SerializeField] private float distanciaRepelir;
 
     [Header("ATAQUE")]
-    [SerializeField] private Transform ataquePoint;
     [SerializeField] private float ataqueRange;
+    [SerializeField] private Transform ataquePoint;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private int danoFacao;
     [SerializeField] private int danoRajada;
     [SerializeField] private int danoRepelir;
+    [SerializeField] private int danoInvestida;
      private int dano;
     
     [Header("REPELIR")]
@@ -39,10 +40,19 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject rajadaPrefab;
     [SerializeField] private Transform rajadaPoint;
 
+    [Header("INVESTIDA")]
+    [SerializeField] private float InvestidaRange;
+    [SerializeField] private float velocidadeInvestida;
+    [SerializeField] private float distanciaInvestida;
+    [SerializeField] private Transform investidaPoint;
+
+    
+
     [Header("VIDA DO BOSS")]
     [SerializeField] private int vidaAtual;
     private int vidaInicial = 20;
     private bool morreu = false;
+
 
     [Header("ESTADOS DO BOSS")]
     private EstadoBoss estadoAtual = EstadoBoss.DECIDINDO;
@@ -51,6 +61,7 @@ public class Boss : MonoBehaviour
 
     private Vector2 posicaoInicial;
     private bool executandoAtaque = false;
+    private bool executandoInvestida = false;
     private bool invencivel = false;
     
     private Rigidbody2D rb;
@@ -87,14 +98,17 @@ public class Boss : MonoBehaviour
     private enum TipoAtaque
     {
         RAJADA,
-        FACAO
+        FACAO,
+        INVESTIDA
     }
 
     private void FixedUpdate()
     {
         if(morreu ||player == null)
             return;
-
+        
+        if (executandoInvestida)
+        return;
 
         if (!executandoAtaque) 
         {
@@ -130,12 +144,14 @@ public class Boss : MonoBehaviour
             sprite.flipX = true;
             ataquePoint.localPosition = new Vector2(Mathf.Abs(ataquePoint.localPosition.x), ataquePoint.localPosition.y);
             rajadaPoint.localPosition = new Vector2(Mathf.Abs(rajadaPoint.localPosition.x), rajadaPoint.localPosition.y);
+            investidaPoint.localPosition = new Vector2(Mathf.Abs(investidaPoint.localPosition.x), investidaPoint.localPosition.y);
         }
         else
         {
             sprite.flipX = false;
             ataquePoint.localPosition = new Vector2(-Mathf.Abs(ataquePoint.localPosition.x), ataquePoint.localPosition.y);
             rajadaPoint.localPosition = new Vector2(-Mathf.Abs(rajadaPoint.localPosition.x), rajadaPoint.localPosition.y);
+            investidaPoint.localPosition = new Vector2(-Mathf.Abs(investidaPoint.localPosition.x), investidaPoint.localPosition.y);
 
 
         }
@@ -165,10 +181,20 @@ public class Boss : MonoBehaviour
     private void EscolherAcao()
     {
         float distancia = Vector2.Distance(transform.position, player.position); // calcula a distancia entre o boss e o player
-
-        if(distancia >= distanciaRajada) 
+        if (segundaFase && distancia >= distanciaInvestida)
         {
-            int escolha = Random.Range(0, 2);
+            int escolha = Random.Range(0, 3);
+
+            if (escolha == 0)
+            {
+                ataqueAtual = TipoAtaque.INVESTIDA;
+                estadoAtual = EstadoBoss.ATACANDO;
+                return;
+            }
+        }
+        if(distancia >= distanciaRajada) 
+        {   
+            int escolha = Random.Range(0, 3);
 
             if(escolha == 0)
             {
@@ -206,13 +232,18 @@ public class Boss : MonoBehaviour
 
         if(ataqueAtual == TipoAtaque.RAJADA)
         {
-            AtaqueRajada();
             dano = danoRajada;
+            AtaqueRajada();
         }   
         if(ataqueAtual == TipoAtaque.FACAO)
         {
-            AtaqueFacao();
             dano = danoFacao;
+            AtaqueFacao();
+        }
+        if(ataqueAtual == TipoAtaque.INVESTIDA)
+        {
+            dano = danoInvestida;
+            IniciarInvestida();
         }
     }
     private void IniciarRepelir()
@@ -253,11 +284,8 @@ public class Boss : MonoBehaviour
                     player.receberDano(danoRepelir);
                     player.anim.SetTrigger("TakeDamage");
                     StartCoroutine(player.Invencibilidade());
-                
             }
         }
-
-
     }
 
     private void AtaqueFacao()
@@ -272,8 +300,14 @@ public class Boss : MonoBehaviour
     }
 
 
-    public void FinalizarAtaque()
+    public void FinalizarAtaque() 
     {
+        if (executandoInvestida)
+        {
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            executandoInvestida = false;
+        }
+
         executandoAtaque = false;
         estadoAtual = EstadoBoss.ESPERANDO;
 
@@ -285,12 +319,17 @@ public class Boss : MonoBehaviour
         estadoAtual = EstadoBoss.DECIDINDO;
     }
 
-    public void CausarDano() // Metodo para o BossAnimation.cs chamar e causar dano no player FACAO
+    public void CausarDanoFacao() // Metodo para o BossAnimation.cs chamar e causar dano no player FACAO
     {
         Collider2D PlayerCollider = Physics2D.OverlapCircle(ataquePoint.position, ataqueRange, playerLayer);
-
         CausarDano(PlayerCollider);
     }
+    public void CausarDanoInvestida() // esse nao chama pela animacao
+    {
+        Collider2D PlayerCollider = Physics2D.OverlapCircle(investidaPoint.position, InvestidaRange, playerLayer);
+        CausarDano(PlayerCollider);
+    }
+
 
     public void CausarDano(Collider2D PlayerCollider) // Metodo para o BossAnimation.cs chamar e causar dano no player
     {
@@ -329,6 +368,7 @@ public class Boss : MonoBehaviour
 
         Gizmos.DrawWireSphere(ataquePoint.position, ataqueRange);
         Gizmos.DrawWireSphere(repelirPoint.position, repelirRange);
+        Gizmos.DrawWireSphere(investidaPoint.position, InvestidaRange);
     }
 
     public void CriarRajada()
@@ -376,8 +416,8 @@ public class Boss : MonoBehaviour
 
         anim.SetBool("isRun", false);
         anim.SetTrigger("isHit");
-
     }
+    
     public void FinalizarDano()
     {
         if (morreu)
@@ -435,5 +475,19 @@ public class Boss : MonoBehaviour
         Debug.Log("Boss reiniciando");
 
         rb.position = posicaoInicial;
+    }
+
+    public void IniciarInvestida()
+    {
+        executandoInvestida = true;
+
+        float direcaoInvestida = player.position.x > transform.position.x ? 1f : -1f; 
+
+        sprite.flipX = direcaoInvestida > 0; 
+
+        rb.linearVelocity = new Vector2(direcaoInvestida * velocidadeInvestida, 0f);
+
+        anim.ResetTrigger("isInvestida");
+        anim.SetTrigger("isInvestida"); 
     }
 }

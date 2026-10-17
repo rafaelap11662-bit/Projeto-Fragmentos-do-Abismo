@@ -17,7 +17,7 @@ public class BossAnimation : MonoBehaviour
 
     public void CausarDano()
     {
-        boss.CausarDano();
+        boss.CausarDanoFacao();
     }
 
     public void CriarRajada()
@@ -58,6 +58,11 @@ public class BossAnimation : MonoBehaviour
     public void FinalizarDano()
     {
         boss.FinalizarDano();
+    }
+
+    public void CausarDanoInvestida()
+    {
+        boss.CausarDanoInvestida();
     }
     
 }
