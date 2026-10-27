@@ -77,13 +77,13 @@ public class Demonoide : MonoBehaviour
         MudarDirecao(currentTarget);
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, visao);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(ataquePoint.position, ataqueRange);
         Gizmos.color = Color.white;
-    }
+    }*/
 
     private void ProcurarPlayer()
     {

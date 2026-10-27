@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Goblin : MonoBehaviour
 {
+     private Rigidbody2D rb;
     [SerializeField] private float perseguicao = 3f;
     [SerializeField] private float speed;
     [SerializeField] private bool ground = true;
@@ -23,9 +24,16 @@ public class Goblin : MonoBehaviour
     [SerializeField] private int dano;
     private bool atacando = false;    
 
+    [Header ("DETECÇÃO DE PAREDE")]
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private float wallDistance;
+    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private float forceJump;
+
     void Start()
     {
         currentTarget = targetA;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -45,6 +53,11 @@ public class Goblin : MonoBehaviour
     {
         // movimento
         transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, speed * Time.deltaTime);
+
+        if (DetectarParede())
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, forceJump);
+        }
         
         if(currentTarget == targetA && transform.position.x == targetA.position.x)
         {
@@ -57,7 +70,8 @@ public class Goblin : MonoBehaviour
         MudarDirecao(currentTarget);
     }
 
-    private void OnDrawGizmos()
+   
+   private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, visao);
         Gizmos.color = Color.red;
@@ -105,11 +119,13 @@ public class Goblin : MonoBehaviour
         {
             sprite.flipX = true;
             ataquePoint.localPosition = new Vector2(-Mathf.Abs(ataquePoint.localPosition.x), ataquePoint.localPosition.y);
+            wallCheck.localPosition = new Vector2(-Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y);
         }
         else
         {
             sprite.flipX = false;
             ataquePoint.localPosition = new Vector2(Mathf.Abs(ataquePoint.localPosition.x), ataquePoint.localPosition.y);
+            wallCheck.localPosition = new Vector2(Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y);
         }
     }
 
@@ -151,4 +167,8 @@ public class Goblin : MonoBehaviour
     Debug.Log("Ataque liberado");
     }
     
+    private bool DetectarParede()
+    {
+        return Physics2D.Raycast(wallCheck.position, transform.right, wallDistance, wallLayer);
+    }
 }
