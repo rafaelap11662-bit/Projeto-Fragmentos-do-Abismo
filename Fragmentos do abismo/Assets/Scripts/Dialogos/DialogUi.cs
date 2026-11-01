@@ -38,11 +38,15 @@ public class DialogUi : MonoBehaviour
     {
         caixaDialogo.fillAmount = 0;
         open = true;
+
+        AudioManager.Instance.BloquearCorrida();
     }
 
     public void Disable()
     {
         open = false;
         dialogText.text = "";
+
+        AudioManager.Instance.LiberarCorrida();
     }
 }

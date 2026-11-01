@@ -14,6 +14,7 @@ public class jogador : MonoBehaviour
     [SerializeField] bool inFloor = true;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
+
     public Animator anim;
 
     public float KBforce;
@@ -25,7 +26,17 @@ public class jogador : MonoBehaviour
     
 
     public bool isInvencivel = false;
-    
+
+    // Variáveis para controlar o som
+    [SerializeField] private float velocidadeMinimaPouso = 8f;
+    private float velocidadeQueda;
+    private bool estavaNoChao;
+    private bool pulou;
+
+    private void Start()
+    {
+        estavaNoChao = inFloor;
+    }
 
     private void Awake()
     { 
@@ -36,14 +47,14 @@ public class jogador : MonoBehaviour
 
     private void Update()
     {
-        inFloor = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.6f, 0.3f), 0f, groundLayer);  
-        //Debug.DrawLine(transform.position, groundCheck.position, Color.blue); 
+        inFloor = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.6f, 0.3f), 0f, groundLayer); 
+        //Debug.DrawLine(transform.position, groundCheck.position, Color.blue);
+         
 
         if (Input.GetButtonDown("Jump") && inFloor) 
            isJump = true;
         else if (Input.GetButtonUp("Jump") && rbPlayer.linearVelocity.y > 0)
            rbPlayer.linearVelocity = new Vector2(rbPlayer.linearVelocity.x, rbPlayer.linearVelocity.y * 0.5f);
-            
     }
 
     // Para visualizar a caixa de colisão do chão no editor, para ajudar 
@@ -61,6 +72,8 @@ public class jogador : MonoBehaviour
         JumpPlayer();
         MoveAnim();
         JumpAnim();
+        ControlarSomCorrida();
+        ControlarSomPouso();
     }
 
     public IEnumerator Invencibilidade() 
@@ -118,30 +131,35 @@ public class jogador : MonoBehaviour
         anim.SetFloat("HorizontalAnim", rbPlayer.linearVelocity.x);
     }
 
+
     void JumpPlayer()               //Pulo do Jogador
     {
         if (isJump){
         rbPlayer.linearVelocity = Vector2.up * jumpForce;
         isJump = false;
+
+        pulou = true;
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.TocarPulo();
         }
+
     }
+
+
     void JumpAnim()                 // Animação do pulo
     {
         anim.SetFloat("VerticalAnim", rbPlayer.linearVelocity.y);
         anim.SetBool("groundCheck", inFloor);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
 
-     void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
 
     if (collision.gameObject.tag == "FIreBox")
     {
         coracao.vida -= 1;
+        AudioManager.Instance.TocarHit();
     }
     }
     
@@ -149,6 +167,7 @@ public class jogador : MonoBehaviour
     public void receberDano (int dano) 
     {
         coracao.vida -= dano;
+        AudioManager.Instance.TocarHit();
     }
 
     public void pararJogador()
@@ -159,5 +178,41 @@ public class jogador : MonoBehaviour
 
         anim.SetFloat("HorizontalAnim", 0);
 
+    }
+
+    // =====Funçoes para controlar o som de corrida do jogador=======
+    void ControlarSomCorrida()
+    {
+        bool estaCorrendo = Mathf.Abs(rbPlayer.linearVelocity.x) > 0.1f && inFloor && KBCount < 0;
+
+         if (estaCorrendo)
+        {
+            AudioManager.Instance.TocarCorrida();
+        }
+        else
+        {
+            AudioManager.Instance.PararCorrida();
+        }
+    }
+    
+    void ControlarSomPouso()
+    {
+        if (!inFloor && rbPlayer.linearVelocity.y < 0)
+        {
+            velocidadeQueda = rbPlayer.linearVelocity.y;
+        }
+
+        if (!estavaNoChao && inFloor)
+        {
+            if (pulou || velocidadeQueda <= -velocidadeMinimaPouso)
+            {
+                AudioManager.Instance.TocarPouso();
+            }
+
+            pulou = false;
+            velocidadeQueda = 0;
+        }
+
+        estavaNoChao = inFloor;
     }
 }

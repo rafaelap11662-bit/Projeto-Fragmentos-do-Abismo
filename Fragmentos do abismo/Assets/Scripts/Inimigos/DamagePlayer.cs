@@ -3,7 +3,7 @@ using UnityEngine;
 public class DamagePlayer : MonoBehaviour
 {
     [SerializeField] int dano;
-
+    [SerializeField] private AudioClip somDoObjeto;
 
     void OnCollisionEnter2D(Collision2D collision)                              
     {
@@ -27,6 +27,8 @@ public class DamagePlayer : MonoBehaviour
         }
 
         player.receberDano(dano);                                                 // Chama a função de receber dano no jogador
+
+        //AudioManager.Instance.TocarSomArmadilha(somDoObjeto);
 
         if (player.coracao.vida <= 0) 
         {
@@ -61,6 +63,8 @@ public class DamagePlayer : MonoBehaviour
         }
 
         player.receberDano(dano);                                                 // Chama a função de receber dano no jogador
+
+        //AudioManager.Instance.TocarSomArmadilha(somDoObjeto);
 
         if (player.coracao.vida <= 0)
         {

@@ -255,6 +255,8 @@ MonoBehaviour:
   vidaAtual: 2
   animator: {fileID: 8919647764515347695}
   morteTrigger: GoblinDead
+  somHit: {fileID: 8300000, guid: f0b6b04d9bf991b40a80f934b43aece3, type: 3}
+  somMorte: {fileID: 8300000, guid: 3528de31648fe0d419b65ffc57f4aa93, type: 3}
 --- !u!114 &3883696629602459382
 MonoBehaviour:
   m_ObjectHideFlags: 0
