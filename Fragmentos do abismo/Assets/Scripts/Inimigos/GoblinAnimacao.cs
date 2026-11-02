@@ -3,6 +3,7 @@ using UnityEngine;
 public class GoblinAnimacao : MonoBehaviour
 {
     private Goblin goblin;
+    [SerializeField] private AudioClip somAtack;
 
     void Start()
     {
@@ -12,12 +13,11 @@ public class GoblinAnimacao : MonoBehaviour
     public void AtacarPlayer()
     {
         goblin.AtacarPlayer();
-        Debug.Log("Atacando player");
+        AudioManager.Instance.TocarSomInimigo(somAtack);
     }
 
     public void LiberarAtaque()
     {
         goblin.liberarAtaque();
-        Debug.Log("Ataque liberado");
     }
 }

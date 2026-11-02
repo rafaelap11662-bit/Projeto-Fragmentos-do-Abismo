@@ -462,3 +462,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab810d95c2c2904996a9498d8d710d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DemonoideAnimacao
+  somAtack: {fileID: 8300000, guid: 247b82d8942b35643b3054bfa821a340, type: 3}

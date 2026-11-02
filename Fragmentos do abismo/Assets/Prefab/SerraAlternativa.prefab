@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6902196907190254644}
   - component: {fileID: 7341636840366657105}
   - component: {fileID: 6064757564080429774}
+  - component: {fileID: 4890020537526503224}
   m_Layer: 0
   m_Name: SerraAlternativa
   m_TagString: Trap
@@ -193,3 +194,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamagePlayer
   dano: 3
+  somDoObjeto: {fileID: 0}
+--- !u!114 &4890020537526503224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706918756461882747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765f6bb24ac20e644ad946ac65306d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Armadilhas
+  somAtivacao: {fileID: 8300000, guid: 647327060bf82d84aab80baf4a2100b6, type: 3}
+  iniciarSomAutomaticamente: 1
+  volume: 0.001
+  distanciaMinima: 5
+  distanciaMaxima: 20
+  pontoDoSomFire: {fileID: 0}
+  somFireBox: {fileID: 0}

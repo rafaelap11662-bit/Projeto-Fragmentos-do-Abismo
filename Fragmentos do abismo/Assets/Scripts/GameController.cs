@@ -43,6 +43,9 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             AlternarPause();
+
+            bool pausado = Time.timeScale == 0;
+            AudioManager.Instance.PausarSonsContinuos(pausado);
         }
     }
 

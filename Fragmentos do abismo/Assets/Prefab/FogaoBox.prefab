@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1690037677131610119}
   - component: {fileID: 5055699678454811896}
   - component: {fileID: 8636507963107848263}
+  - component: {fileID: 5321835070541079644}
   m_Layer: 6
   m_Name: FogaoBox
   m_TagString: Untagged
@@ -130,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   Fire: {fileID: 5542271288105818829}
+  armadilhas: {fileID: 5321835070541079644}
 --- !u!61 &8636507963107848263
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,6 +178,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &5321835070541079644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953349427184419333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765f6bb24ac20e644ad946ac65306d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Armadilhas
+  somAtivacao: {fileID: 0}
+  volume: 1
+  distanciaMinima: 10
+  distanciaMaxima: 20
+  pontoDoSomFire: {fileID: 3160272166922269652}
+  somFireBox: {fileID: 8300000, guid: 90a3ee37eb4dc374d8c4da1f2d39bdd6, type: 3}
 --- !u!1001 &4485068319148681175
 PrefabInstance:
   m_ObjectHideFlags: 0

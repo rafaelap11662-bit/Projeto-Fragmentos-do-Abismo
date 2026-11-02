@@ -1303,11 +1303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 87.33
+      value: 110.9
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.72
+      value: -59.6
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3470,7 +3470,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5241,7 +5241,7 @@ Transform:
   m_GameObject: {fileID: 1106660349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.838905, y: -25.52662, z: -10}
+  m_LocalPosition: {x: 111.408905, y: -59.07263, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5641,6 +5641,14 @@ PrefabInstance:
     - target: {fileID: 2706918756461882747, guid: d5ed5290e8309314e8844e7e441900df, type: 3}
       propertyPath: m_Name
       value: SerraAlternativa
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890020537526503224, guid: d5ed5290e8309314e8844e7e441900df, type: 3}
+      propertyPath: volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890020537526503224, guid: d5ed5290e8309314e8844e7e441900df, type: 3}
+      propertyPath: distanciaMinima
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8905,6 +8913,10 @@ PrefabInstance:
     - target: {fileID: 3044335006289611013, guid: f6e048adfa3e19646ae3c5cef542c0ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112528620654912913, guid: f6e048adfa3e19646ae3c5cef542c0ad, type: 3}
+      propertyPath: volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7421423288344973360, guid: f6e048adfa3e19646ae3c5cef542c0ad, type: 3}
       propertyPath: m_Name
@@ -222824,7 +222836,7 @@ Transform:
   m_GameObject: {fileID: 1933644959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.838905, y: -25.52662, z: -10}
+  m_LocalPosition: {x: 111.408905, y: -59.07263, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -226638,6 +226650,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogUi
   speed: 10
+  caixaTexto: {fileID: 8300000, guid: 66ad6b7d5d0bf444e8bc1ca393c806ea, type: 3}
+  caixaTextoInverso: {fileID: 8300000, guid: efcc80c425f74a249b9b18452cbb91f2, type: 3}
 --- !u!224 &2028381178
 RectTransform:
   m_ObjectHideFlags: 0

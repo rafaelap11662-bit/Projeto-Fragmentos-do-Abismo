@@ -28,14 +28,14 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void TocarSomJogador(AudioClip som)
@@ -113,9 +113,6 @@ public class AudioManager : MonoBehaviour
     }
 
 
-
-
-
 // =========================== Função para tocar o som do Background =======================
 
     public void TocarBackGround()
@@ -126,27 +123,6 @@ public class AudioManager : MonoBehaviour
             backGround.loop = true;
             backGround.Play();
         }
-    }
-
-// =========================== Função para parar o som do Inimigos ==========================
-
-    public void TocarHitInimigo(AudioClip som)
-    {
-        if (som != null)
-            somInimigos.PlayOneShot(som);
-    }
-
-    public void TocarMorteInimigo(AudioClip som)
-    {
-        if (som != null)
-            somInimigos.PlayOneShot(som);
-    }
-
-// =========================== Função para tocar o som das Armadilhas e alguns Inimigos que utilizam DamagePlayer.cs ==========================
-
-    public void TocarObjetos(AudioClip som)
-    {
-        somDoObjeto.PlayOneShot(som);
     }
 
 // =========================== Função para tocar o som das Armadilhas ==========================
@@ -170,9 +146,55 @@ public class AudioManager : MonoBehaviour
 
         fonte.Play();
 
-        Debug.Log("Áudio reproduzindo: " + fonte.isPlaying);
-        Debug.Log("Volume: " + fonte.volume);
-        Debug.Log("Clip: " + fonte.clip.name);
         Destroy(objetoSom, som.length + 0.2f);
+    }
+
+    public AudioSource TocarSomArmadilhaContinua(AudioClip som, Transform posicao, float volume = 1f, float distanciaMinima = 10f, float distanciaMaxima = 20f)
+    {
+        GameObject objetoSom = new GameObject("SomContinuo");
+        objetoSom.transform.SetParent(posicao);
+        objetoSom.transform.localPosition = Vector3.zero;
+
+        AudioSource fonte = objetoSom.AddComponent<AudioSource>();
+
+        fonte.clip = som;
+        fonte.loop = true;
+        fonte.playOnAwake = false;
+        fonte.spatialBlend = 1f;
+        fonte.volume = volume;
+        fonte.minDistance = distanciaMinima;
+        fonte.maxDistance = distanciaMaxima;
+        fonte.rolloffMode = AudioRolloffMode.Linear;
+        fonte.dopplerLevel = 0f;
+
+        fonte.Play();
+
+        return fonte;
+
+    }
+
+    // =========================== Função para tocar o som da UI (Interface) ==========================
+
+    public void TocarCaixaTexto(AudioClip som)
+    {
+        somInterface.PlayOneShot(som);
+    }
+
+    // =========================== Função para pausar o som ==========================
+
+    public void PausarSonsContinuos(bool pausar)
+    {
+        AudioSource[] sons = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+
+        foreach (AudioSource som in sons)
+        {
+            if (som.loop)
+            {
+                if (pausar)
+                    som.Pause();
+                else
+                    som.UnPause();
+            }
+        }
     }
 }

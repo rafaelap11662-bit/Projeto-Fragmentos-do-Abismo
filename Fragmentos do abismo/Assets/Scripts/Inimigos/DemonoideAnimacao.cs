@@ -3,6 +3,7 @@ using UnityEngine;
 public class DemonoideAnimacao : MonoBehaviour
 {
     private Demonoide demonoide;
+    [SerializeField] private AudioClip somAtack;
 
     void Start()
     {
@@ -12,12 +13,11 @@ public class DemonoideAnimacao : MonoBehaviour
     public void AtacarPlayer()
     {
         demonoide.AtacarPlayer();
-        Debug.Log("Atacando player");
+        AudioManager.Instance.TocarSomInimigo(somAtack);
     }
 
     public void LiberarAtaque()
     {
         demonoide.liberarAtaque();
-        Debug.Log("Ataque liberado");
     }
 }

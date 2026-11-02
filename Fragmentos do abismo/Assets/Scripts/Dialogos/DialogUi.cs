@@ -10,6 +10,10 @@ public class DialogUi : MonoBehaviour
     public float speed = 10f;
     bool open = false;
 
+    [Header("Sons da armadilha")]
+    [SerializeField] private AudioClip caixaTexto;
+    [SerializeField] private AudioClip caixaTextoInverso;
+
     void Awake()
     {
         caixaDialogo = transform.GetChild(0).GetComponent<Image>();
@@ -27,6 +31,7 @@ public class DialogUi : MonoBehaviour
         if (open)
         {
             caixaDialogo.fillAmount = Mathf.Lerp(caixaDialogo.fillAmount, 1, speed * Time.deltaTime);
+            
         }
         else
         {
@@ -38,7 +43,8 @@ public class DialogUi : MonoBehaviour
     {
         caixaDialogo.fillAmount = 0;
         open = true;
-
+        
+        AudioManager.Instance.TocarCaixaTexto(caixaTexto);
         AudioManager.Instance.BloquearCorrida();
     }
 
@@ -47,6 +53,7 @@ public class DialogUi : MonoBehaviour
         open = false;
         dialogText.text = "";
 
+        AudioManager.Instance.TocarCaixaTexto(caixaTextoInverso);
         AudioManager.Instance.LiberarCorrida();
     }
 }

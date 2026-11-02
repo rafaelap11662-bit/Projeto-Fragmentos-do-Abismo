@@ -32,15 +32,15 @@ public class MorteInimigo : MonoBehaviour
         }
         else
         {
-            AudioManager.Instance.TocarHitInimigo(somHit);
+            AudioManager.Instance.TocarSomInimigo(somHit);
         }
     }
 
     void Morrer()
     {
-        AudioManager.Instance.TocarMorteInimigo(somMorte);
+        AudioManager.Instance.TocarSomInimigo(somMorte);
 
-        rb.bodyType = RigidbodyType2D.Static;
+        rb.bodyType = RigidbodyType2D.Dynamic;
         col.enabled = false;
         animator.SetTrigger(morteTrigger);
 
