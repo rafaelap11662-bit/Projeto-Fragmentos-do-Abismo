@@ -151,7 +151,7 @@ public class AudioManager : MonoBehaviour
 
 // =========================== Função para tocar o som das Armadilhas ==========================
 
-    public void TocarSomArmadilha(AudioClip som, Vector3 posicao)
+    public void TocarSomArmadilha( AudioClip som, Vector3 posicao, float volume = 1f, float distanciaMinima = 10f, float distanciaMaxima = 20f)
     {
         if (som == null) return;
 
@@ -162,9 +162,9 @@ public class AudioManager : MonoBehaviour
 
         fonte.clip = som;
         fonte.spatialBlend = 1f;
-        fonte.volume = 1f;
-        fonte.minDistance = 10f;
-        fonte.maxDistance = 20f;
+        fonte.volume = volume;
+        fonte.minDistance = distanciaMinima;
+        fonte.maxDistance = distanciaMaxima;
         fonte.rolloffMode = AudioRolloffMode.Linear;
         fonte.dopplerLevel = 0f;
 

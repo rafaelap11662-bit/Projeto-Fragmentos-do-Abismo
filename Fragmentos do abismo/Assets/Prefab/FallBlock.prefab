@@ -129,6 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FallBlock
   tempoParaVoltar: 2.5
+  SomFallBlock: {fileID: 8300000, guid: 8527ecaf2bf84a04686a07db986f0bcb, type: 3}
+  volume: 0.2
+  distanciaMinima: 10
+  distanciaMaxima: 20
 --- !u!61 &8787196920161306054
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,6 +12,15 @@ public class FallBlock : MonoBehaviour
 
     [SerializeField] private float tempoParaVoltar;
 
+    [Header("Sons da armadilha")]
+    [SerializeField] private AudioClip SomFallBlock;
+
+    [Header("Configurações de áudio")]
+    [SerializeField, Range(0f, 1f)] private float volume = 1f;
+    [SerializeField] private float distanciaMinima = 10f;
+    [SerializeField] private float distanciaMaxima = 20f;
+
+
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -24,7 +33,7 @@ public class FallBlock : MonoBehaviour
         if(collider2D.gameObject.tag == "Player" && !ativado)
         {
             anim.SetTrigger("FallBlock");
-
+            AudioManager.Instance.TocarSomArmadilha(SomFallBlock, transform.position, volume, distanciaMinima, distanciaMaxima);
             ativado = true;
         }
     }
