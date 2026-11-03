@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource somInimigos;
     [SerializeField] private AudioSource somInterface;
     [SerializeField] private AudioSource somDoObjeto;
+    [SerializeField] private AudioSource somBoss;
 
     [Header("Sons do jogador")]
     [SerializeField] private AudioClip somCorrida;
@@ -196,5 +197,33 @@ public class AudioManager : MonoBehaviour
                     som.UnPause();
             }
         }
+    }
+
+    //========================== Função para tocar o som do Boss ==========================
+
+    public void TocarMovimentoBoss(AudioClip som)
+    {
+        if (som == null || somBoss == null)
+            return;
+
+        if (somBoss.clip == som && somBoss.isPlaying)
+            return;
+
+        somBoss.Stop();
+        somBoss.clip = som;
+        somBoss.loop = true;
+        somBoss.Play();   
+    }
+
+    public void PararMovimentoBoss()
+    {
+        if (somBoss != null)
+            somBoss.Stop();
+    }
+
+    public void TocarSomBoss(AudioClip som)
+    {
+        if (som != null && somBoss != null)
+            somBoss.PlayOneShot(som);
     }
 }

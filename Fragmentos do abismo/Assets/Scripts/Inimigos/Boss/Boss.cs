@@ -46,18 +46,22 @@ public class Boss : MonoBehaviour
     [SerializeField] private float distanciaInvestida;
     [SerializeField] private Transform investidaPoint;
 
-    
-
     [Header("VIDA DO BOSS")]
     [SerializeField] private int vidaAtual;
     private int vidaInicial = 20;
     private bool morreu = false;
 
-
     [Header("ESTADOS DO BOSS")]
     private EstadoBoss estadoAtual = EstadoBoss.DECIDINDO;
     private TipoAtaque ataqueAtual;
 
+    [Header("Sons do Boss")]
+    [SerializeField] private AudioClip somFacao;
+    [SerializeField] private AudioClip somInvestida;
+    [SerializeField] private AudioClip somRun;
+    [SerializeField] private AudioClip somMorte;
+    [SerializeField] private AudioClip somHit;
+    [SerializeField] private AudioClip somRepelir;
 
     private Vector2 posicaoInicial;
     private bool executandoAtaque = false;
@@ -167,11 +171,13 @@ public class Boss : MonoBehaviour
             rb.linearVelocity = new Vector2(direcao.x * velocidade, rb.linearVelocity.y);
 
             anim.SetBool("isRun", true);
+            AudioManager.Instance.TocarMovimentoBoss(somRun);
         }
         else
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             anim.SetBool("isRun", false);
+            AudioManager.Instance.PararMovimentoBoss();
             
             estadoAtual = EstadoBoss.ATACANDO;
             ataqueAtual = TipoAtaque.FACAO;
@@ -254,6 +260,7 @@ public class Boss : MonoBehaviour
             executandoAtaque = true;
 
             anim.SetTrigger("isRepelir");
+            AudioManager.Instance.TocarSomBoss(somRepelir);
     }
 
     public void RepelirPlayer()
@@ -291,12 +298,13 @@ public class Boss : MonoBehaviour
     private void AtaqueFacao()
     {
         anim.SetTrigger("isFacaoAtk");
+        AudioManager.Instance.TocarSomBoss(somFacao);
     }
 
     private void AtaqueRajada()
     {
         anim.SetTrigger("isRajadaAtk");
-        //Debug.Log("Ataque rajada");
+        AudioManager.Instance.TocarSomBoss(somFacao);
     }
 
 
@@ -415,6 +423,7 @@ public class Boss : MonoBehaviour
         executandoAtaque = true;
 
         anim.SetBool("isRun", false);
+        AudioManager.Instance.TocarSomBoss(somHit);
         anim.SetTrigger("isHit");
     }
     
@@ -437,6 +446,7 @@ public class Boss : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         
         anim.SetBool("isRun", false);
+        AudioManager.Instance.TocarSomBoss(somMorte);
         anim.SetTrigger("isDead");
 
         Debug.Log("Boss morreu");
@@ -488,6 +498,7 @@ public class Boss : MonoBehaviour
         rb.linearVelocity = new Vector2(direcaoInvestida * velocidadeInvestida, 0f);
 
         anim.ResetTrigger("isInvestida");
+        AudioManager.Instance.TocarSomBoss(somInvestida);
         anim.SetTrigger("isInvestida"); 
     }
 }

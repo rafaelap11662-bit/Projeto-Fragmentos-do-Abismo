@@ -33,6 +33,7 @@ public class BossAnimation : MonoBehaviour
     public void AtivarExplosao()
     {
         Explosao.SetActive(true);
+        Explosao.GetComponent<Explosao>().ExplosaoSom();
     }
     
     public void DesativarExplosao()

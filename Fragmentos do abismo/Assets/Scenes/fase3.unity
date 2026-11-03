@@ -1303,11 +1303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 110.9
+      value: 251.5
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -59.6
+      value: -78.1
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5241,7 +5241,7 @@ Transform:
   m_GameObject: {fileID: 1106660349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 111.408905, y: -59.07263, z: -10}
+  m_LocalPosition: {x: 254.42625, y: -77.99662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8527,6 +8527,135 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 594999d52543ee64e92b0783e37bc766, type: 3}
+--- !u!1 &1655117128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655117130}
+  - component: {fileID: 1655117129}
+  m_Layer: 0
+  m_Name: SomBoss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1655117129
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655117128}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 10
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1655117130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655117128}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2062103513}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1665118052
 GameObject:
   m_ObjectHideFlags: 0
@@ -8633,7 +8762,7 @@ MonoBehaviour:
   danoFacao: 0
   danoRajada: 0
   danoRepelir: 0
-  danoInvestida: 1
+  danoInvestida: 0
   repelirRange: 5
   knockbackRepelir: 20
   repelirPoint: {fileID: 641820744}
@@ -8644,6 +8773,12 @@ MonoBehaviour:
   distanciaInvestida: 7
   investidaPoint: {fileID: 2140479556}
   vidaAtual: 0
+  somFacao: {fileID: 8300000, guid: faf35bdede9ae544bbec7087e18718c5, type: 3}
+  somInvestida: {fileID: 8300000, guid: 0eb6f40188fcb9e4f8c2874a2037a38f, type: 3}
+  somRun: {fileID: 8300000, guid: 87f1eebeb1a9b034b8cf877bdbbd83f7, type: 3}
+  somMorte: {fileID: 8300000, guid: fb6828bee2dac9e43b71a0f0bba45d22, type: 3}
+  somHit: {fileID: 8300000, guid: 5e90461bdaf29ad449689234b00e1f5d, type: 3}
+  somRepelir: {fileID: 8300000, guid: e44a069bbe9cbfd4d8c9a7c764de7994, type: 3}
 --- !u!50 &1665118057
 Rigidbody2D:
   serializedVersion: 5
@@ -222836,7 +222971,7 @@ Transform:
   m_GameObject: {fileID: 1933644959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 111.408905, y: -59.07263, z: -10}
+  m_LocalPosition: {x: 254.42625, y: -77.99662, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -226934,6 +227069,7 @@ MonoBehaviour:
   somInimigos: {fileID: 1510635693}
   somInterface: {fileID: 745055344}
   somDoObjeto: {fileID: 1313616811}
+  somBoss: {fileID: 1655117129}
   somCorrida: {fileID: 8300000, guid: 9a9312f1d43cdd044ad5925cc52d87c1, type: 3}
   somPulo: {fileID: 8300000, guid: ace8712d3fb25a447b9bb29563d19e9c, type: 3}
   somPouso: {fileID: 8300000, guid: 340c7b21d008e4247b9b36c8bcfa4c47, type: 3}
@@ -226958,6 +227094,7 @@ Transform:
   - {fileID: 1477245429}
   - {fileID: 16392630}
   - {fileID: 1510635694}
+  - {fileID: 1655117130}
   - {fileID: 745055345}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class Rajada : MonoBehaviour
 {
-    [SerializeField] private float Velocidade;
     Boss boss;
-
     private float direcao;
+
+    [SerializeField] private float Velocidade;
+    [SerializeField] private AudioClip somRajada;
+
 
     public void ConfigurarDirecao(float novaDirecao, Boss bossCriador)
     {
@@ -16,6 +18,13 @@ public class Rajada : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector2.right * direcao * Velocidade * Time.deltaTime);
+        
+    }
+
+    private void Start()
+    {
+        if (somRajada != null && AudioManager.Instance != null)
+            AudioManager.Instance.TocarSomBoss(somRajada);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

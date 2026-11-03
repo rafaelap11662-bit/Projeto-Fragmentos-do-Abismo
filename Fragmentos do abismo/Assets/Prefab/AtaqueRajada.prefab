@@ -212,3 +212,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rajada
   Velocidade: 15
+  somRajada: {fileID: 8300000, guid: f11d82e4d972fea439f7b01e373ef38b, type: 3}
