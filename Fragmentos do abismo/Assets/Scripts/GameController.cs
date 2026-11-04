@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameController : MonoBehaviour
 {
@@ -24,6 +25,12 @@ public class GameController : MonoBehaviour
     public int mortes = 0;
 
     public BossArena bossArenaAtiva;
+
+    [Header("Sons da Interface")]
+    [SerializeField] private  AudioClip somBotao;
+    [SerializeField] private  AudioClip somGameOver;
+    [SerializeField] private  AudioClip somPause;
+    
 
 
     
@@ -139,13 +146,19 @@ public class GameController : MonoBehaviour
             bossArenaAtiva.ReiniciarBatalha();
             return;
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);  
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+
+        if (AudioManager.Instance != null)
+        AudioManager.Instance.TocarSomInterface(somBotao); 
     }
 
     public void MostrarPainelGameOver()
     {
         painelGameOver.SetActive(true);
         Time.timeScale = 0f;
+
+        if (AudioManager.Instance != null)
+        AudioManager.Instance.TocarSomInterface(somGameOver);
     }
 
     public void AlternarPause() //botao Continuar do pause
@@ -154,11 +167,20 @@ public class GameController : MonoBehaviour
         painelPauseMenu.SetActive(pause);
         painelHUD.SetActive(!pause);
         Time.timeScale = pause ? 0f : 1f;
+
+        if (AudioManager.Instance != null)
+        AudioManager.Instance.TocarSomInterface(somBotao);
+        
+        bool pausado = Time.timeScale == 0;
+        AudioManager.Instance.PausarSonsContinuos(pausado);
     }
     
     public void BotaoMenu() //botao MENU do pause
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MenuPrincipal");
+
+        if (AudioManager.Instance != null)
+        AudioManager.Instance.TocarSomInterface(somBotao);
     }
 }
