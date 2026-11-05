@@ -36,7 +36,7 @@ public class MorteInimigo : MonoBehaviour
         }
     }
 
-    void Morrer()
+    private void Morrer()
     {
         AudioManager.Instance.TocarSomInimigo(somMorte);
 
@@ -45,5 +45,13 @@ public class MorteInimigo : MonoBehaviour
         animator.SetTrigger(morteTrigger);
 
         Destroy(gameObject, 0.8f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Lava"))
+        {
+            danoInimigo(2);
+        }
     }
 }

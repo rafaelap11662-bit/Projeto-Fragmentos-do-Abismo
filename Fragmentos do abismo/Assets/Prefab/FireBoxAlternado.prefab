@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4668081323321350306}
   - component: {fileID: 1961184047092188954}
   - component: {fileID: 1220322639801354}
+  - component: {fileID: 8241986751590081279}
   m_Layer: 6
   m_Name: FireBoxAlternado
   m_TagString: FIreBox
@@ -154,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   Fire: {fileID: 3810279490087593094}
+  armadilhas: {fileID: 8241986751590081279}
 --- !u!95 &1220322639801354
 Animator:
   serializedVersion: 7
@@ -176,6 +178,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8241986751590081279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118847748043881753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765f6bb24ac20e644ad946ac65306d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Armadilhas
+  somAtivacao: {fileID: 0}
+  iniciarSomAutomaticamente: 0
+  volume: 0.5
+  distanciaMinima: 5
+  distanciaMaxima: 15
+  pontoDoSomFire: {fileID: 6039685093397679519}
+  somFireBox: {fileID: 8300000, guid: 90a3ee37eb4dc374d8c4da1f2d39bdd6, type: 3}
 --- !u!1001 &5058921731389086108
 PrefabInstance:
   m_ObjectHideFlags: 0

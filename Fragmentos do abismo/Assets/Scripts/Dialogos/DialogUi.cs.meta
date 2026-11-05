@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: edf4c802163b73e4299f3473db58c045
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - caixaTexto: {fileID: 8300000, guid: 66ad6b7d5d0bf444e8bc1ca393c806ea, type: 3}
+  - caixaTextoInverso: {fileID: 8300000, guid: efcc80c425f74a249b9b18452cbb91f2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

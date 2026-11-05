@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -9,6 +11,17 @@ public class Fragmento : MonoBehaviour
     public GameObject coleta;                                   // animação de coleta
     public int Score = 1;                                       //Valor do Fragmento
     public DialogData dialogData;                               // Referência ao ScriptableObject de diálogo
+
+
+    [Header("=========== Fase 3 ===========")]
+    [Header("Fragmento Final ")]
+    [SerializeField] private bool fragmentoFinal;
+    [SerializeField] private Boss boss;
+
+
+    [SerializeField] private bool fragmentosFase3;
+    [SerializeField] private BossArena bossArena;
+    
 
     
     void Start()
@@ -29,6 +42,16 @@ public class Fragmento : MonoBehaviour
 
             GameController.instance.totalScore += Score;        //add um ponto no score
             GameController.instance.UpdateScoreText();          //atualiza o score
+
+            if (fragmentoFinal && boss != null)
+                {
+                    boss.AbrirPortal();
+                }
+            
+            if (fragmentosFase3 && bossArena != null)
+            {
+                bossArena.AbrirBarreira();
+            }
 
             Destroy(gameObject, 0.3f);  
         }

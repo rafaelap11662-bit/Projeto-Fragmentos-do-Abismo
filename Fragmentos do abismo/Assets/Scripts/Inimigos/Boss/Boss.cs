@@ -55,6 +55,11 @@ public class Boss : MonoBehaviour
     private EstadoBoss estadoAtual = EstadoBoss.DECIDINDO;
     private TipoAtaque ataqueAtual;
 
+    [Header("Fragmento e Portal Final")]
+    [SerializeField]private GameObject fragmentoFinal;
+    [SerializeField]private GameObject portalFinal;
+
+
     [Header("Sons do Boss")]
     [SerializeField] private AudioClip somFacao;
     [SerializeField] private AudioClip somInvestida;
@@ -449,14 +454,10 @@ public class Boss : MonoBehaviour
         AudioManager.Instance.TocarSomBoss(somMorte);
         anim.SetTrigger("isDead");
 
+        Invoke(nameof(AparecerFragmentoFinal), 2.5f);
+
         Debug.Log("Boss morreu");
     }
-
-    public void AbrirBarreira() // Metodo para o BossAnimation chamar e abrir a barreira da arena
-    {
-        arena.AbrirBarreira();
-    }
-
 
     public void ReiniciarBoss()
     {
@@ -500,5 +501,17 @@ public class Boss : MonoBehaviour
         anim.ResetTrigger("isInvestida");
         AudioManager.Instance.TocarSomBoss(somInvestida);
         anim.SetTrigger("isInvestida"); 
+    }
+
+    private void AparecerFragmentoFinal()
+    {
+        if (fragmentoFinal != null)
+            fragmentoFinal.SetActive(true);
+    }
+
+    public void AbrirPortal()
+    {
+        if (portalFinal != null)
+            portalFinal.SetActive(true);
     }
 }

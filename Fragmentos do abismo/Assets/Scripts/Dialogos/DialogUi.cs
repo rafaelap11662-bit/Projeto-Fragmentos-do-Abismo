@@ -43,9 +43,12 @@ public class DialogUi : MonoBehaviour
     {
         caixaDialogo.fillAmount = 0;
         open = true;
+        if(caixaTexto != null && caixaTextoInverso != null)
+        {
+            AudioManager.Instance.TocarCaixaTexto(caixaTexto);
+            AudioManager.Instance.BloquearCorrida();
+        }
         
-        AudioManager.Instance.TocarCaixaTexto(caixaTexto);
-        AudioManager.Instance.BloquearCorrida();
     }
 
     public void Disable()
@@ -53,7 +56,10 @@ public class DialogUi : MonoBehaviour
         open = false;
         dialogText.text = "";
 
-        AudioManager.Instance.TocarCaixaTexto(caixaTextoInverso);
-        AudioManager.Instance.LiberarCorrida();
+        if(caixaTexto != null && caixaTextoInverso != null)
+        {
+            AudioManager.Instance.TocarCaixaTexto(caixaTexto);
+            AudioManager.Instance.BloquearCorrida();
+        }
     }
 }

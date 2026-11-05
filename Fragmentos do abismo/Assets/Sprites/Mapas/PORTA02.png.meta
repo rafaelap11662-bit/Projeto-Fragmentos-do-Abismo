@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: f4fa9aeb1b84bbe4e91c346381474424
+guid: ec8df3d38bb17f643a1551a1f7d8d493
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3449081978878806526
-    second: Key Gold2_0
+      213: 732019907603497648
+    second: PORTA02_0
+  - first:
+      213: 4006583347397591718
+    second: PORTA02_1
+  - first:
+      213: -8776518802516211942
+    second: PORTA02_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +119,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Key Gold2_0
+      name: PORTA02_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 8
-        height: 13
+        x: 232
+        y: 624
+        width: 258
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef9c54829c99ddf20800000000000000
-      internalID: 3449081978878806526
+      spriteID: 0b288314a38a82a00800000000000000
+      internalID: 732019907603497648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PORTA02_2
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 60
+        width: 253
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a170c7b26aa833680800000000000000
+      internalID: -8776518802516211942
       vertices: []
       indices: 
       edges: []
@@ -138,7 +166,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 71b2060726252a84581ac3ca07320768
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +176,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Key Gold2_0: 3449081978878806526
+      PORTA02_0: 732019907603497648
+      PORTA02_1: 4006583347397591718
+      PORTA02_2: -8776518802516211942
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

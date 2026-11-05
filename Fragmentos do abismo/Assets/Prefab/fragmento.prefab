@@ -83,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 8
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1971970484512350760, guid: 9365d608f6a826c4294a3c27e667932b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -189,6 +189,10 @@ MonoBehaviour:
   coleta: {fileID: 8263928166557954436}
   Score: 1
   dialogData: {fileID: 0}
+  fragmentoFinal: 0
+  boss: {fileID: 0}
+  fragmentosFase3: 0
+  bossArena: {fileID: 0}
 --- !u!1 &8263928166557954436
 GameObject:
   m_ObjectHideFlags: 0

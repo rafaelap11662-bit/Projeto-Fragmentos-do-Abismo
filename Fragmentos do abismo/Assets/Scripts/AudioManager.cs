@@ -58,6 +58,10 @@ public class AudioManager : MonoBehaviour
     {
         backGround.PlayOneShot(som);
     }
+    public void TocarSomDoObjeto(AudioClip som)
+    {
+        somDoObjeto.PlayOneShot(som);
+    }
 
     private void Start()
     {
@@ -152,10 +156,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource TocarSomArmadilhaContinua(AudioClip som, Transform posicao, float volume = 1f, float distanciaMinima = 10f, float distanciaMaxima = 20f)
     {
-        GameObject objetoSom = new GameObject("SomContinuo");
-        objetoSom.transform.SetParent(posicao);
-        objetoSom.transform.localPosition = Vector3.zero;
 
+        GameObject objetoSom = new GameObject("SomContinuo");
+        objetoSom.transform.position = posicao.position;
         AudioSource fonte = objetoSom.AddComponent<AudioSource>();
 
         fonte.clip = som;
@@ -225,5 +228,30 @@ public class AudioManager : MonoBehaviour
     {
         if (som != null && somBoss != null)
             somBoss.PlayOneShot(som);
+    }
+
+    //========================== Função para tocar o som de objetos ==========================
+
+    public AudioSource TocarSomObjetos(AudioClip som, Transform posicao, float volume = 1f, float distanciaMinima = 10f, float distanciaMaxima = 20f)
+    {
+
+        GameObject objetoSom = new GameObject("SomContinuo");
+        objetoSom.transform.position = posicao.position;
+        AudioSource fonte = objetoSom.AddComponent<AudioSource>();
+
+        fonte.clip = som;
+        fonte.loop = true;
+        fonte.playOnAwake = false;
+        fonte.spatialBlend = 1f;
+        fonte.volume = volume;
+        fonte.minDistance = distanciaMinima;
+        fonte.maxDistance = distanciaMaxima;
+        fonte.rolloffMode = AudioRolloffMode.Linear;
+        fonte.dopplerLevel = 0f;
+
+        fonte.Play();
+
+        return fonte;
+
     }
 }

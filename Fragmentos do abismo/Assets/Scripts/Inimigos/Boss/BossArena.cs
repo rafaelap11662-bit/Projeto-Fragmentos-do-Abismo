@@ -32,9 +32,12 @@ public class BossArena : MonoBehaviour
 
     public void AbrirBarreira()
     {
-        barreiraBoss.SetActive(false);
+        if(GameController.instance.totalScore == 2)
+        {
+            barreiraBoss.SetActive(false);
+        }
 
-        if (GameController.instance != null) 
+        if (GameController.instance != null)   
         {
             GameController.instance.bossArenaAtiva = null;
         }

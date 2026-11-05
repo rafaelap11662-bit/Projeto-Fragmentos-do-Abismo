@@ -190,4 +190,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Armadilhas
   somAtivacao: {fileID: 8300000, guid: 957f42d2245b3b74696217d330cc95f9, type: 3}
-  somImpacto: {fileID: 0}
+  iniciarSomAutomaticamente: 0
+  volume: 0.5
+  distanciaMinima: 5
+  distanciaMaxima: 20
+  pontoDoSomFire: {fileID: 0}
+  somFireBox: {fileID: 0}

@@ -51,11 +51,6 @@ public class BossAnimation : MonoBehaviour
         boss.DesativarIvencibilidade();
     }
 
-    public void AbrirBarreira()
-    {
-        boss.AbrirBarreira();
-    }
-
     public void FinalizarDano()
     {
         boss.FinalizarDano();
