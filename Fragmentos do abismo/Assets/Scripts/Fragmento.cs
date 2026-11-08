@@ -12,17 +12,14 @@ public class Fragmento : MonoBehaviour
     public int Score = 1;                                       //Valor do Fragmento
     public DialogData dialogData;                               // Referência ao ScriptableObject de diálogo
 
-
     [Header("=========== Fase 3 ===========")]
     [Header("Fragmento Final ")]
     [SerializeField] private bool fragmentoFinal;
     [SerializeField] private Boss boss;
 
-
     [SerializeField] private bool fragmentosFase3;
     [SerializeField] private BossArena bossArena;
     
-
     
     void Start()
     {  

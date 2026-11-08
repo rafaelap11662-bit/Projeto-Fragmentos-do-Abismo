@@ -7,7 +7,8 @@ public class AnimacaoTexto : MonoBehaviour
 {
     public Action TypeFinished;
 
-    private float typeDelay = 0.01f;
+    [SerializeField] private float typeDelay = 0.01f;
+    
     public TextMeshProUGUI textObject;
 
     public string fullText;
@@ -38,6 +39,15 @@ public class AnimacaoTexto : MonoBehaviour
     {
         StopCoroutine(coroutine);
         textObject.maxVisibleCharacters = textObject.text.Length;
+    }
+
+    public void ConfigurarTexto(string texto)
+    {
+        if (coroutine != null)
+            StopCoroutine(coroutine);
+
+        fullText = texto;
+        StartTyping();
     }
 
 
