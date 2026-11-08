@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea460737b0922b45b8a5cbb9b1a0d61, type: 3}
+  m_Name: Creditos
+  m_EditorClassIdentifier: Assembly-CSharp::DialogData
+  talkScript:
+  - texto: 'DESENVOLVIMENTO
+
+
+      Rafael Aparecido da Silva'
+  - texto: "ORIENTADOR\n\nProf. Msc. Kleber M\xE1rcio de Souza\r\n"
+  - texto: 'AGRADECIMENTOS
+
+
+      Aos professores, familiares e a todas as pessoas
+      que apoiaram e fizeram parte desta jornada.
+
+'
