@@ -4548,6 +4548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff792bada02c8647aeda2c08c5e6d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimacaoTexto
+  typeDelay: 0.01
   textObject: {fileID: 1970706005}
   fullText: 
 --- !u!4 &717005991
@@ -11211,7 +11212,7 @@ MonoBehaviour:
   mortesText: {fileID: 1853020135}
   mortes: 0
   bossArenaAtiva: {fileID: 0}
-  somBotao: {fileID: 0}
+  somBotao: {fileID: 8300000, guid: b0fe3af003bcecd429dfabb8681bc25e, type: 3}
   somGameOver: {fileID: 0}
   somPause: {fileID: 0}
 --- !u!4 &1486783804

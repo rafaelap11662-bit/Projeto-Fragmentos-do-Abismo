@@ -23,6 +23,8 @@ public class MenuPrincipal : MonoBehaviour
     public void ContinuarJogo()
     {
         string faseSalva = PlayerPrefs.GetString("FaseSalva", "Fase1");
+
+        Debug.Log("CONTINUAR - Fase recuperada: " + faseSalva);
         Time.timeScale = 1f;
         SceneManager.LoadScene(faseSalva);
         AudioManager.Instance.TocarSomInterface(somBotao);

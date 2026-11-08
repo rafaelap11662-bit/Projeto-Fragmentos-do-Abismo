@@ -2120,7 +2120,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1442331573}
         m_TargetAssemblyTypeName: MenuPrincipal, Assembly-CSharp
-        m_MethodName: IniciarJogo
+        m_MethodName: ContinuarJogo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

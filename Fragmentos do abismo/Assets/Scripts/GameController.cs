@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour
         checkpointAtual = checkpointInicial;
         UpdateMortesText();
 
-        //ResetarSave();
+        ResetarSave();
         SalvarJogo(SceneManager.GetActiveScene().name);
     }
     
@@ -79,6 +79,7 @@ public class GameController : MonoBehaviour
             PlayerPrefs.SetString("FaseSalva", nomeFase);
             PlayerPrefs.Save();
         }
+        Debug.Log("Jogo salvo! Fase atual: " + nomeFase);
     }
 
     public void ResetarSave()
