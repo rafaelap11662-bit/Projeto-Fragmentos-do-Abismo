@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1926447906859135790}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 1.42, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,7 +196,7 @@ MonoBehaviour:
   targetB: {fileID: 4900516451327429413}
   alvo: {fileID: 0}
   visao: 6.5
-  distanciaMinima: 1
+  distanciaMinima: 1.5
   ataqueRange: 0.8
   playerLayer:
     serializedVersion: 2
@@ -208,6 +208,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   forceJump: 4
+  distanciaEsquiva: 1
+  velocidadeEsquiva: 10
+  tempoEsquiva: 0.1
 --- !u!114 &4473264968332769650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +228,7 @@ MonoBehaviour:
   morteTrigger: DemonoideDead
   somHit: {fileID: 8300000, guid: d84177422ab0f4e45be92e4da1f57f1a, type: 3}
   somMorte: {fileID: 8300000, guid: 453d991c7e0339b4998538945c1cb95f, type: 3}
+  chanceEsquiva: 0.35
 --- !u!114 &8978365740404352567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +420,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 11
   m_MaskInteraction: 0
   m_Sprite: {fileID: 966150777723490071, guid: 0611e14b36b97f74eb470cf1ecda9f91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -77,17 +77,25 @@ public class AtackPlayer : MonoBehaviour
             }
             else
             {
-                inimigo.GetComponent<MorteInimigo>().danoInimigo(1);        // Chama a função de dano no inimigo
-            }
+                MorteInimigo morte = inimigo.GetComponent<MorteInimigo>();
 
-            Vector2 direcaoKnockback = (inimigo.transform.position - transform.position).normalized;         // Calcula a direção do knockback
+                if (morte == null) //
+                    continue;
 
-            KBInimigo knockback = inimigo.GetComponent<KBInimigo>();
+                bool recebeuDano = morte.danoInimigo(1);
 
-            if(knockback != null)
-            {
-                knockback.AplicarKnockback(direcaoKnockback);
-            }
+                if (!recebeuDano)
+                    continue;
+                }
+
+                Vector2 direcaoKnockback = (inimigo.transform.position - transform.position).normalized;         // Calcula a direção do knockback
+
+                KBInimigo knockback = inimigo.GetComponent<KBInimigo>();
+
+                if(knockback != null)
+                {
+                    knockback.AplicarKnockback(direcaoKnockback);
+                }
         }
 
         Invoke(nameof(liberarAtaque), 0.4f);                            // Permite que o jogador ataque novamente após um curto período de tempo
@@ -99,8 +107,8 @@ public class AtackPlayer : MonoBehaviour
     }
 
     // Para conseguir ver o AtaquePoint
-    /*private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(ataquePoint.position, ataqueRanger);
-    }*/
+    }
 }

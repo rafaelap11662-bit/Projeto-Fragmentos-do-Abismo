@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MorteInimigo : MonoBehaviour
 {
+    private Demonoide demonoide;
+
     private Collider2D col;
     private Rigidbody2D rb;
     [SerializeField] int vidaAtual = 2;
@@ -14,16 +16,27 @@ public class MorteInimigo : MonoBehaviour
     [Header("Sons")]
     [SerializeField] AudioClip somHit;
     [SerializeField] AudioClip somMorte;
+
+    [Header("Demonoide")]
+    [SerializeField]private float chanceEsquiva = 0.3f;
     
 
     private void Awake()
     {
         col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        demonoide = GetComponent<Demonoide>();
     }
 
-    public void danoInimigo(int dano)
+    public bool danoInimigo(int dano)
     {
+
+        if (demonoide != null && Random.value <= chanceEsquiva)
+        {
+            demonoide.Esquivar();
+            return false;
+        }
+
         vidaAtual -= dano;
 
         if (vidaAtual <= 0)
@@ -34,6 +47,7 @@ public class MorteInimigo : MonoBehaviour
         {
             AudioManager.Instance.TocarSomInimigo(somHit);
         }
+        return true;
     }
 
     private void Morrer()

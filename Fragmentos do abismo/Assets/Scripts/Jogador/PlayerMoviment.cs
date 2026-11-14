@@ -60,11 +60,11 @@ public class jogador : MonoBehaviour
     // Para visualizar a caixa de colisão do chão no editor, para ajudar 
     // ajustar a posição e o tamanho da caixa de colisão corretamente.
 
-    void OnDrawGizmos()    
+    /*void OnDrawGizmos()    
     {
     Gizmos.color = Color.green;                                                 // Define a cor do Gizmo como verde
     Gizmos.DrawWireCube(groundCheck.position, new Vector2(0.6f, 0.3f));         // Desenha uma caixa
-    }
+    }*/
 
     void FixedUpdate()
     {

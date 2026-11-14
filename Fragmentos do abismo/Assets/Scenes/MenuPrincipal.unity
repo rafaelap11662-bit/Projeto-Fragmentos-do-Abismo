@@ -575,7 +575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &716191472
 AudioSource:
   m_ObjectHideFlags: 0
@@ -847,7 +847,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2476,6 +2476,7 @@ MonoBehaviour:
   somPouso: {fileID: 8300000, guid: 340c7b21d008e4247b9b36c8bcfa4c47, type: 3}
   somHit: {fileID: 8300000, guid: def72a7ebbf865e4fa1a5c512a0ae939, type: 3}
   somBackGround: {fileID: 8300000, guid: b2f418662c5930e46ae5328ce3cd3b5a, type: 3}
+  musicas: {fileID: 8300000, guid: cbad26abdc9eab146a54391801a6b52c, type: 3}
 --- !u!4 &2137012357
 Transform:
   m_ObjectHideFlags: 0

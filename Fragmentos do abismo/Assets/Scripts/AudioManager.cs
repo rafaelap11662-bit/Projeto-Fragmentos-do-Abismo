@@ -23,6 +23,8 @@ public class AudioManager : MonoBehaviour
     [Header("Sons do Background")]
     [SerializeField] private AudioClip somBackGround;
 
+    [Header("Musicas")]
+    [SerializeField] private AudioClip musicas;
 
 
     private bool corridaBloqueada = false;
@@ -59,13 +61,27 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         TocarBackGround();
+        TocarMusica();
+        
     }
+    // =========================== Funções para controlar a música =======================
 
+    public void TocarMusica()
+    {
+        if (musica == null || musica == null) 
+            return;
+
+        musica.clip = musicas;
+        musica.loop = true;
+        musica.Play();
+
+        
+    }
     
     // =========================== Funções para controlar o som do jogador =======================
     public void TocarCorrida()
     {
-        if (!somJogador.isPlaying && somCorrida != null)
+        if (!somJogador.isPlaying && somCorrida != null) 
         {
             somJogador.clip = somCorrida;
             somJogador.loop = true;
@@ -181,7 +197,7 @@ public class AudioManager : MonoBehaviour
 
     public void PausarSonsContinuos(bool pausar)
     {
-        AudioSource[] sons = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        AudioSource[] sons = FindObjectsByType<AudioSource>();
 
         foreach (AudioSource som in sons)
         {

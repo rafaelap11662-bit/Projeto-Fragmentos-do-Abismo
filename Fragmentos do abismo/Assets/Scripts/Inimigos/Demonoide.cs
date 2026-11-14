@@ -1,5 +1,4 @@
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
+using System.Collections;
 using UnityEngine;
 
 public class Demonoide : MonoBehaviour
@@ -32,6 +31,11 @@ public class Demonoide : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private float forceJump;
 
+    [Header("ESQUIVA")]
+    [SerializeField] private float distanciaEsquiva = 1.5f;
+    [SerializeField] private float velocidadeEsquiva = 10f;
+    [SerializeField] private float tempoEsquiva = 0.2f;
+    private bool esquivando = false;
 
 
 
@@ -43,6 +47,8 @@ public class Demonoide : MonoBehaviour
 
     void Update()
     {
+         if (esquivando) return;
+
         ProcurarPlayer();
         if(alvo != null)
         {
@@ -77,13 +83,13 @@ public class Demonoide : MonoBehaviour
         MudarDirecao(currentTarget);
     }
 
-    /*private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, visao);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(ataquePoint.position, ataqueRange);
         Gizmos.color = Color.white;
-    }*/
+    }
 
     private void ProcurarPlayer()
     {
@@ -180,6 +186,38 @@ public class Demonoide : MonoBehaviour
     private bool DetectarParede()
     {
         return Physics2D.Raycast(wallCheck.position, transform.right, wallDistance, wallLayer);
+    }
+
+
+    public void Esquivar()
+    {
+        if (!esquivando && alvo != null)
+        {
+            StartCoroutine(ExecutarEsquiva());
+        }
+    }
+
+    private IEnumerator ExecutarEsquiva()
+    {
+        esquivando = true;
+
+        float direcao = transform.position.x < alvo.position.x ? -1 : 1;
+
+        float destino = transform.position.x + (direcao * distanciaEsquiva);
+
+        float tempo = 0;
+
+        while (tempo < tempoEsquiva)
+        {
+            float novoX = Mathf.MoveTowards( transform.position.x, destino, velocidadeEsquiva * Time.deltaTime);
+
+            transform.position = new Vector2(novoX, transform.position.y);
+
+            tempo += Time.deltaTime;
+            yield return null;
+        }
+
+        esquivando = false;
     }
     
 }
