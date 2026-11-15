@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 
 public class GameController : MonoBehaviour
 {
@@ -30,8 +31,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private  AudioClip somBotao;
     [SerializeField] private  AudioClip somGameOver;
     [SerializeField] private  AudioClip somPause;
-    
-
 
     
     void Start()
@@ -50,9 +49,6 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             AlternarPause();
-
-            bool pausado = Time.timeScale == 0;
-            AudioManager.Instance.PausarSonsContinuos(pausado);
         }
     }
 
@@ -156,6 +152,8 @@ public class GameController : MonoBehaviour
     public void MostrarPainelGameOver()
     {
         painelGameOver.SetActive(true);
+        painelPauseMenu.SetActive(false);
+
         Time.timeScale = 0f;
 
         if (AudioManager.Instance != null)
@@ -165,9 +163,11 @@ public class GameController : MonoBehaviour
     public void AlternarPause() //botao Continuar do pause
     {
         pause = !pause;
+
         painelPauseMenu.SetActive(pause);
         painelHUD.SetActive(!pause);
-        Time.timeScale = pause ? 0f : 1f;
+
+        Time.timeScale = pause ? 0f : 1f; 
 
         if (AudioManager.Instance != null)
         AudioManager.Instance.TocarSomInterface(somBotao);
