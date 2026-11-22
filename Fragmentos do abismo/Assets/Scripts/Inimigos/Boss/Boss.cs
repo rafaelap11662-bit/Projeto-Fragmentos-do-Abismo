@@ -72,6 +72,7 @@ public class Boss : MonoBehaviour
     private bool executandoAtaque = false;
     private bool executandoInvestida = false;
     private bool invencivel = false;
+    private float velocidadeInicial;
     
     private Rigidbody2D rb;
     private Transform player;
@@ -83,6 +84,7 @@ public class Boss : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         vidaAtual = vidaInicial;
         posicaoInicial = transform.position;
+        velocidadeInicial = velocidade;
     }
 
     private void Update()
@@ -464,9 +466,10 @@ public class Boss : MonoBehaviour
         CancelInvoke(nameof(VoltarDecidir));
 
         vidaAtual = vidaInicial;
+        velocidade  = velocidadeInicial;
+        executandoInvestida = false;
 
         segundaFase = false;
-        velocidade /= multiVelocidadeFase2;
 
         morreu = false;
         invencivel = false;

@@ -1438,6 +1438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelecionarBotaoMenu
   primeiroBotao: {fileID: 1735793128}
+  botaoContinuar: {fileID: 0}
+  botaoReiniciar: {fileID: 0}
 --- !u!1 &1556088086
 GameObject:
   m_ObjectHideFlags: 0

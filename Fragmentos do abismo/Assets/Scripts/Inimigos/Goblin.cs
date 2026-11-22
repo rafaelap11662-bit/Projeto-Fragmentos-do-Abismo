@@ -1,9 +1,10 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Goblin : MonoBehaviour
 {
-     private Rigidbody2D rb;
+    private Rigidbody2D rb;
+    private MorteInimigo morteInimigo;
+
     [SerializeField] private float perseguicao = 3f;
     [SerializeField] private float speed;
     [SerializeField] private bool ground = true;
@@ -30,10 +31,11 @@ public class Goblin : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private float forceJump;
 
-    void Start()
+    private void Start()
     {
         currentTarget = targetA;
         rb = GetComponent<Rigidbody2D>();
+        morteInimigo = GetComponent<MorteInimigo>();
     }
 
     void Update()
@@ -51,6 +53,11 @@ public class Goblin : MonoBehaviour
 
      private void Move()
     {
+        if(morteInimigo != null && morteInimigo.morto == true)
+        {
+            return;
+        }
+
         // movimento
         transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, speed * Time.deltaTime);
 

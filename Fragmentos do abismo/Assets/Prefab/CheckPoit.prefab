@@ -155,7 +155,7 @@ MonoBehaviour:
   animTocha: {fileID: 6517528391159216723}
   somTochaContinuo: {fileID: 8300000, guid: 92db19c51ae6fca4e90ad1cc8810a1ad, type: 3}
   somTochaAtivacao: {fileID: 8300000, guid: 0f96ee5aa67fb0e489082e414ad3b040, type: 3}
-  volume: 0.2
+  volume: 0.3
   distanciaMinima: 2
   distanciaMaxima: 15
 --- !u!95 &6517528391159216723

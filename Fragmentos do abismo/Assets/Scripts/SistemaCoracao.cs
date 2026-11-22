@@ -31,9 +31,9 @@ public class SistemaCoracao : MonoBehaviour
     {
         vida = Mathf.Clamp(vida, 0, vidaMaxima);
 
-        for (int i = 0; i < coracao.Length; i++)
+        for (int i = 0; i < coracao.Length; i++) 
         {
-            coracao[i].sprite = (i < vida) ? cheio : vazio;
+            coracao[i].sprite = (i < vida) ? cheio : vazio; 
             coracao[i].enabled = i < vidaMaxima;
         }
     }

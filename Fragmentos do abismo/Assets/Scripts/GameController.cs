@@ -1,9 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
-using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class GameController : MonoBehaviour
 {
@@ -46,7 +44,7 @@ public class GameController : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || (Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame))
         {
             AlternarPause();
         }
@@ -168,6 +166,11 @@ public class GameController : MonoBehaviour
         painelHUD.SetActive(!pause);
 
         Time.timeScale = pause ? 0f : 1f; 
+
+        if (Time.timeScale == 1f)
+        {
+            FindAnyObjectByType<jogador>().BloquearPulo(0.2f);
+        }
 
         if (AudioManager.Instance != null)
         AudioManager.Instance.TocarSomInterface(somBotao);

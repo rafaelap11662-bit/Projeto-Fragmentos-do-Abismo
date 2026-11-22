@@ -4,6 +4,7 @@ public class CheckPoit : MonoBehaviour
 {
     [Header("Tocha")]
     [SerializeField] private Animator animTocha;
+    private AudioSource somTocha;
 
     [Header("Sons da Tocha")]
     [SerializeField] private AudioClip somTochaContinuo;
@@ -28,11 +29,18 @@ public class CheckPoit : MonoBehaviour
             {
                 animTocha.SetTrigger("Acender");
 
-                if (somTochaAtivacao != null && somTochaContinuo != null)
-                {
+                if (AudioManager.Instance != null)
+{
+                if (somTochaAtivacao != null)
+                    {
                     AudioManager.Instance.TocarSomDoObjeto(somTochaAtivacao);
-                    AudioManager.Instance.TocarSomObjetos( somTochaContinuo, transform, volume, distanciaMinima, distanciaMaxima);
+                    }
+
+                if (somTochaContinuo != null && somTocha == null)
+                {
+                    somTocha = AudioManager.Instance.TocarSomObjetos(somTochaContinuo, transform, volume, distanciaMinima, distanciaMaxima);
                 }
+            }
                 
 
             }

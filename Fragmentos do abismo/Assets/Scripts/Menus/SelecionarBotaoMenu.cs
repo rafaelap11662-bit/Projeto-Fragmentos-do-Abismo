@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -20,11 +19,11 @@ public class SelecionarBotaoMenu : MonoBehaviour
     }
 
     void Update()
-    {
-        if (EventSystem.current == null || gameController == null)
+    {   
+        if (EventSystem.current == null)
             return;
 
-        bool menuAberto = (gameController.painelPauseMenu != null && gameController.painelPauseMenu.activeInHierarchy) || (gameController.painelGameOver != null && gameController.painelGameOver.activeInHierarchy);
+        bool menuAberto = gameController != null && ((gameController.painelPauseMenu != null && gameController.painelPauseMenu.activeInHierarchy) || (gameController.painelGameOver != null && gameController.painelGameOver.activeInHierarchy));
 
         if (menuAberto && !menuEstavaAberto)
         {
@@ -41,17 +40,20 @@ public class SelecionarBotaoMenu : MonoBehaviour
         if (!navegou)
             return;
 
-        if (EventSystem.current.currentSelectedGameObject != null)
+        if (EventSystem.current.currentSelectedGameObject != null) 
             return;
 
         GameObject botaoInicial = primeiroBotao;
+        
+        if(gameController != null)
+        {
+            if (gameController.painelGameOver.activeInHierarchy)
+                botaoInicial = botaoReiniciar;
 
-        if (gameController.painelGameOver.activeInHierarchy)
-            botaoInicial = botaoReiniciar;
-
-        else if (gameController.painelPauseMenu.activeInHierarchy)
-            botaoInicial = botaoReiniciar;
-
+            else if (gameController.painelPauseMenu.activeInHierarchy)
+                botaoInicial = botaoContinuar;   
+        }
+    
         if (botaoInicial != null)
             EventSystem.current.SetSelectedGameObject(botaoInicial);
     }

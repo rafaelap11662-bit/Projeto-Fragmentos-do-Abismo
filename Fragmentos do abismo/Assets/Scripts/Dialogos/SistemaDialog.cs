@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public enum STATE
 {
@@ -112,7 +113,7 @@ public class SistemaDialog : MonoBehaviour
 
     void Waiting()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Return) || (Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame))
 
         if (!finished)
         {
@@ -134,7 +135,7 @@ public class SistemaDialog : MonoBehaviour
 
     void Typing()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Return) || (Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame))
         {
             typeText.Skip();
             state = STATE.WAITING;

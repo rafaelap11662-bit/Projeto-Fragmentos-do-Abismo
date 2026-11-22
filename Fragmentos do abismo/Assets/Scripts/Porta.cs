@@ -42,7 +42,7 @@ public class Porta : MonoBehaviour
         {
             if (estaAberta)
             {
-                SceneManager.LoadScene(nomeProximaFase);
+                SceneManager.LoadSceneAsync(nomeProximaFase);
             }
             else
             {

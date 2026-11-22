@@ -7,8 +7,8 @@ public class Lava : MonoBehaviour
 
     [Header("Configurações de áudio")]
     [SerializeField, Range(0f, 1f)] private float volume = 0.001f;
-    [SerializeField] private float distanciaMinima = 10f;
-    [SerializeField] private float distanciaMaxima = 20f;
+    [SerializeField] private float distanciaMinima = 5f;
+    [SerializeField] private float distanciaMaxima = 15f;
 
 
     

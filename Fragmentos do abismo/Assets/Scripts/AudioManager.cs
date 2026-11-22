@@ -168,6 +168,7 @@ public class AudioManager : MonoBehaviour
 
         GameObject objetoSom = new GameObject("SomContinuo");
         objetoSom.transform.position = posicao.position;
+        objetoSom.transform.SetParent(posicao);
         AudioSource fonte = objetoSom.AddComponent<AudioSource>();
 
         fonte.clip = som;
@@ -211,6 +212,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PararSonsDoJogo()
+    {
+        AudioSource[] sons = FindObjectsByType<AudioSource>();
+
+        foreach (AudioSource som in sons)
+        {
+            if (som == musica || som == somInterface)
+                continue;
+
+            som.Stop();
+        }
+    }
+
     //========================== Função para tocar o som do Boss ==========================
 
     public void TocarMovimentoBoss(AudioClip som)
@@ -239,13 +253,14 @@ public class AudioManager : MonoBehaviour
             somBoss.PlayOneShot(som);
     }
 
-    //========================== Função para tocar o som de objetos ==========================
+    //========================== Função para tocar o som de objetos  ==========================
 
     public AudioSource TocarSomObjetos(AudioClip som, Transform posicao, float volume = 1f, float distanciaMinima = 10f, float distanciaMaxima = 20f)
     {
 
         GameObject objetoSom = new GameObject("SomContinuo");
         objetoSom.transform.position = posicao.position;
+        objetoSom.transform.SetParent(posicao);
         AudioSource fonte = objetoSom.AddComponent<AudioSource>();
 
         fonte.clip = som;
@@ -263,4 +278,5 @@ public class AudioManager : MonoBehaviour
         return fonte;
 
     }
+
 }

@@ -19,7 +19,10 @@ public class MorteInimigo : MonoBehaviour
 
     [Header("Demonoide")]
     [SerializeField]private float chanceEsquiva = 0.3f;
-    
+
+    [Header("Slime")]
+    public bool morto = false;
+
 
     private void Awake()
     {
@@ -52,9 +55,11 @@ public class MorteInimigo : MonoBehaviour
 
     private void Morrer()
     {
+        morto = true; 
+
         AudioManager.Instance.TocarSomInimigo(somMorte);
 
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.bodyType = RigidbodyType2D.Kinematic;
         col.enabled = false;
         animator.SetTrigger(morteTrigger);
 
@@ -65,7 +70,7 @@ public class MorteInimigo : MonoBehaviour
     {
         if (collision.CompareTag("Lava"))
         {
-            danoInimigo(2);
+            danoInimigo(100);
         }
     }
 }

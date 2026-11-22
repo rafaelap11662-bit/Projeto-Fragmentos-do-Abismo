@@ -32,6 +32,7 @@ public class jogador : MonoBehaviour
     private float velocidadeQueda;
     private bool estavaNoChao;
     private bool pulou;
+    private float tempoBloqueioPulo ;
 
     private void Start()
     {
@@ -47,6 +48,13 @@ public class jogador : MonoBehaviour
 
     private void Update()
     {
+        if (tempoBloqueioPulo > 0)
+        {
+            tempoBloqueioPulo -= Time.unscaledDeltaTime;
+            isJump = false;
+            return;
+        }
+
         inFloor = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.6f, 0.3f), 0f, groundLayer); 
         //Debug.DrawLine(transform.position, groundCheck.position, Color.blue);
          
@@ -142,7 +150,6 @@ public class jogador : MonoBehaviour
         if (AudioManager.Instance != null)
             AudioManager.Instance.TocarPulo();
         }
-
     }
 
 
@@ -150,6 +157,12 @@ public class jogador : MonoBehaviour
     {
         anim.SetFloat("VerticalAnim", rbPlayer.linearVelocity.y);
         anim.SetBool("groundCheck", inFloor);
+    }
+
+    public void BloquearPulo(float tempo)
+    {
+        tempoBloqueioPulo = tempo;
+        isJump = false;
     }
 
 
