@@ -24,8 +24,9 @@ public class jogador : MonoBehaviour
 
     public bool isKnockRight;
     
-
     public bool isInvencivel = false;
+
+    public bool atacando = false;
 
     // Variáveis para controlar o som
     [SerializeField] private float velocidadeMinimaPouso = 8f;
@@ -121,15 +122,16 @@ public class jogador : MonoBehaviour
         float xMove = Input.GetAxisRaw("Horizontal");
         rbPlayer.linearVelocity = new Vector2(xMove * speed, rbPlayer.linearVelocity.y);
 
-        if (xMove > 0)              // Vai para Direita
+        if (!atacando)
         {
-            transform.eulerAngles = new Vector2(0, 0);
-           
-        }
-        else if (xMove < 0)         // Vai para Esquerda 
-        {
-            transform.eulerAngles = new Vector2(0, 180);
-            
+            if (xMove > 0)
+            {
+                transform.eulerAngles = new Vector2(0, 0);
+            }
+            else if (xMove < 0)
+            {
+                transform.eulerAngles = new Vector2(0, 180);
+            }
         }
         
     }
@@ -183,7 +185,7 @@ public class jogador : MonoBehaviour
         AudioManager.Instance.TocarHit();
     }
 
-    public void pararJogador()
+    public void pararJogador() //Chamado em SistemaDialogo
     {
         rbPlayer.linearVelocity = Vector2.zero;
         

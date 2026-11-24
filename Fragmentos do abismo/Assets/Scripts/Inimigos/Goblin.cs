@@ -31,15 +31,34 @@ public class Goblin : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private float forceJump;
 
+    [Header ("Som do Goblin")]
+    [SerializeField] private AudioClip somCorrida;
+    [SerializeField] private float volume = 0.3f;
+    [SerializeField] private float somDistanciaMinima = 2f;
+    [SerializeField] private float somdistanciaMaxima = 15f;
+
+    private AudioSource audioGoblin;
+
     private void Start()
     {
         currentTarget = targetA;
         rb = GetComponent<Rigidbody2D>();
         morteInimigo = GetComponent<MorteInimigo>();
+
+        if (somCorrida != null && AudioManager.Instance != null)
+        {
+            audioGoblin = AudioManager.Instance.TocarSomObjetos(somCorrida, transform, volume, somDistanciaMinima, somdistanciaMaxima);
+        }
     }
 
     void Update()
     {
+        if(morteInimigo != null && morteInimigo.morto == true)
+        {
+            PararSom();
+            return;
+        }
+
         ProcurarPlayer();
         if(alvo != null)
         {
@@ -53,11 +72,6 @@ public class Goblin : MonoBehaviour
 
      private void Move()
     {
-        if(morteInimigo != null && morteInimigo.morto == true)
-        {
-            return;
-        }
-
         // movimento
         transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, speed * Time.deltaTime);
 
@@ -177,5 +191,20 @@ public class Goblin : MonoBehaviour
     private bool DetectarParede()
     {
         return Physics2D.Raycast(wallCheck.position, transform.right, wallDistance, wallLayer);
+    }
+
+    private void PararSom()
+    {
+        if (audioGoblin != null)
+        {
+            audioGoblin.Stop();
+            Destroy(audioGoblin.gameObject);
+            audioGoblin = null;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        PararSom();
     }
 }

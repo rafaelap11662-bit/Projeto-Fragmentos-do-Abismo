@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AtackPlayer : MonoBehaviour
 {
-    
+    private jogador jogador;
     public Animator animator;
     public Transform ataquePoint;                               // Ponto onde o ataque será detectado
     public float ataqueRanger = 0.5f;                           // Alcance do ataque
@@ -14,6 +14,12 @@ public class AtackPlayer : MonoBehaviour
     public float startComboTime = 1.5f;                         // Tempo máximo entre ataques antes do combo resetar
     private bool podeAtacar = true;                             // Variável para controlar se o jogador pode atacar ou não 
     
+
+    void Start()
+    {
+        jogador = GetComponent<jogador>();
+    }
+
     void Update()
     {
         if(comboTime > 0)                                       // Verifica se ainda existe tempo para continuar o combo
@@ -35,6 +41,7 @@ public class AtackPlayer : MonoBehaviour
     void Ataque() 
     {
         podeAtacar = false;                                    // Impede que o jogador ataque novamente até que a animação termine
+        jogador.atacando = true;
         combo++;
 
         comboTime = startComboTime;                             // Reinicia o tempo do combo
@@ -103,6 +110,7 @@ public class AtackPlayer : MonoBehaviour
     private void liberarAtaque()
     {
         podeAtacar = true;
+        jogador.atacando = false;
     }
 
     // Para conseguir ver o AtaquePoint

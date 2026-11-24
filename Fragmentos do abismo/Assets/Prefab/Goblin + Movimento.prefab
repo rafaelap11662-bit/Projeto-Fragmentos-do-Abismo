@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 4301025071631896638}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: 0, z: 0}
+  m_LocalPosition: {x: 0.55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -228,8 +228,8 @@ MonoBehaviour:
   targetB: {fileID: 5718180219206147797}
   alvo: {fileID: 0}
   visao: 6
-  distanciaMinima: 1.1
-  ataqueRange: 0.5
+  distanciaMinima: 1.3
+  ataqueRange: 0.95
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -240,6 +240,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   forceJump: 5
+  somCorrida: {fileID: 8300000, guid: 4832a9078098e0847b2dbe2a31eb4edc, type: 3}
+  volume: 0.3
+  somDistanciaMinima: 2
+  somdistanciaMaxima: 15
 --- !u!114 &548714977811969331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +261,8 @@ MonoBehaviour:
   morteTrigger: GoblinDead
   somHit: {fileID: 8300000, guid: f0b6b04d9bf991b40a80f934b43aece3, type: 3}
   somMorte: {fileID: 8300000, guid: 3528de31648fe0d419b65ffc57f4aa93, type: 3}
+  chanceEsquiva: 0.3
+  morto: 0
 --- !u!114 &3883696629602459382
 MonoBehaviour:
   m_ObjectHideFlags: 0

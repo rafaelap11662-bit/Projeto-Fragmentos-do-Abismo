@@ -211,6 +211,11 @@ MonoBehaviour:
   distanciaEsquiva: 1
   velocidadeEsquiva: 10
   tempoEsquiva: 0.1
+  somCorrida: {fileID: 8300000, guid: 5e1d91d91bd46c44a80360455bcd7eb1, type: 3}
+  volume: 0.5
+  somDistanciaMinima: 2
+  somdistanciaMaxima: 15
+  somEsquiva: {fileID: 8300000, guid: f16895e2635415b4491cb407c4645af7, type: 3}
 --- !u!114 &4473264968332769650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +234,7 @@ MonoBehaviour:
   somHit: {fileID: 8300000, guid: d84177422ab0f4e45be92e4da1f57f1a, type: 3}
   somMorte: {fileID: 8300000, guid: 453d991c7e0339b4998538945c1cb95f, type: 3}
   chanceEsquiva: 0.35
+  morto: 0
 --- !u!114 &8978365740404352567
 MonoBehaviour:
   m_ObjectHideFlags: 0

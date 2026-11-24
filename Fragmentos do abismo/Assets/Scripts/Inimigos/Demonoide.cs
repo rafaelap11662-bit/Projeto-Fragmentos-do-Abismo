@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Demonoide : MonoBehaviour
 {
-    
     private Rigidbody2D rb;
+    private MorteInimigo morteInimigo;
     private float perseguicao = 3f;
     [SerializeField] private float speed;
     [SerializeField] private bool ground = true;
@@ -37,16 +37,36 @@ public class Demonoide : MonoBehaviour
     [SerializeField] private float tempoEsquiva = 0.2f;
     private bool esquivando = false;
 
+    [Header ("Som do Demonoide 3D")]
+    [SerializeField] private AudioClip somCorrida;
+    [SerializeField] private float volume = 0.3f;
+    [SerializeField] private float somDistanciaMinima = 2f;
+    [SerializeField] private float somdistanciaMaxima = 15f;
 
+    [Header ("Som do Demonoide 2D")]
+    [SerializeField] private AudioClip somEsquiva;
+
+    private AudioSource audioDemonoide;
 
     void Start()
     {
         currentTarget = targetA;
         rb = GetComponent<Rigidbody2D>();
+
+        if(somCorrida != null && AudioManager.Instance != null)
+        {
+            audioDemonoide = AudioManager.Instance.TocarSomObjetos(somCorrida, transform, volume, somDistanciaMinima, somdistanciaMaxima);
+        }
     }
 
     void Update()
     {
+        if(morteInimigo != null && morteInimigo.morto == true)
+        {
+            PararSom();
+            return;
+        }
+
          if (esquivando) return;
 
         ProcurarPlayer();
@@ -200,11 +220,10 @@ public class Demonoide : MonoBehaviour
     private IEnumerator ExecutarEsquiva()
     {
         esquivando = true;
+        AudioManager.Instance.TocarSomInimigo(somEsquiva);
 
         float direcao = transform.position.x < alvo.position.x ? -1 : 1;
-
         float destino = transform.position.x + (direcao * distanciaEsquiva);
-
         float tempo = 0;
 
         while (tempo < tempoEsquiva)
@@ -219,5 +238,19 @@ public class Demonoide : MonoBehaviour
 
         esquivando = false;
     }
-    
+
+    private void PararSom()
+    {
+        if (audioDemonoide != null)
+        {
+            audioDemonoide.Stop();
+            Destroy(audioDemonoide.gameObject);
+            audioDemonoide = null;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        PararSom();
+    }
 }
