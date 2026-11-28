@@ -146,6 +146,7 @@ public class GameController : MonoBehaviour
         if (AudioManager.Instance != null)
         AudioManager.Instance.TocarSomInterface(somBotao); 
     }
+    
 
     public void MostrarPainelGameOver()
     {

@@ -36,11 +36,6 @@ public class BossArena : MonoBehaviour
         {
             barreiraBoss.SetActive(false);
         }
-
-        if (GameController.instance != null)   
-        {
-            GameController.instance.bossArenaAtiva = null;
-        }
     }
 
     public void ReiniciarBatalha()

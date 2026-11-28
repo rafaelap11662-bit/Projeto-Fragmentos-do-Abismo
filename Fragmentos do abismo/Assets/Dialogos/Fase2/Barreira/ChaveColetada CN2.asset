@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bea460737b0922b45b8a5cbb9b1a0d61, type: 3}
-  m_Name: PortaTrancadaCN3
+  m_Name: ChaveColetada CN2
   m_EditorClassIdentifier: Assembly-CSharp::DialogData
   talkScript:
-  - texto: Vou precisar de um fragmento chave
+  - texto: Um fragmento vermelho??

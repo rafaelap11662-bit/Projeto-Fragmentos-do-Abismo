@@ -13,6 +13,9 @@ public class Porta : MonoBehaviour
     [SerializeField] private Sprite portaFechada;
     [SerializeField] private Sprite portaAberta;
 
+    [Header("Caixa de Texto")]
+    [SerializeField] private DialogData dialogData; 
+
     private bool estaAberta = false;
 
     private void Start()
@@ -46,7 +49,7 @@ public class Porta : MonoBehaviour
             }
             else
             {
-                Debug.Log("Voce precisa de " + check + " fragmentos para conseguir passar");
+                SistemaDialog.Instance.StartDialog(dialogData);
             }
         }
     }

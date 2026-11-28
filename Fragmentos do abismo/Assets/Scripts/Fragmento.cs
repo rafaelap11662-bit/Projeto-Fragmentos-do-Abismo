@@ -6,9 +6,9 @@ public class Fragmento : MonoBehaviour
     private SpriteRenderer sr;
     private EdgeCollider2D pikup; 
     
-    public GameObject coleta;                                   // animação de coleta
-    public int Score = 1;                                       //Valor do Fragmento
-    public DialogData dialogData;                               // Referência ao ScriptableObject de diálogo
+    public GameObject coleta;                                   
+    public int Score = 1;                                       
+    public DialogData dialogData;                               
 
     [Header("=========== Fase 3 ===========")]
     [Header("Fragmento Final ")]
@@ -26,17 +26,17 @@ public class Fragmento : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D collider)                  // Detecta a colisão do Player com o fragmento.
+    void OnTriggerEnter2D(Collider2D collider)                
     {
         if(collider.gameObject.tag == "Player")
         {
             SistemaDialog.Instance.StartDialog(dialogData);     
             sr.enabled = false;                                 
             pikup.enabled = false;                              
-            coleta.SetActive(true);                             //habilita a animação de coleta
+            coleta.SetActive(true);                             
 
-            GameController.instance.totalScore += Score;        //add um ponto no score
-            GameController.instance.UpdateScoreText();          //atualiza o score
+            GameController.instance.totalScore += Score;        
+            GameController.instance.UpdateScoreText();          
 
             if (fragmentoFinal && boss != null)
                 {

@@ -986,11 +986,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.36
+      value: -7.281
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.232
+      value: -24.23
       objectReference: {fileID: 0}
     - target: {fileID: 5635068104924392960, guid: 17d51f0cb33346248bb6628e8ba54db9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33858,7 +33858,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.04
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -155594,7 +155594,7 @@ Transform:
   m_GameObject: {fileID: 1620082439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8969646, y: -23.378763, z: -10}
+  m_LocalPosition: {x: -4.3889647, y: -23.108772, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -162371,6 +162371,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1859013833}
   portaFechada: {fileID: 732019907603497648, guid: ec8df3d38bb17f643a1551a1f7d8d493, type: 3}
   portaAberta: {fileID: -8776518802516211942, guid: ec8df3d38bb17f643a1551a1f7d8d493, type: 3}
+  dialogData: {fileID: 11400000, guid: 5442c04abcb98b44b8d0d11f6e20f419, type: 2}
 --- !u!58 &1859013831
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -162469,7 +162470,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 7
   m_MaskInteraction: 0
   m_Sprite: {fileID: 732019907603497648, guid: ec8df3d38bb17f643a1551a1f7d8d493, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

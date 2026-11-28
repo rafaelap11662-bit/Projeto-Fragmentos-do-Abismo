@@ -6,21 +6,20 @@ public class PortaChave : MonoBehaviour
     [SerializeField] private DialogData dialogData;
     [SerializeField] private DialogData fragChaveColetada;
 
+    private bool chaveColetada = false;
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (!collision.gameObject.CompareTag("Player"))
+            if (GameController.instance.temChave && !chaveColetada)
             {
-                return;
-            }
-            if (GameController.instance.temChave)
-            {
+                chaveColetada = true;
                 anim.SetTrigger("PortaFim");
                 SistemaDialog.Instance.StartDialog(fragChaveColetada);
                 Destroy(gameObject, 1.9f);
             }
-            else
+            if (!GameController.instance.temChave)
             {
                 SistemaDialog.Instance.StartDialog(dialogData);
             }   
