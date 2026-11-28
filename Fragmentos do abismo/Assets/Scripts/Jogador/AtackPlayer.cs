@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class AtackPlayer : MonoBehaviour
 {
     private jogador jogador;
@@ -13,6 +12,12 @@ public class AtackPlayer : MonoBehaviour
     private float comboTime;                                    // Tempo restante para continuar o combo
     public float startComboTime = 1.5f;                         // Tempo máximo entre ataques antes do combo resetar
     private bool podeAtacar = true;                             // Variável para controlar se o jogador pode atacar ou não 
+
+    [Header ("Sons dos ataques")]
+    [SerializeField] private AudioClip somAtaque1;
+    [SerializeField] private AudioClip somAtaque2;
+    [SerializeField] private AudioClip somAtaque3;
+    
     
 
     void Start()
@@ -54,16 +59,19 @@ public class AtackPlayer : MonoBehaviour
         if(combo == 1)                                          // Se o combo for igual a 1
         {   
             animator.SetTrigger("Atack01");                     // Ativa a animação do primeiro ataque
+            AudioManager.Instance.TocarSomSFXJogador(somAtaque1);
         }
 
         if(combo == 2)                                          // Se o combo for igual a 2
         {
             animator.SetTrigger("Atack02");                     // Ativa a animação do segundo ataque
+            AudioManager.Instance.TocarSomSFXJogador(somAtaque2);
         }
 
         if(combo == 3)                                          // Se o combo for igual a 3
         {
             animator.SetTrigger("Atack03");                     // Ativa a animação do terceiro ataque
+            AudioManager.Instance.TocarSomSFXJogador(somAtaque3);
         }
 
 

@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
         checkpointAtual = checkpointInicial;
         UpdateMortesText();
 
-        ResetarSave();
+        //ResetarSave();
         SalvarJogo(SceneManager.GetActiveScene().name);
     }
     

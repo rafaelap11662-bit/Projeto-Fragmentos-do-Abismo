@@ -34,9 +34,9 @@ public class AudioManager : MonoBehaviour
         Instance = this;
     }
 
-    public void TocarSomJogador(AudioClip som)
+    public void TocarSomSFXJogador(AudioClip som)
     {
-        somJogador.PlayOneShot(som);
+        sfxJogador.PlayOneShot(som);
     }
 
     public void TocarSomInimigo(AudioClip som)

@@ -243,6 +243,7 @@ MonoBehaviour:
   KBTime: 0.2
   isKnockRight: 0
   isInvencivel: 0
+  atacando: 0
   velocidadeMinimaPouso: 8
 --- !u!114 &2624471453648838752
 MonoBehaviour:
@@ -286,6 +287,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   startComboTime: 1.5
+  somAtaque1: {fileID: 8300000, guid: 927b2b00b523def469ca67c663356040, type: 3}
+  somAtaque2: {fileID: 8300000, guid: 69cb9df7c0c1bca43830982095a3ee9c, type: 3}
+  somAtaque3: {fileID: 8300000, guid: 704b8cb2f24e7474bacda047621cabb6, type: 3}
 --- !u!1 &4248910518422514116
 GameObject:
   m_ObjectHideFlags: 0

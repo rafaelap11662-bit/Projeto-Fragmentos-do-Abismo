@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8559834785883192074}
   - component: {fileID: 5407930629703360791}
   m_Layer: 0
-  m_Name: tocha_1_0
+  m_Name: tocha_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

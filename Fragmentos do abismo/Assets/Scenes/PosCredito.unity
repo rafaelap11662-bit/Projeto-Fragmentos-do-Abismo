@@ -424,7 +424,7 @@ MonoBehaviour:
   somPouso: {fileID: 8300000, guid: 340c7b21d008e4247b9b36c8bcfa4c47, type: 3}
   somHit: {fileID: 8300000, guid: def72a7ebbf865e4fa1a5c512a0ae939, type: 3}
   somBackGround: {fileID: 0}
-  musicas: {fileID: 8300000, guid: 81e9624f325ac4d438be390cb88c005a, type: 3}
+  musicas: {fileID: 8300000, guid: 46101bb216764b34aa618ed715b97c36, type: 3}
 --- !u!4 &181948510
 Transform:
   m_ObjectHideFlags: 0
@@ -472,7 +472,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
